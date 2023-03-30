@@ -4,9 +4,9 @@ import ServiceName from '../constants/ServiceName';
 import Service from './Service';
 import type { Options } from './Service';
 
-export default class FullNode extends Service {
+export default class Beacon extends Service {
   constructor(client: Client, options?: Options) {
-    super(ServiceName.FULL_NODE, client, options);
+    super(ServiceName.BEACON, client, options);
   }
 
   async getBlockRecords(start?: number, end?: number) {
@@ -50,13 +50,6 @@ export default class FullNode extends Service {
   async getBlockRecord(headerHash: string) {
     return this.command('get_block_record', {
       headerHash,
-    });
-  }
-
-  async getFeeEstimate(targetTimes: number[], cost: number) {
-    return this.command('get_fee_estimate', {
-      targetTimes,
-      cost,
     });
   }
 

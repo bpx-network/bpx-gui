@@ -125,7 +125,6 @@ export default class Plotter extends Service {
     overrideK, //overrideK
     f, // farmerPublicKey
     p, // poolPublicKey
-    c, // poolContractAddress
     m, // bladebitDisableNUMA,
     w, // bladebitWarmStart,
     v, // madmaxNumBucketsPhase3,
@@ -160,10 +159,6 @@ export default class Plotter extends Service {
   
     if (p) {
       args.p = p;
-    }
-  
-    if (c) {
-      args.c = c;
     }
   
     if (m) { // bladebitDisableNUMA

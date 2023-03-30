@@ -103,15 +103,6 @@ export default class Daemon extends Service {
     });
   }
 
-  migrateKeyring(passphrase: string, passphraseHint: string, savePassphrase: boolean, cleanupLegacyKeyring: boolean) {
-    return this.command('migrate_keyring', {
-      passphrase,
-      passphraseHint,
-      savePassphrase,
-      cleanupLegacyKeyring,
-    });
-  }
-
   unlockKeyring(key: string) {
     return this.command('unlock_keyring', {
       key,
@@ -148,7 +139,6 @@ export default class Daemon extends Service {
     overrideK?: boolean, // overrideK
     f?: string, // farmerPublicKey
     p?: string, // poolPublicKey
-    c?: string, // poolContractAddress
     mm_v?: number, // madmaxNumBucketsPhase3,
     mm_G?: boolean, // madmaxTempToggle,
     mm_K?: number, // madmaxThreadMultiplier,
@@ -188,7 +178,6 @@ export default class Daemon extends Service {
     if (a) args.a = a;
     if (f) args.f = f;
     if (p) args.p = p;
-    if (c) args.c = c;
     // madmaxNumBucketsPhase3
     if (mm_v) args.v = mm_v;
     // madmaxTempToggle
