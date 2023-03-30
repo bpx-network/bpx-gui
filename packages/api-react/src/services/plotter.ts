@@ -1,5 +1,5 @@
-import { PlotterService } from '@chia-network/api';
-import type { Plot } from '@chia-network/api';
+import { PlotterService } from '@bpx-network/api';
+import type { Plot } from '@bpx-network/api';
 
 import api, { baseQuery } from '../api';
 import onCacheEntryAddedInvalidate from '../utils/onCacheEntryAddedInvalidate';
@@ -40,7 +40,6 @@ export const plotterApi = apiWithTag.injectEndpoints({
       query: ({ 
         bladebitDisableNUMA,
         bladebitWarmStart,
-        c,
         delay,
         disableBitfieldPlotting,
         excludeFinalDir,
@@ -84,7 +83,6 @@ export const plotterApi = apiWithTag.injectEndpoints({
           overrideK,
           farmerPublicKey,
           poolPublicKey,
-          c,
           bladebitDisableNUMA,
           bladebitWarmStart,
           madmaxNumBucketsPhase3,

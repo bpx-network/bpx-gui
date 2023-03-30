@@ -1,5 +1,5 @@
-import { Daemon, optionsForPlotter, defaultsForPlotter } from '@chia-network/api';
-import type { KeyringStatus, ServiceName, KeyData } from '@chia-network/api';
+import { Daemon, optionsForPlotter, defaultsForPlotter } from '@bpx-network/api';
+import type { KeyringStatus, ServiceName, KeyData } from '@bpx-network/api';
 
 import api, { baseQuery } from '../api';
 import onCacheEntryAddedInvalidate from '../utils/onCacheEntryAddedInvalidate';
@@ -210,24 +210,6 @@ export const daemonApi = apiWithTag.injectEndpoints({
       transformResponse: (response: any) => response?.success,
     }),
 
-    migrateKeyring: build.mutation<
-      boolean,
-      {
-        passphrase: string;
-        passphraseHint: string;
-        savePassphrase: boolean;
-        cleanupLegacyKeyring: boolean;
-      }
-    >({
-      query: ({ passphrase, passphraseHint, savePassphrase, cleanupLegacyKeyring }) => ({
-        command: 'migrateKeyring',
-        service: Daemon,
-        args: [passphrase, passphraseHint, savePassphrase, cleanupLegacyKeyring],
-      }),
-      invalidatesTags: () => ['KeyringStatus'],
-      transformResponse: (response: any) => response?.success,
-    }),
-
     unlockKeyring: build.mutation<
       boolean,
       {
@@ -354,7 +336,6 @@ export const daemonApi = apiWithTag.injectEndpoints({
         bladebitDiskAlternate,
         bladebitDiskNoT1Direct,
         bladebitDiskNoT2Direct,
-        c,
         delay,
         disableBitfieldPlotting,
         excludeFinalDir,
@@ -399,7 +380,6 @@ export const daemonApi = apiWithTag.injectEndpoints({
           overrideK,
           farmerPublicKey,
           poolPublicKey,
-          c,
           madmaxNumBucketsPhase3,
           madmaxTempToggle,
           madmaxThreadMultiplier,
@@ -440,7 +420,6 @@ export const {
   useRunningServicesQuery,
   useSetKeyringPassphraseMutation,
   useRemoveKeyringPassphraseMutation,
-  useMigrateKeyringMutation,
   useUnlockKeyringMutation,
   useGetVersionQuery,
 
