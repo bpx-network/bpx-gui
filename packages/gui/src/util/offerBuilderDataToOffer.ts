@@ -1,6 +1,6 @@
-import type { Wallet } from '@chia-network/api';
-import { WalletType } from '@chia-network/api';
-import { chiaToMojo, catToMojo } from '@chia-network/core';
+import type { Wallet } from '@bpx-network/api';
+import { WalletType } from '@bpx-network/api';
+import { chiaToMojo, catToMojo } from '@bpx-network/core';
 import { t } from '@lingui/macro';
 import BigNumber from 'bignumber.js';
 

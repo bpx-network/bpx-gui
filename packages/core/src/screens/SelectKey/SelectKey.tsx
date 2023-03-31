@@ -1,4 +1,4 @@
-import type { KeyData } from '@chia-network/api';
+import type { KeyData } from '@bpx-network/api';
 import {
   usePrefs,
   useGetKeyringStatusQuery,
@@ -7,8 +7,8 @@ import {
   useGetKeysQuery,
   useLogout,
   type Serializable,
-} from '@chia-network/api-react';
-import { ChiaBlack, Coins } from '@chia-network/icons';
+} from '@bpx-network/api-react';
+import { ChiaBlack, Coins } from '@bpx-network/icons';
 import data from '@emoji-mart/data';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon } from '@mui/icons-material';

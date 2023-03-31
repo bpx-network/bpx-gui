@@ -55,7 +55,7 @@ msgid "<0>Use one (1) mojo to create a Profile.</0>"
 msgstr "<0>Використовуйте один (1) mojo для створення профілю.</0>"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:77
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
 msgstr "Комбайн - це служба, що працює на пристрої, де фактично зберігаються ділянки. Фермер та комбайн розмовляють із повним вузлом, щоб побачити стан ланцюга. Перегляньте свою мережу підключених комбайнів нижче. Докладніше"
 
 #: src/components/settings/SettingsDataLayer.tsx:79
@@ -85,9 +85,9 @@ msgstr "Прийняти пропозицію"
 msgid "Action"
 msgstr "Дія"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:52
+#: src/components/farm/FarmBeaconConnections.tsx:52
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:52
-#: src/components/fullNode/FullNodeConnections.tsx:64
+#: src/components/beacon/BeaconConnections.tsx:64
 #: src/components/nfts/NFTContextualActions.tsx:623
 #: src/components/offers2/OfferIncomingTable.tsx:102
 msgid "Actions"
@@ -251,7 +251,7 @@ msgstr "Ви впевнені, що хочете видалити ділянку
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "Ви дійсно бажаєте видалити непідтверджені транзакції?"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:28
+#: src/components/beacon/BeaconCloseConnection.tsx:28
 msgid "Are you sure you want to disconnect?"
 msgstr "Ви впевнені, що бажаєте відключитися?"
 
@@ -362,7 +362,7 @@ msgstr "Блок з хешем {headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "Блок з хешем {headerHash} не існує."
 
-#: src/components/fullNode/FullNode.jsx:105
+#: src/components/beacon/Beacon.jsx:105
 msgid "Blocks"
 msgstr "Блоки"
 
@@ -404,7 +404,7 @@ msgstr "Розмір кешу (GB)"
 
 #: src/components/app/AppPassPrompt.tsx:183
 #: src/components/farm/FarmManageFarmingRewards.tsx:163
-#: src/components/fullNode/FullNodeAddConnection.tsx:100
+#: src/components/beacon/BeaconAddConnection.tsx:100
 #: src/components/nfts/MultipleDownloadDialog.tsx:120
 #: src/components/nfts/NFTBurnDialog.tsx:174
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:57
@@ -594,7 +594,7 @@ msgstr "Колекція"
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:19
+#: src/components/beacon/BeaconCloseConnection.tsx:19
 msgid "Confirm Disconnect"
 msgstr "Підтвердити відключення"
 
@@ -628,12 +628,12 @@ msgstr ""
 msgid "Confirmed"
 msgstr "Підтверджено"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:103
+#: src/components/beacon/BeaconAddConnection.tsx:103
 msgid "Connect"
 msgstr "Підключитися"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:82
-#: src/components/fullNode/FullNodeConnections.tsx:92
+#: src/components/beacon/BeaconAddConnection.tsx:82
+#: src/components/beacon/BeaconConnections.tsx:92
 msgid "Connect to other peers"
 msgstr "Підключитися до інших вузлів"
 
@@ -641,7 +641,7 @@ msgstr "Підключитися до інших вузлів"
 msgid "Connect to pool"
 msgstr "Підключитися до пулу"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:85
 msgid "Connected"
 msgstr "Підключено"
@@ -655,16 +655,16 @@ msgstr ""
 msgid "Connecting to daemon"
 msgstr "Підключення до служби"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:14
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:14
 msgid "Connection Status"
 msgstr "Стан підключення"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:87
+#: src/components/farm/FarmBeaconConnections.tsx:87
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:85
 msgid "Connection Status:"
 msgstr "Стан підключення:"
 
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "Connection type"
 msgstr "Тип підключення"
 
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Cost to send notification to the NFT holder"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:55
+#: src/components/beacon/BeaconAddConnection.tsx:55
 msgid "Could not connect to host {host} on port {port}"
 msgstr ""
 
@@ -921,7 +921,7 @@ msgid "Dexie URL"
 msgstr "Dexie URL"
 
 #: src/components/block/Block.jsx:181
-#: src/components/fullNode/card/FullNodeCardDifficulty.tsx:14
+#: src/components/beacon/card/BeaconCardDifficulty.tsx:14
 msgid "Difficulty"
 msgstr "Складність"
 
@@ -953,7 +953,7 @@ msgstr "Вимкнути прямий I/O у каталозі temp 1, щоб о�
 msgid "Disable direct I/O on the temp 2 directory in order to extract maximum performance with RAM disk"
 msgstr "Вимкнути прямий I/O у каталозі temp 2, щоб отримати максимальну продуктивність за допомогою RAM-диска"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:20
+#: src/components/beacon/BeaconCloseConnection.tsx:20
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:119
 #: src/components/walletConnect/WalletConnectConnections.tsx:87
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:151
@@ -1143,7 +1143,7 @@ msgstr ""
 msgid "Error: {0}"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:14
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:14
 msgid "Estimated Network Space"
 msgstr "Приблизний простір мережі"
 
@@ -1152,7 +1152,7 @@ msgstr "Приблизний простір мережі"
 msgid "Estimated Time to Win"
 msgstr "Очікуваний час до виграшу"
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:15
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:15
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr "Орієнтовна сума обсягу всіх ділянок на дисковому просторі всіх фермерів у мережі"
 
@@ -1317,8 +1317,8 @@ msgstr "Розташування кінцевої теки"
 msgid "Fingerprint"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:28
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:28
+#: src/components/beacon/Beacon.jsx:77
 msgid "Finished"
 msgstr "Завершено"
 
@@ -1336,12 +1336,12 @@ msgstr "Найчастіші питання"
 
 #: src/components/app/AppStatusHeader.tsx:84
 #: src/components/dashboard/DashboardSideBar.tsx:76
-#: src/components/fullNode/FullNode.jsx:116
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:116
+msgid "Beacon Client"
 msgstr "Повний вузол"
 
-#: src/components/fullNode/FullNodeConnections.tsx:89
-msgid "Full Node Connections"
+#: src/components/beacon/BeaconConnections.tsx:89
+msgid "Beacon Client Connections"
 msgstr "З'єднання з повним вузлом"
 
 #: src/electron/main.tsx:1022
@@ -1437,7 +1437,7 @@ msgstr "Невідповідність хешу."
 msgid "Hashgreen DEX URL"
 msgstr "Hashgreen DEX URL"
 
-#: src/components/fullNode/FullNode.jsx:43
+#: src/components/beacon/Beacon.jsx:43
 msgid "Header Hash"
 msgstr "Хеш заголовка"
 
@@ -1446,8 +1446,8 @@ msgid "Header hash"
 msgstr "Хеш заголовка"
 
 #: src/components/block/Block.jsx:168
-#: src/components/fullNode/FullNode.jsx:61
-#: src/components/fullNode/FullNodeConnections.tsx:61
+#: src/components/beacon/Beacon.jsx:61
+#: src/components/beacon/BeaconConnections.tsx:61
 msgid "Height"
 msgstr "Висота"
 
@@ -1486,7 +1486,7 @@ msgstr "Підказка"
 msgid "Hooray, no files here!"
 msgstr "Ура, тут немає файлів!"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:31
+#: src/components/farm/FarmBeaconConnections.tsx:31
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:31
 msgid "Host Name"
 msgstr "Ім'я хосту"
@@ -1495,11 +1495,11 @@ msgstr "Ім'я хосту"
 msgid "I Understand, Create Offer"
 msgstr "Я розумію, створити пропозицію"
 
-#: src/components/fullNode/FullNodeConnections.tsx:32
+#: src/components/beacon/BeaconConnections.tsx:32
 msgid "IP address"
 msgstr "ІР-адреса"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:89
+#: src/components/beacon/BeaconAddConnection.tsx:89
 msgid "IP address / host"
 msgstr "IP-адреса / хост"
 
@@ -1539,7 +1539,7 @@ msgstr ""
 msgid "Import"
 msgstr "Імпорт"
 
-#: src/components/fullNode/FullNode.jsx:28
+#: src/components/beacon/Beacon.jsx:28
 msgid "In Progress"
 msgstr "Виконується"
 
@@ -1672,7 +1672,7 @@ msgstr "Keybase — це програма для безпечного обмін
 msgid "Keyring migration failed: {0}"
 msgstr "Помилка міграції системи ключів: {0}"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:49
+#: src/components/farm/FarmBeaconConnections.tsx:49
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:49
 msgid "KiB Up/Down"
 msgstr "KiB Вивантаження/Завантаження"
@@ -1685,7 +1685,7 @@ msgstr "Остання спроба доказу"
 msgid "Last Height Farmed"
 msgstr "Висота останнього створеного блоку"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:16
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:16
 msgid "Last Transaction Block Time"
 msgstr "Час блоку останньої транзакції"
 
@@ -1732,7 +1732,7 @@ msgstr "URL ліцензії {0}"
 msgid "Limit cache size"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:99
+#: src/components/beacon/BeaconConnections.tsx:99
 msgid "List of connections is empty"
 msgstr "Список з'єднань порожній"
 
@@ -1825,7 +1825,7 @@ msgstr "URL метаданих {0}"
 msgid "Metadata hash mismatch"
 msgstr "Невідповідність хешу метаданих"
 
-#: src/components/fullNode/FullNodeConnections.tsx:50
+#: src/components/beacon/BeaconConnections.tsx:50
 msgid "MiB Up/Down"
 msgstr "MiB Вивантаження/Завантаження"
 
@@ -2015,7 +2015,7 @@ msgstr "Чистий прибуток"
 msgid "Network Fee (Optional)"
 msgstr "Комісія мережі (необов'язково)"
 
-#: src/components/fullNode/card/FullNodeCardNetworkName.tsx:14
+#: src/components/beacon/card/BeaconCardNetworkName.tsx:14
 msgid "Network Name"
 msgstr "Назва мережі"
 
@@ -2082,9 +2082,9 @@ msgstr "Немає приватних ключів для одного або о
 msgid "No standard wallet found"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:27
+#: src/components/farm/FarmBeaconConnections.tsx:27
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:27
-#: src/components/fullNode/FullNodeConnections.tsx:28
+#: src/components/beacon/BeaconConnections.tsx:28
 msgid "Node ID"
 msgstr "ID вузла"
 
@@ -2110,12 +2110,12 @@ msgstr "Жодна з ваших ділянок ще не пройшла філ�
 msgid "Not Available"
 msgstr "Не доступно"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:14
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:44
+#: src/components/beacon/card/BeaconCardStatus.tsx:14
+#: src/components/beacon/card/BeaconCardStatus.tsx:44
 msgid "Not Synced"
 msgstr "Не синхронізовано"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 msgid "Not connected"
 msgstr "Немає з'єднання"
 
@@ -2124,7 +2124,7 @@ msgid "Note that this does not change your pooling payout addresses. This only a
 msgstr "Зауважте, що це не змінює адреси виплат пула. Це впливає лише на старий формат ділянок та на винагороду 0.25XCH за ділянки у пулі."
 
 #: src/components/notification/NotificationSendDialog.tsx:145
-msgid "Notification has successfully been sent to a full node and included in the mempool."
+msgid "Notification has successfully been sent to a beacon client and included in the mempool."
 msgstr ""
 
 #: src/components/settings/Settings.tsx:78
@@ -2410,7 +2410,7 @@ msgstr ""
 msgid "Payout Address"
 msgstr "Адреса для виплати"
 
-#: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
+#: src/components/beacon/card/BeaconCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "Найбільша висота"
 
@@ -2695,10 +2695,10 @@ msgstr "Пул:"
 msgid "Pooling"
 msgstr "Добувається"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:37
+#: src/components/farm/FarmBeaconConnections.tsx:37
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:37
-#: src/components/fullNode/FullNodeAddConnection.tsx:95
-#: src/components/fullNode/FullNodeConnections.tsx:38
+#: src/components/beacon/BeaconAddConnection.tsx:95
+#: src/components/beacon/BeaconConnections.tsx:38
 msgid "Port"
 msgstr "Порт"
 
@@ -2893,7 +2893,7 @@ msgid "Royalty Percentage"
 msgstr "Відсоток роялті"
 
 #: src/components/app/AppSelectMode.tsx:139
-msgid "Runs the full node"
+msgid "Runs the beacon client"
 msgstr "Запуск повного вузла"
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:166
@@ -2916,7 +2916,7 @@ msgstr ""
 msgid "Save passphrase"
 msgstr "Зберегти пароль"
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:38
+#: src/components/beacon/BeaconBlockSearch.tsx:38
 msgid "Search block by header hash"
 msgstr "Пошук блоку за хешем заголовку"
 
@@ -3219,12 +3219,12 @@ msgstr "Запуск сервісів"
 msgid "Startup"
 msgstr "Автозавантаження"
 
-#: src/components/fullNode/FullNode.jsx:79
+#: src/components/beacon/Beacon.jsx:79
 msgid "State"
 msgstr "Стан"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:69
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:74
+#: src/components/beacon/card/BeaconCardStatus.tsx:69
+#: src/components/beacon/card/BeaconCardStatus.tsx:74
 #: src/components/offers/OfferManager.tsx:251
 #: src/components/plot/PlotHarvesterPlots.tsx:74
 #: src/components/plot/PlotPlotting.tsx:26
@@ -3254,7 +3254,7 @@ msgstr ""
 msgid "Successfully updated the derivation index. Your balances may take a while to update."
 msgstr "Індекс деривації успішно оновлено. Оновлення вашого балансу може зайняти деякий час."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:50
+#: src/components/beacon/card/BeaconCardStatus.tsx:50
 msgid "Synced"
 msgstr "Синхронізовано"
 
@@ -3263,7 +3263,7 @@ msgstr "Синхронізовано"
 msgid "Syncing"
 msgstr "Синхронізація"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:27
+#: src/components/beacon/card/BeaconCardStatus.tsx:27
 msgid "Syncing <0/>/<1/>"
 msgstr "Синхронізація <0/>/<1/>"
 
@@ -3320,8 +3320,8 @@ msgstr "Індекс деривації встановлює діапазон а
 msgid "The folder is on a RAM Disk"
 msgstr "Папка знаходиться на RAM диску"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:77
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:77
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr "Повний вузол, до якого підключено вашого фермера, вказано нижче. <0>Дізнатися більше</0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:46
@@ -3333,12 +3333,12 @@ msgstr "Мінімальний необхідний розмір для голо
 msgid "The net proceeds include the asking price, minus any associated creator fees (if the NFT has royalty payments enabled)."
 msgstr "Чисті надходження включають ціну запиту за мінусом будь-яких пов’язаних комісій творця (якщо в NFT увімкнено виплати роялті)."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:16
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:46
+#: src/components/beacon/card/BeaconCardStatus.tsx:16
+#: src/components/beacon/card/BeaconCardStatus.tsx:46
 msgid "The node is not synced"
 msgstr "Вузол не синхронізовано"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:35
+#: src/components/beacon/card/BeaconCardStatus.tsx:35
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr "Вузол синхронізований, це означає, що він завантажує блоки з інших вузлів, щоб досягти останнього блоку в ланцюжку"
 
@@ -3423,7 +3423,7 @@ msgstr "Ця функція доступна лише з графічного і
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "Це час, коли блок був створений фермером, який до того, як він буде опрацьований доказом часу"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:17
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:17
 msgid "This is the timestamp of the most recent transaction block."
 msgstr "Це мітка часу останнього блоку транзакцій."
 
@@ -3437,7 +3437,7 @@ msgstr "Це загальна кількість балів, яка має NFT �
 msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
 msgstr "Це загальна кількість балів, які ваш фермер набрав для цієї NFT ділянки. Кожна ділянка k32 отримуватиме близько 10 очок на день, тому якщо у вас є 10TiB, слід очікувати близько 1000 балів на день, або 41 бал на годину."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:52
+#: src/components/beacon/card/BeaconCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
 msgstr "Цей вузел повністю підіймається і перевіряє мережу"
 
@@ -3481,7 +3481,7 @@ msgstr "Множник потоків для етапу 2"
 msgid "Thumbnail hash mismatch"
 msgstr "Невідповідність Thumbnail хешу"
 
-#: src/components/fullNode/FullNode.jsx:71
+#: src/components/beacon/Beacon.jsx:71
 msgid "Time Created"
 msgstr "Час створення"
 
@@ -3540,7 +3540,7 @@ msgstr "Усього вирощено монет"
 msgid "Total Harvesters"
 msgstr "Усього збирачів"
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:14
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:14
 msgid "Total Iterations"
 msgstr "Всього ітерацій"
 
@@ -3568,7 +3568,7 @@ msgstr "Загальна кількість VDF ітерацій"
 msgid "Total amount including royalties"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:15
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:15
 msgid "Total iterations since the start of the blockchain"
 msgstr "Загальна ітерація з початку блокчейн"
 
@@ -3674,7 +3674,7 @@ msgstr "Непризначені NFTs"
 msgid "Unclaimed Rewards"
 msgstr "Не забрані нагороди"
 
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:77
 msgid "Unfinished"
 msgstr "Незавершений"
 
@@ -3720,7 +3720,7 @@ msgstr ""
 msgid "User Transaction Fees"
 msgstr "Користувальницькі комісії"
 
-#: src/components/fullNode/card/FullNodeCardVDFSubSlotIterations.tsx:14
+#: src/components/beacon/card/BeaconCardVDFSubSlotIterations.tsx:14
 msgid "VDF Sub Slot Iterations"
 msgstr "Ітерації підслотів VDF"
 
@@ -4045,8 +4045,8 @@ msgstr "Ви отримаєте <0/> на {address}"
 msgid "Your Farm Overview"
 msgstr "Огляд вашої ферми"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:74
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:74
+msgid "Your Beacon Client Connection"
 msgstr "Ваше підключення до повного вузла"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:74

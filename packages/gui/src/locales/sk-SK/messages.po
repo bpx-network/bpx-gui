@@ -55,7 +55,7 @@ msgid "<0>Use one (1) mojo to create a Profile.</0>"
 msgstr "<0>Na vytvorenie profilu použite jedno (1) mojo.</0>"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:77
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
 msgstr "Kombajn je služba bežiaca na stroji, kde sú uložené polia. Farmár a kombajn komunikujú s plným uzlom, aby zistili stav reťaze. Nižšie si pozrite svoju sieť prepojených kombajnov. Viac informácií"
 
 #: src/components/settings/SettingsDataLayer.tsx:79
@@ -85,9 +85,9 @@ msgstr "Prijať ponuku"
 msgid "Action"
 msgstr "Akcia"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:52
+#: src/components/farm/FarmBeaconConnections.tsx:52
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:52
-#: src/components/fullNode/FullNodeConnections.tsx:64
+#: src/components/beacon/BeaconConnections.tsx:64
 #: src/components/nfts/NFTContextualActions.tsx:623
 #: src/components/offers2/OfferIncomingTable.tsx:102
 msgid "Actions"
@@ -251,7 +251,7 @@ msgstr "Naozaj chcete odstrániť pole? Pole nie je možné obnoviť."
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "Naozaj chcete odstrániť nepotvrdené transakcie?"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:28
+#: src/components/beacon/BeaconCloseConnection.tsx:28
 msgid "Are you sure you want to disconnect?"
 msgstr "Naozaj sa chcete odpojiť?"
 
@@ -362,7 +362,7 @@ msgstr "Blok s hashom {headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "Block s hashom {headerHash} neexistuje."
 
-#: src/components/fullNode/FullNode.jsx:105
+#: src/components/beacon/Beacon.jsx:105
 msgid "Blocks"
 msgstr "Bloky"
 
@@ -404,7 +404,7 @@ msgstr "Veľkosť vyrovnávacej pamäte (GB)"
 
 #: src/components/app/AppPassPrompt.tsx:183
 #: src/components/farm/FarmManageFarmingRewards.tsx:163
-#: src/components/fullNode/FullNodeAddConnection.tsx:100
+#: src/components/beacon/BeaconAddConnection.tsx:100
 #: src/components/nfts/MultipleDownloadDialog.tsx:120
 #: src/components/nfts/NFTBurnDialog.tsx:174
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:57
@@ -594,7 +594,7 @@ msgstr "Zbierka"
 msgid "Confirm"
 msgstr "Potvrdiť"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:19
+#: src/components/beacon/BeaconCloseConnection.tsx:19
 msgid "Confirm Disconnect"
 msgstr "Potvrďte odpojenie"
 
@@ -628,12 +628,12 @@ msgstr ""
 msgid "Confirmed"
 msgstr "Potvrdené"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:103
+#: src/components/beacon/BeaconAddConnection.tsx:103
 msgid "Connect"
 msgstr "Pripojiť"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:82
-#: src/components/fullNode/FullNodeConnections.tsx:92
+#: src/components/beacon/BeaconAddConnection.tsx:82
+#: src/components/beacon/BeaconConnections.tsx:92
 msgid "Connect to other peers"
 msgstr "Pripojiť k iným uzlom"
 
@@ -641,7 +641,7 @@ msgstr "Pripojiť k iným uzlom"
 msgid "Connect to pool"
 msgstr "Pripojiť k združeniu"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:85
 msgid "Connected"
 msgstr "Pripojené"
@@ -655,16 +655,16 @@ msgstr ""
 msgid "Connecting to daemon"
 msgstr "Pripájanie k démonovi"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:14
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:14
 msgid "Connection Status"
 msgstr "Stav pripojenia"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:87
+#: src/components/farm/FarmBeaconConnections.tsx:87
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:85
 msgid "Connection Status:"
 msgstr "Stav pripojenia:"
 
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "Connection type"
 msgstr "Typ pripojenia"
 
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Cost to send notification to the NFT holder"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:55
+#: src/components/beacon/BeaconAddConnection.tsx:55
 msgid "Could not connect to host {host} on port {port}"
 msgstr ""
 
@@ -921,7 +921,7 @@ msgid "Dexie URL"
 msgstr "Dexie URL"
 
 #: src/components/block/Block.jsx:181
-#: src/components/fullNode/card/FullNodeCardDifficulty.tsx:14
+#: src/components/beacon/card/BeaconCardDifficulty.tsx:14
 msgid "Difficulty"
 msgstr "Zložitosť"
 
@@ -953,7 +953,7 @@ msgstr "Zakázať priame I/O v adresári temp 1, aby sa získal maximálny výko
 msgid "Disable direct I/O on the temp 2 directory in order to extract maximum performance with RAM disk"
 msgstr "Zakázať priame I/O v adresári temp 2, aby sa získal maximálny výkon z RAM disku"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:20
+#: src/components/beacon/BeaconCloseConnection.tsx:20
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:119
 #: src/components/walletConnect/WalletConnectConnections.tsx:87
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:151
@@ -1143,7 +1143,7 @@ msgstr ""
 msgid "Error: {0}"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:14
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:14
 msgid "Estimated Network Space"
 msgstr "Odhadovaná velkosť siete"
 
@@ -1152,7 +1152,7 @@ msgstr "Odhadovaná velkosť siete"
 msgid "Estimated Time to Win"
 msgstr "Očakávaný čas na výhru"
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:15
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:15
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr "Odhadovaný súčet všetkého obsadeného miesta na disku všetkých ťažiarov v sieti"
 
@@ -1317,8 +1317,8 @@ msgstr "Cieľový adresár"
 msgid "Fingerprint"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:28
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:28
+#: src/components/beacon/Beacon.jsx:77
 msgid "Finished"
 msgstr "Dokončené"
 
@@ -1336,12 +1336,12 @@ msgstr "Často kladené otázky (FAQ)"
 
 #: src/components/app/AppStatusHeader.tsx:84
 #: src/components/dashboard/DashboardSideBar.tsx:76
-#: src/components/fullNode/FullNode.jsx:116
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:116
+msgid "Beacon Client"
 msgstr "Celý uzol"
 
-#: src/components/fullNode/FullNodeConnections.tsx:89
-msgid "Full Node Connections"
+#: src/components/beacon/BeaconConnections.tsx:89
+msgid "Beacon Client Connections"
 msgstr "Pripojenia k celým uzlom"
 
 #: src/electron/main.tsx:1022
@@ -1437,7 +1437,7 @@ msgstr "Nezhoda hash."
 msgid "Hashgreen DEX URL"
 msgstr "Hashgreen DEX URL"
 
-#: src/components/fullNode/FullNode.jsx:43
+#: src/components/beacon/Beacon.jsx:43
 msgid "Header Hash"
 msgstr "Hash hlavičky"
 
@@ -1446,8 +1446,8 @@ msgid "Header hash"
 msgstr "Hash hlavičky"
 
 #: src/components/block/Block.jsx:168
-#: src/components/fullNode/FullNode.jsx:61
-#: src/components/fullNode/FullNodeConnections.tsx:61
+#: src/components/beacon/Beacon.jsx:61
+#: src/components/beacon/BeaconConnections.tsx:61
 msgid "Height"
 msgstr "Poradie"
 
@@ -1486,7 +1486,7 @@ msgstr "Nápoveda"
 msgid "Hooray, no files here!"
 msgstr "Hurá, nie sú tu žiadne súbory!"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:31
+#: src/components/farm/FarmBeaconConnections.tsx:31
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:31
 msgid "Host Name"
 msgstr "Meno hostiteľa"
@@ -1495,11 +1495,11 @@ msgstr "Meno hostiteľa"
 msgid "I Understand, Create Offer"
 msgstr "Rozumiem, vytvoriť ponuku"
 
-#: src/components/fullNode/FullNodeConnections.tsx:32
+#: src/components/beacon/BeaconConnections.tsx:32
 msgid "IP address"
 msgstr "IP Adresa"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:89
+#: src/components/beacon/BeaconAddConnection.tsx:89
 msgid "IP address / host"
 msgstr "IP Adresa / host"
 
@@ -1539,7 +1539,7 @@ msgstr ""
 msgid "Import"
 msgstr "Importovať"
 
-#: src/components/fullNode/FullNode.jsx:28
+#: src/components/beacon/Beacon.jsx:28
 msgid "In Progress"
 msgstr "Prebieha"
 
@@ -1676,7 +1676,7 @@ msgstr "Keybase je bezpečná aplikácia na odosielanie správ a zdieľanie súb
 msgid "Keyring migration failed: {0}"
 msgstr "Migrácia zväzku kľúčov zlyhala: {0}"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:49
+#: src/components/farm/FarmBeaconConnections.tsx:49
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:49
 msgid "KiB Up/Down"
 msgstr "KiB Odoslané/Stiahnuté"
@@ -1689,7 +1689,7 @@ msgstr "Posledný pokus o dôkaz"
 msgid "Last Height Farmed"
 msgstr "Posledná vyfarmárčená pozícia"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:16
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:16
 msgid "Last Transaction Block Time"
 msgstr "Čas posledného transakčného bloku"
 
@@ -1736,7 +1736,7 @@ msgstr "URL adresa licencie {0}"
 msgid "Limit cache size"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:99
+#: src/components/beacon/BeaconConnections.tsx:99
 msgid "List of connections is empty"
 msgstr "Zoznam pripojení je prázdny"
 
@@ -1829,7 +1829,7 @@ msgstr "URL adresa metadát {0}"
 msgid "Metadata hash mismatch"
 msgstr "Hash metadát sa nezhoduje"
 
-#: src/components/fullNode/FullNodeConnections.tsx:50
+#: src/components/beacon/BeaconConnections.tsx:50
 msgid "MiB Up/Down"
 msgstr "MiB Odoslané/Stiahnuté"
 
@@ -2019,7 +2019,7 @@ msgstr "Čistý výnos"
 msgid "Network Fee (Optional)"
 msgstr "Sieťový poplatok (nepovinné)"
 
-#: src/components/fullNode/card/FullNodeCardNetworkName.tsx:14
+#: src/components/beacon/card/BeaconCardNetworkName.tsx:14
 msgid "Network Name"
 msgstr "Názov siete"
 
@@ -2086,9 +2086,9 @@ msgstr "Žiadne súkromné kľúče pre jednu alebo obidve adresy. Bezpečné ib
 msgid "No standard wallet found"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:27
+#: src/components/farm/FarmBeaconConnections.tsx:27
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:27
-#: src/components/fullNode/FullNodeConnections.tsx:28
+#: src/components/beacon/BeaconConnections.tsx:28
 msgid "Node ID"
 msgstr "ID uzla"
 
@@ -2114,12 +2114,12 @@ msgstr "Žiadne z vašich polí zatiaľ neprešlo filtrom polí."
 msgid "Not Available"
 msgstr "Nie je k dispozícií"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:14
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:44
+#: src/components/beacon/card/BeaconCardStatus.tsx:14
+#: src/components/beacon/card/BeaconCardStatus.tsx:44
 msgid "Not Synced"
 msgstr "Nesynchronizované"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 msgid "Not connected"
 msgstr "Nepripojené"
 
@@ -2128,7 +2128,7 @@ msgid "Note that this does not change your pooling payout addresses. This only a
 msgstr "Toto však nezmení vaše platobné adresy združovania. Ovplyvňuje to iba polia v starom formáte, a odmenu 0,25 XCH za združovanie polí."
 
 #: src/components/notification/NotificationSendDialog.tsx:145
-msgid "Notification has successfully been sent to a full node and included in the mempool."
+msgid "Notification has successfully been sent to a beacon client and included in the mempool."
 msgstr ""
 
 #: src/components/settings/Settings.tsx:78
@@ -2414,7 +2414,7 @@ msgstr ""
 msgid "Payout Address"
 msgstr "Výplatná adresa"
 
-#: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
+#: src/components/beacon/card/BeaconCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "Najvyššia pozícia"
 
@@ -2699,10 +2699,10 @@ msgstr "Združenie:"
 msgid "Pooling"
 msgstr "Združovanie"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:37
+#: src/components/farm/FarmBeaconConnections.tsx:37
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:37
-#: src/components/fullNode/FullNodeAddConnection.tsx:95
-#: src/components/fullNode/FullNodeConnections.tsx:38
+#: src/components/beacon/BeaconAddConnection.tsx:95
+#: src/components/beacon/BeaconConnections.tsx:38
 msgid "Port"
 msgstr "Port"
 
@@ -2897,7 +2897,7 @@ msgid "Royalty Percentage"
 msgstr "Percento autorského honoráru"
 
 #: src/components/app/AppSelectMode.tsx:139
-msgid "Runs the full node"
+msgid "Runs the beacon client"
 msgstr "Spustí úplný uzol"
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:166
@@ -2920,7 +2920,7 @@ msgstr ""
 msgid "Save passphrase"
 msgstr "Uložiť prístupovú frázu"
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:38
+#: src/components/beacon/BeaconBlockSearch.tsx:38
 msgid "Search block by header hash"
 msgstr "Hľadanie bloku podľa hashu záhlavia"
 
@@ -3223,12 +3223,12 @@ msgstr "Spúšťajú sa služby"
 msgid "Startup"
 msgstr "Po spustení"
 
-#: src/components/fullNode/FullNode.jsx:79
+#: src/components/beacon/Beacon.jsx:79
 msgid "State"
 msgstr "Stav"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:69
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:74
+#: src/components/beacon/card/BeaconCardStatus.tsx:69
+#: src/components/beacon/card/BeaconCardStatus.tsx:74
 #: src/components/offers/OfferManager.tsx:251
 #: src/components/plot/PlotHarvesterPlots.tsx:74
 #: src/components/plot/PlotPlotting.tsx:26
@@ -3258,7 +3258,7 @@ msgstr ""
 msgid "Successfully updated the derivation index. Your balances may take a while to update."
 msgstr "Derivačný index bol úspešne aktualizovaný. Aktualizácia vašich zostatkov môže chvíľu trvať."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:50
+#: src/components/beacon/card/BeaconCardStatus.tsx:50
 msgid "Synced"
 msgstr "Synchronizované"
 
@@ -3267,7 +3267,7 @@ msgstr "Synchronizované"
 msgid "Syncing"
 msgstr "Synchronizácia"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:27
+#: src/components/beacon/card/BeaconCardStatus.tsx:27
 msgid "Syncing <0/>/<1/>"
 msgstr "Synchronizácia <0/>/<1/>"
 
@@ -3324,8 +3324,8 @@ msgstr "Derivačný index nastavuje rozsah adries peňaženky, ktoré peňaženk
 msgid "The folder is on a RAM Disk"
 msgstr "Priečinok je na RAM disku"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:77
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:77
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr "Celý uzol, ku ktorému je váš farmár pripojený, je uvedený nižšie. <0> Ďalšie informácie </0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:46
@@ -3337,12 +3337,12 @@ msgstr "Minimálna požadovaná veľkosť pre sieť mainnet je k = 32"
 msgid "The net proceeds include the asking price, minus any associated creator fees (if the NFT has royalty payments enabled)."
 msgstr "Čistý výnos zahŕňa požadovanú cenu mínus všetky súvisiace autorské poplatky (ak má NFT povolené licenčné poplatky)."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:16
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:46
+#: src/components/beacon/card/BeaconCardStatus.tsx:16
+#: src/components/beacon/card/BeaconCardStatus.tsx:46
 msgid "The node is not synced"
 msgstr "Uzol nie je synchronizovaný"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:35
+#: src/components/beacon/card/BeaconCardStatus.tsx:35
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr "Uzol sa synchronizuje, čo znamená, že sťahuje bloky z iných uzlov, aby sa dostal k najnovšiemu bloku v reťazci"
 
@@ -3427,7 +3427,7 @@ msgstr "Táto možnosť je dostupná iba z Electron aplikácie."
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "Toto je čas, kedy ťažiar vytvoril blok, a to ešte predtým, ako bol finalizovaný s dôkazom o čase"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:17
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:17
 msgid "This is the timestamp of the most recent transaction block."
 msgstr "Toto je časová pečiatka posledného transakčného bloku."
 
@@ -3441,7 +3441,7 @@ msgstr "Toto je celkový počet bodov, ktoré má tento NFT v tomto združení o
 msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
 msgstr "Toto je celkový počet bodov, ktoré váš farmár našiel pre tento NFT poľa. Každé k32 pole získa okolo 10 bodov za deň, takže ak máte 10TiB, mali by ste očakávať okolo 1000 bodov za deň, alebo 41 bodov za hodinu."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:52
+#: src/components/beacon/card/BeaconCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
 msgstr "Tento uzol je plne aktualizovaný a overuje sieť"
 
@@ -3485,7 +3485,7 @@ msgstr "Násobiteľ vlákien pre fázu 2"
 msgid "Thumbnail hash mismatch"
 msgstr "Nezhoda hashu miniatúr"
 
-#: src/components/fullNode/FullNode.jsx:71
+#: src/components/beacon/Beacon.jsx:71
 msgid "Time Created"
 msgstr "Čas vytvorenia"
 
@@ -3544,7 +3544,7 @@ msgstr "Celková vyťažená Chia"
 msgid "Total Harvesters"
 msgstr "Celkovo zberačov"
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:14
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:14
 msgid "Total Iterations"
 msgstr "Celkový počet iterácií"
 
@@ -3572,7 +3572,7 @@ msgstr "Celkový počet VDF iterácií"
 msgid "Total amount including royalties"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:15
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:15
 msgid "Total iterations since the start of the blockchain"
 msgstr "Celkový počet iterácií od začiatku blockchainu"
 
@@ -3678,7 +3678,7 @@ msgstr "Nepriradené NFT tokeny"
 msgid "Unclaimed Rewards"
 msgstr "Nevyzdvihnuté odmeny"
 
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:77
 msgid "Unfinished"
 msgstr "Nedokončené"
 
@@ -3724,7 +3724,7 @@ msgstr ""
 msgid "User Transaction Fees"
 msgstr "Používateľské transakčné poplatky"
 
-#: src/components/fullNode/card/FullNodeCardVDFSubSlotIterations.tsx:14
+#: src/components/beacon/card/BeaconCardVDFSubSlotIterations.tsx:14
 msgid "VDF Sub Slot Iterations"
 msgstr "VDF dielčie iterácie slotu"
 
@@ -4049,8 +4049,8 @@ msgstr "Dostanete <0/> na {address}"
 msgid "Your Farm Overview"
 msgstr "Prehľad vašej farmy"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:74
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:74
+msgid "Your Beacon Client Connection"
 msgstr "Vaše pripojenie k sieti"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:74

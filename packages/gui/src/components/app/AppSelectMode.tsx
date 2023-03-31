@@ -1,5 +1,5 @@
-import { Button, Flex, Logo, Card, useMode, Mode } from '@chia-network/core';
-import { Farming as FarmingIcon } from '@chia-network/icons';
+import { Button, Flex, Logo, Card, useMode, Mode } from '@bpx-network/core';
+import { Farming as FarmingIcon } from '@bpx-network/icons';
 import { Trans } from '@lingui/macro';
 import {
   AccountBalanceWallet as AccountBalanceWalletIcon,
@@ -136,7 +136,7 @@ export default function AppSelectMode() {
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Runs the full node</Trans>
+                        <Trans>Runs the beacon client</Trans>
                       </Typography>
                     </Flex>
                   </Flex>

@@ -55,7 +55,7 @@ msgid "<0>Use one (1) mojo to create a Profile.</0>"
 msgstr "<0>Käytä yksi (1) mojo luodaksesi Profiilin.</0>"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:77
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
 msgstr "Harvesteri on palvelu koneella, jolle plot-tiedostot on tallennettu. Farmari ja harvesteri ovat yhteydessä noodiin, jolta saavat lohkoketjun tilatiedot. Katso alta yhdistetyt harvesteripalvelut"
 
 #: src/components/settings/SettingsDataLayer.tsx:79
@@ -85,9 +85,9 @@ msgstr "Hyväksy tarjous"
 msgid "Action"
 msgstr "Toiminto"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:52
+#: src/components/farm/FarmBeaconConnections.tsx:52
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:52
-#: src/components/fullNode/FullNodeConnections.tsx:64
+#: src/components/beacon/BeaconConnections.tsx:64
 #: src/components/nfts/NFTContextualActions.tsx:623
 #: src/components/offers2/OfferIncomingTable.tsx:102
 msgid "Actions"
@@ -251,7 +251,7 @@ msgstr "Haluatko tuhota plotin? Plottia ei voi palauttaa."
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "Haluatko varmasti poistaa nämä vahvistamattomat tapahtumat?"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:28
+#: src/components/beacon/BeaconCloseConnection.tsx:28
 msgid "Are you sure you want to disconnect?"
 msgstr "Katkaise yhteys?"
 
@@ -362,7 +362,7 @@ msgstr "Lohko tiivisteellä {headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "Lohkoa tunnistetiivisteellä {headerHash} ei ole olemassa."
 
-#: src/components/fullNode/FullNode.jsx:105
+#: src/components/beacon/Beacon.jsx:105
 msgid "Blocks"
 msgstr "Lohkot"
 
@@ -404,7 +404,7 @@ msgstr "Välimuistin koko (GB)"
 
 #: src/components/app/AppPassPrompt.tsx:183
 #: src/components/farm/FarmManageFarmingRewards.tsx:163
-#: src/components/fullNode/FullNodeAddConnection.tsx:100
+#: src/components/beacon/BeaconAddConnection.tsx:100
 #: src/components/nfts/MultipleDownloadDialog.tsx:120
 #: src/components/nfts/NFTBurnDialog.tsx:174
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:57
@@ -594,7 +594,7 @@ msgstr "Kokoelma"
 msgid "Confirm"
 msgstr "Vahvista"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:19
+#: src/components/beacon/BeaconCloseConnection.tsx:19
 msgid "Confirm Disconnect"
 msgstr "Varmista Yhteyden Katkaisu"
 
@@ -628,12 +628,12 @@ msgstr ""
 msgid "Confirmed"
 msgstr "Vahvistettu"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:103
+#: src/components/beacon/BeaconAddConnection.tsx:103
 msgid "Connect"
 msgstr "Yhdistä"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:82
-#: src/components/fullNode/FullNodeConnections.tsx:92
+#: src/components/beacon/BeaconAddConnection.tsx:82
+#: src/components/beacon/BeaconConnections.tsx:92
 msgid "Connect to other peers"
 msgstr "Yhdistä muihin verkkonoodeihin"
 
@@ -641,7 +641,7 @@ msgstr "Yhdistä muihin verkkonoodeihin"
 msgid "Connect to pool"
 msgstr "Yhdistä pooliin"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:85
 msgid "Connected"
 msgstr "Yhdistetty"
@@ -655,16 +655,16 @@ msgstr ""
 msgid "Connecting to daemon"
 msgstr "Yhdistetään daemoniin"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:14
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:14
 msgid "Connection Status"
 msgstr "Yhteyden Tila"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:87
+#: src/components/farm/FarmBeaconConnections.tsx:87
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:85
 msgid "Connection Status:"
 msgstr "Yhteyden Tila:"
 
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "Connection type"
 msgstr "Yhteystyyppi"
 
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Cost to send notification to the NFT holder"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:55
+#: src/components/beacon/BeaconAddConnection.tsx:55
 msgid "Could not connect to host {host} on port {port}"
 msgstr ""
 
@@ -921,7 +921,7 @@ msgid "Dexie URL"
 msgstr "Dexie URL"
 
 #: src/components/block/Block.jsx:181
-#: src/components/fullNode/card/FullNodeCardDifficulty.tsx:14
+#: src/components/beacon/card/BeaconCardDifficulty.tsx:14
 msgid "Difficulty"
 msgstr "Vaikeusaste"
 
@@ -953,7 +953,7 @@ msgstr "Poista suora I/O temp 1 -hakemistosta saadaksesi maksimaalisen suoritusk
 msgid "Disable direct I/O on the temp 2 directory in order to extract maximum performance with RAM disk"
 msgstr "Poista suora I/O temp 2 -hakemistosta saadaksesi maksimaalisen suorituskyvyn RAM-levylle"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:20
+#: src/components/beacon/BeaconCloseConnection.tsx:20
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:119
 #: src/components/walletConnect/WalletConnectConnections.tsx:87
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:151
@@ -1143,7 +1143,7 @@ msgstr ""
 msgid "Error: {0}"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:14
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:14
 msgid "Estimated Network Space"
 msgstr "Estimoitu Verkkoavaruus"
 
@@ -1152,7 +1152,7 @@ msgstr "Estimoitu Verkkoavaruus"
 msgid "Estimated Time to Win"
 msgstr "Laskennallinen Voittoaika"
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:15
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:15
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr "Kaikkien farmien sisältämien plot-tiedostojen arvoitu yhteiskoko"
 
@@ -1317,8 +1317,8 @@ msgstr "Lopullinen hakemisto"
 msgid "Fingerprint"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:28
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:28
+#: src/components/beacon/Beacon.jsx:77
 msgid "Finished"
 msgstr "Valmis"
 
@@ -1336,12 +1336,12 @@ msgstr "Usein Kysytyt Kysymykset"
 
 #: src/components/app/AppStatusHeader.tsx:84
 #: src/components/dashboard/DashboardSideBar.tsx:76
-#: src/components/fullNode/FullNode.jsx:116
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:116
+msgid "Beacon Client"
 msgstr "Verkkonoodi"
 
-#: src/components/fullNode/FullNodeConnections.tsx:89
-msgid "Full Node Connections"
+#: src/components/beacon/BeaconConnections.tsx:89
+msgid "Beacon Client Connections"
 msgstr "Noodin Yhteydet"
 
 #: src/electron/main.tsx:1022
@@ -1437,7 +1437,7 @@ msgstr "Tiiviste ei täsmää."
 msgid "Hashgreen DEX URL"
 msgstr "Hashgreen DEX URL"
 
-#: src/components/fullNode/FullNode.jsx:43
+#: src/components/beacon/Beacon.jsx:43
 msgid "Header Hash"
 msgstr "Lohkotunniste"
 
@@ -1446,8 +1446,8 @@ msgid "Header hash"
 msgstr "Lohkotunniste"
 
 #: src/components/block/Block.jsx:168
-#: src/components/fullNode/FullNode.jsx:61
-#: src/components/fullNode/FullNodeConnections.tsx:61
+#: src/components/beacon/Beacon.jsx:61
+#: src/components/beacon/BeaconConnections.tsx:61
 msgid "Height"
 msgstr "Lohkokorkeus"
 
@@ -1486,7 +1486,7 @@ msgstr "Vihje"
 msgid "Hooray, no files here!"
 msgstr "Hurraa, ei tiedostoja täällä!"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:31
+#: src/components/farm/FarmBeaconConnections.tsx:31
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:31
 msgid "Host Name"
 msgstr "Palvelimen nimi"
@@ -1495,11 +1495,11 @@ msgstr "Palvelimen nimi"
 msgid "I Understand, Create Offer"
 msgstr "Ymmärrän, Luo Tarjous"
 
-#: src/components/fullNode/FullNodeConnections.tsx:32
+#: src/components/beacon/BeaconConnections.tsx:32
 msgid "IP address"
 msgstr "IP-osoite"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:89
+#: src/components/beacon/BeaconAddConnection.tsx:89
 msgid "IP address / host"
 msgstr "IP-osoite / nimi"
 
@@ -1539,7 +1539,7 @@ msgstr ""
 msgid "Import"
 msgstr "Tuo"
 
-#: src/components/fullNode/FullNode.jsx:28
+#: src/components/beacon/Beacon.jsx:28
 msgid "In Progress"
 msgstr "Käynnissä"
 
@@ -1676,7 +1676,7 @@ msgstr "Keybase on turvallinen viesti- ja tiedostonjakosovellus. Jakaaksesi tarj
 msgid "Keyring migration failed: {0}"
 msgstr "Avainten siirto epäonnistui: {0}"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:49
+#: src/components/farm/FarmBeaconConnections.tsx:49
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:49
 msgid "KiB Up/Down"
 msgstr "KiB Lähetys/Lataus"
@@ -1689,7 +1689,7 @@ msgstr "Viimeisin Yritetty Todiste"
 msgid "Last Height Farmed"
 msgstr "Viimeisin Voitettu Lohko"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:16
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:16
 msgid "Last Transaction Block Time"
 msgstr "Viimeisin Transaktiolohko"
 
@@ -1736,7 +1736,7 @@ msgstr "Lisenssin URL {0}"
 msgid "Limit cache size"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:99
+#: src/components/beacon/BeaconConnections.tsx:99
 msgid "List of connections is empty"
 msgstr "Luettelo yhteyksistä on tyhjä"
 
@@ -1829,7 +1829,7 @@ msgstr "Metatietojen URL {0}"
 msgid "Metadata hash mismatch"
 msgstr "Metadatan tiiviste ei täsmää"
 
-#: src/components/fullNode/FullNodeConnections.tsx:50
+#: src/components/beacon/BeaconConnections.tsx:50
 msgid "MiB Up/Down"
 msgstr "MiB Lähetys/Lataus"
 
@@ -2019,7 +2019,7 @@ msgstr "Nettotuotot"
 msgid "Network Fee (Optional)"
 msgstr "Transaktiomaksu (valinnainen)"
 
-#: src/components/fullNode/card/FullNodeCardNetworkName.tsx:14
+#: src/components/beacon/card/BeaconCardNetworkName.tsx:14
 msgid "Network Name"
 msgstr "Verkon Nimi"
 
@@ -2086,9 +2086,9 @@ msgstr "Jompaan kumpaan tai kumpaankaan osoitteeseen ei ole yksitysiä avaimia. 
 msgid "No standard wallet found"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:27
+#: src/components/farm/FarmBeaconConnections.tsx:27
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:27
-#: src/components/fullNode/FullNodeConnections.tsx:28
+#: src/components/beacon/BeaconConnections.tsx:28
 msgid "Node ID"
 msgstr "Noodin tunnus"
 
@@ -2114,12 +2114,12 @@ msgstr "Yksikään ploteistasi ei ole vielä päässyt suodatuksesta läpi."
 msgid "Not Available"
 msgstr "Ei Saatavilla"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:14
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:44
+#: src/components/beacon/card/BeaconCardStatus.tsx:14
+#: src/components/beacon/card/BeaconCardStatus.tsx:44
 msgid "Not Synced"
 msgstr "Ei Synkronoitu"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 msgid "Not connected"
 msgstr "Ei yhteyttä"
 
@@ -2128,7 +2128,7 @@ msgid "Note that this does not change your pooling payout addresses. This only a
 msgstr "Huomaa, että tämä ei muuta poolauksen maksuosoitteitasi. Tämä vaikuttaa vain vanhan formaatin plotteihin, ja 0,25 XCH palkintoon poolausploteissa."
 
 #: src/components/notification/NotificationSendDialog.tsx:145
-msgid "Notification has successfully been sent to a full node and included in the mempool."
+msgid "Notification has successfully been sent to a beacon client and included in the mempool."
 msgstr ""
 
 #: src/components/settings/Settings.tsx:78
@@ -2414,7 +2414,7 @@ msgstr ""
 msgid "Payout Address"
 msgstr "Maksun Osoite"
 
-#: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
+#: src/components/beacon/card/BeaconCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "Lakikorkeus"
 
@@ -2699,10 +2699,10 @@ msgstr "Pooli:"
 msgid "Pooling"
 msgstr "Pooli"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:37
+#: src/components/farm/FarmBeaconConnections.tsx:37
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:37
-#: src/components/fullNode/FullNodeAddConnection.tsx:95
-#: src/components/fullNode/FullNodeConnections.tsx:38
+#: src/components/beacon/BeaconAddConnection.tsx:95
+#: src/components/beacon/BeaconConnections.tsx:38
 msgid "Port"
 msgstr "Portti"
 
@@ -2897,7 +2897,7 @@ msgid "Royalty Percentage"
 msgstr "Rojaltiprosentti"
 
 #: src/components/app/AppSelectMode.tsx:139
-msgid "Runs the full node"
+msgid "Runs the beacon client"
 msgstr "Ajaa koko noodia"
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:166
@@ -2920,7 +2920,7 @@ msgstr ""
 msgid "Save passphrase"
 msgstr "Tallenna salasana"
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:38
+#: src/components/beacon/BeaconBlockSearch.tsx:38
 msgid "Search block by header hash"
 msgstr "Etsi lohko otsikon tiivisteellä"
 
@@ -3223,12 +3223,12 @@ msgstr "Käynnistetään palveluja"
 msgid "Startup"
 msgstr "Käynnistys"
 
-#: src/components/fullNode/FullNode.jsx:79
+#: src/components/beacon/Beacon.jsx:79
 msgid "State"
 msgstr "Tila"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:69
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:74
+#: src/components/beacon/card/BeaconCardStatus.tsx:69
+#: src/components/beacon/card/BeaconCardStatus.tsx:74
 #: src/components/offers/OfferManager.tsx:251
 #: src/components/plot/PlotHarvesterPlots.tsx:74
 #: src/components/plot/PlotPlotting.tsx:26
@@ -3258,7 +3258,7 @@ msgstr ""
 msgid "Successfully updated the derivation index. Your balances may take a while to update."
 msgstr "Onnistuneesti päivitetty derivaatioindeksi. Saldojen päivitys voivat kestää jonkin aikaa."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:50
+#: src/components/beacon/card/BeaconCardStatus.tsx:50
 msgid "Synced"
 msgstr "Synkronissa"
 
@@ -3267,7 +3267,7 @@ msgstr "Synkronissa"
 msgid "Syncing"
 msgstr "Synkronoi"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:27
+#: src/components/beacon/card/BeaconCardStatus.tsx:27
 msgid "Syncing <0/>/<1/>"
 msgstr "Synkronoi <0/>/<1/>"
 
@@ -3324,8 +3324,8 @@ msgstr "Derivaatioindeksi asettaa lompakon osoitteiden määrän, jota lompakko 
 msgid "The folder is on a RAM Disk"
 msgstr "Kansio on RAM levyllä"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:77
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:77
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr "Alla noodi, johon farmarisi on yhteydessä. <0>Katso lisää</0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:46
@@ -3337,12 +3337,12 @@ msgstr "Lohkoketjun hyväksymä minimiarvo on k=32"
 msgid "The net proceeds include the asking price, minus any associated creator fees (if the NFT has royalty payments enabled)."
 msgstr "Nettotuotot sisältävät pyyntöhinnan, josta on vähennetty mahdolliset rojaltit (jos NFT:llä on rojaltimaksut)."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:16
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:46
+#: src/components/beacon/card/BeaconCardStatus.tsx:16
+#: src/components/beacon/card/BeaconCardStatus.tsx:46
 msgid "The node is not synced"
 msgstr "Noodi ei ole synkronoitu"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:35
+#: src/components/beacon/card/BeaconCardStatus.tsx:35
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr "Noodi synkronoi. Se lataa lohkoketjua muilta solmuilta"
 
@@ -3427,7 +3427,7 @@ msgstr "Tämä ominaisuus käytettävissä ainoastaan graafisessa käyttöliitty
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "Ajankohta jolloin farmari on luonut lohkon. Aikatodiste viimeistelee lohkon tämän ajankohdan jälkeen"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:17
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:17
 msgid "This is the timestamp of the most recent transaction block."
 msgstr "Tämä on uusimman transaktiolohkon aikaleima."
 
@@ -3441,7 +3441,7 @@ msgstr "Tämä on Plot-NFT:n yhteispistemäärä edellisen maksun jälkeen. Pool
 msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
 msgstr "Tämä on kokonaispistemäärä jotka olet tuottanut tälle Plot-NFT:lle. Jokainen k32-plotti tuottaa noin 10 pistettä päivässä, joten jos sinulla on 10TiB, pitäisi plottien tuottaa noin 1000 pistettä päivässä tai 41 pistettä tunnissa."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:52
+#: src/components/beacon/card/BeaconCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
 msgstr "Noodi on ajan tasalla ja todentaa lohkoketjuverkkoa"
 
@@ -3485,7 +3485,7 @@ msgstr "Säikeiden kerroin vaiheeseen 2"
 msgid "Thumbnail hash mismatch"
 msgstr "Esikatselukuvan tiiviste ei täsmää"
 
-#: src/components/fullNode/FullNode.jsx:71
+#: src/components/beacon/Beacon.jsx:71
 msgid "Time Created"
 msgstr "Luontiaika"
 
@@ -3544,7 +3544,7 @@ msgstr "Farmatut Chiat Yhteensä"
 msgid "Total Harvesters"
 msgstr "Harvestereita yhteensä"
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:14
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:14
 msgid "Total Iterations"
 msgstr "Iteraatioita"
 
@@ -3572,7 +3572,7 @@ msgstr "VDF-iteraatioiden Määrä"
 msgid "Total amount including royalties"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:15
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:15
 msgid "Total iterations since the start of the blockchain"
 msgstr "Iteraatioiden määrä lohkoketjun alusta asti"
 
@@ -3678,7 +3678,7 @@ msgstr "Määrittelemättömät NFT:t"
 msgid "Unclaimed Rewards"
 msgstr "Lunastamattomat palkkiot"
 
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:77
 msgid "Unfinished"
 msgstr "Kesken"
 
@@ -3724,7 +3724,7 @@ msgstr ""
 msgid "User Transaction Fees"
 msgstr "Transaktiomaksut"
 
-#: src/components/fullNode/card/FullNodeCardVDFSubSlotIterations.tsx:14
+#: src/components/beacon/card/BeaconCardVDFSubSlotIterations.tsx:14
 msgid "VDF Sub Slot Iterations"
 msgstr "VDF -alaiteraatioita"
 
@@ -4049,8 +4049,8 @@ msgstr "Saat <0/> osoitteeseen {address}"
 msgid "Your Farm Overview"
 msgstr "Farmin Yleiskuva"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:74
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:74
+msgid "Your Beacon Client Connection"
 msgstr "Noodin Yhteys"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:74

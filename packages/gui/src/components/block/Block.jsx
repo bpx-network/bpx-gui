@@ -1,5 +1,5 @@
-import { toBech32m } from '@chia-network/api';
-import { useGetBlockQuery, useGetBlockRecordQuery } from '@chia-network/api-react';
+import { toBech32m } from '@bpx-network/api';
+import { useGetBlockQuery, useGetBlockRecordQuery } from '@bpx-network/api-react';
 import {
   Back,
   Button,
@@ -9,12 +9,8 @@ import {
   LayoutDashboardSub,
   TooltipIcon,
   Flex,
-  calculatePoolReward,
-  calculateBaseFarmerReward,
-  useCurrencyCode,
-  mojoToChia,
   Suspender,
-} from '@chia-network/core';
+} from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Alert, Paper, TableRow, Table, TableBody, TableCell, TableContainer } from '@mui/material';
 import moment from 'moment';
@@ -40,7 +36,6 @@ export default function Block() {
   const navigate = useNavigate();
   const [newPlotId, setNewPlotId] = useState();
   const [nextSubBlocks, setNextSubBlocks] = useState([]);
-  const currencyCode = useCurrencyCode();
 
   const {
     data: block,
@@ -145,11 +140,6 @@ export default function Block() {
   const difficulty =
     prevBlockRecord && blockRecord ? blockRecord.weight - prevBlockRecord.weight : blockRecord?.weight ?? 0;
 
-  const poolReward = mojoToChia(calculatePoolReward(blockRecord.height));
-  const baseFarmerReward = mojoToChia(calculateBaseFarmerReward(blockRecord.height));
-
-  const chiaFees = blockRecord.fees !== undefined ? mojoToChia(blockRecord.fees) : '';
-
   const rows = [
     {
       name: <Trans>Header hash</Trans>,
@@ -157,7 +147,7 @@ export default function Block() {
     },
     {
       name: <Trans>Timestamp</Trans>,
-      value: blockRecord.timestamp ? moment(blockRecord.timestamp * 1000).format('LLL') : null,
+      value: moment(blockRecord.timestamp * 1000).format('LLL'),
       tooltip: (
         <Trans>
           This is the time the block was created by the farmer, which is before it is finalized with a proof of time
@@ -211,34 +201,9 @@ export default function Block() {
       value: block.rewardChainBlock.proofOfSpace.poolPublicKey,
     },
     {
-      name: <Trans>Farmer Puzzle Hash</Trans>,
-      value: currencyCode ? toBech32m(blockRecord.farmerPuzzleHash, currencyCode.toLowerCase()) : '',
-    },
-    {
-      name: <Trans>Pool Puzzle Hash</Trans>,
-      value: currencyCode ? toBech32m(blockRecord.poolPuzzleHash, currencyCode.toLowerCase()) : '',
-    },
-    {
       name: <Trans>Plot Id</Trans>,
       value: newPlotId,
       tooltip: <Trans>The seed used to create the plot. This depends on the pool pk and plot pk.</Trans>,
-    },
-    {
-      name: <Trans>Transactions Filter Hash</Trans>,
-      value: block.foliageTransactionBlock?.filterHash,
-    },
-    {
-      name: <Trans>Pool Reward Amount</Trans>,
-      value: `${poolReward} ${currencyCode}`,
-    },
-    {
-      name: <Trans>Base Farmer Reward Amount</Trans>,
-      value: `${baseFarmerReward} ${currencyCode}`,
-    },
-    {
-      name: <Trans>Fees Amount</Trans>,
-      value: chiaFees ? `${chiaFees} ${currencyCode}` : '',
-      tooltip: <Trans>The total transactions fees in this block. Rewarded to the farmer.</Trans>,
     },
   ];
 
@@ -247,7 +212,7 @@ export default function Block() {
       <Card
         title={
           <Back variant="h5">
-            <Trans>Block at height {blockRecord.height} in the Chia blockchain</Trans>
+            <Trans>Block at height {blockRecord.height} in the BPX Beacon Chain</Trans>
           </Back>
         }
         action={

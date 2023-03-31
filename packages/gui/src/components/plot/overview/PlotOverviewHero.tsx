@@ -1,6 +1,6 @@
-import { useRefreshPlotsMutation } from '@chia-network/api-react';
-import { Button, CardHero, Flex, Link, useOpenDialog } from '@chia-network/core';
-import { Plots } from '@chia-network/icons';
+import { useRefreshPlotsMutation } from '@bpx-network/api-react';
+import { Button, CardHero, Flex, Link, useOpenDialog } from '@bpx-network/core';
+import { Plots } from '@bpx-network/icons';
 import { Trans } from '@lingui/macro';
 import { Grid, Typography, Divider } from '@mui/material';
 import React from 'react';
@@ -32,10 +32,7 @@ export default function PlotOverviewHero() {
           <Plots color="primary" fontSize="extraLarge" />
           <Typography variant="body1">
             <Trans>
-              Plots are allocated space on your hard drive used to farm and earn Chia. &nbsp;
-              <Link target="_blank" href="https://github.com/Chia-Network/chia-blockchain/wiki/Network-Architecture">
-                Learn more
-              </Link>
+              Plots are allocated space on your hard drive used to farm and earn BPX. &nbsp;
             </Trans>
           </Typography>
           <Flex gap={1}>

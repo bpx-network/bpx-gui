@@ -9,24 +9,13 @@ async function migrateGUIPrefsFromLocalStorage() {
   const w = window as WindowExt;
   const prefs: Record<string, any> = {};
   const targets: string[] = [
-    'cacheFolder',
-    'cacheLimitSize',
     'darkMode',
     'enableAutoLogin',
-    'enableDataLayerService',
-    'enableFilePropagationServer',
     'finaldir',
     'fingerprintSettings',
-    'hiddenWalletsItems',
-    'hideObjectionableContent',
     'isHidden',
-    'limit-cache-size',
     'locale',
     'mode',
-    'sensitive-content',
-    'skipMigration',
-    'suppressShareOnCreate',
-    'suppressUnsafeLinkWarning',
     'tmp2dir',
     'tmpdir',
   ];

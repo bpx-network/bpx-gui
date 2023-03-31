@@ -1,6 +1,6 @@
 export { default as useGetLatestBlocksQuery } from './useGetLatestBlocksQuery';
 export { default as useGetLatestPeakTimestampQuery } from './useGetLatestPeakTimestampQuery';
-export { default as useGetFarmerFullNodeConnectionsQuery } from './useGetFarmerFullNodeConnectionsQuery';
+export { default as useGetFarmerBeaconConnectionsQuery } from './useGetFarmerBeaconConnectionsQuery';
 export { default as useGetHarvesterConnectionsQuery } from './useGetHarvesterConnectionsQuery';
 export { default as useGetHarvesterQuery } from './useGetHarvesterQuery';
 export { default as useGetHarvesterStats } from './useGetHarvesterStats';

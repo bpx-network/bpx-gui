@@ -1,7 +1,7 @@
-import type { Connection } from '@chia-network/api';
-import { ServiceName } from '@chia-network/api';
-import { useGetFarmerFullNodeConnectionsQuery, useService } from '@chia-network/api-react';
-import { Table, Card, FormatBytes, FormatConnectionStatus } from '@chia-network/core';
+import type { Connection } from '@bpx-network/api';
+import { ServiceName } from '@bpx-network/api';
+import { useGetFarmerBeaconConnectionsQuery, useService } from '@bpx-network/api-react';
+import { Table, Card, FormatBytes, FormatConnectionStatus } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon } from '@mui/icons-material';
 import { Link, Typography, Tooltip, IconButton } from '@mui/material';
@@ -64,21 +64,18 @@ const cols = [
   },
 ];
 
-export default function FarmFullNodeConnections() {
-  const { data: connections = [] } = useGetFarmerFullNodeConnectionsQuery();
+export default function FarmBeaconConnections() {
+  const { data: connections = [] } = useGetFarmerBeaconConnectionsQuery();
   const { isRunning, isLoading } = useService(ServiceName.FARMER);
 
   return (
     <Card
       gap={1}
-      title={<Trans>Your Full Node Connection</Trans>}
+      title={<Trans>Your Beacon Client Connection</Trans>}
       titleVariant="h6"
       tooltip={
         <Trans>
-          {'The full node that your farmer is connected to is below. '}
-          <Link target="_blank" href="https://github.com/Chia-Network/chia-blockchain/wiki/Network-Architecture">
-            Learn more
-          </Link>
+          {'The Beacon Client that your farmer is connected to is below. '}
         </Trans>
       }
       transparent

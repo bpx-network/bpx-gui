@@ -1,5 +1,5 @@
-import { toBech32m, OfferSummaryRecord } from '@chia-network/api';
-import { useSignMessageByIdMutation } from '@chia-network/api-react';
+import { toBech32m, OfferSummaryRecord } from '@bpx-network/api';
+import { useSignMessageByIdMutation } from '@bpx-network/api-react';
 import { useCallback, useMemo, useState } from 'react';
 
 type NFTsByOfferSide = {

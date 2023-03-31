@@ -1,10 +1,10 @@
-import { useGetBlockchainStateQuery } from '@chia-network/api-react';
+import { useGetBlockchainStateQuery } from '@bpx-network/api-react';
 
-import FullNodeState from '../constants/FullNodeState';
+import BeaconState from '../constants/BeaconState';
 
-export default function useFullNodeState(): {
+export default function useBeaconState(): {
   isLoading: boolean;
-  state?: FullNodeState;
+  state?: BeaconState;
   error?: Error;
 } {
   const {
@@ -20,13 +20,13 @@ export default function useFullNodeState(): {
   const blockchainSynced = blockchainState?.sync?.synced;
   const blockchainSynching = blockchainState?.sync?.syncMode;
 
-  let state: FullNodeState;
+  let state: BeaconState;
   if (blockchainSynching) {
-    state = FullNodeState.SYNCHING;
+    state = BeaconState.SYNCHING;
   } else if (blockchainSynced) {
-    state = FullNodeState.SYNCED;
+    state = BeaconState.SYNCED;
   } else {
-    state = FullNodeState.ERROR;
+    state = BeaconState.ERROR;
   }
 
   return {

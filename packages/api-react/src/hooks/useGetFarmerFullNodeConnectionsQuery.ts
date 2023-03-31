@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useGetFarmerConnectionsQuery } from '../services/farmer';
 
-export default function useGetFarmerFullNodeConnectionsQuery() {
+export default function useGetFarmerBeaconConnectionsQuery() {
   const { data: connections, ...rest } = useGetFarmerConnectionsQuery(
     {},
     {

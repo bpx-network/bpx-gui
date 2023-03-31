@@ -1,4 +1,4 @@
-import { Flex, More, useOpenDialog, MenuItem } from '@chia-network/core';
+import { Flex, More, useOpenDialog, MenuItem } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Settings as SettingsIcon } from '@mui/icons-material';
 import { ListItemIcon, Typography } from '@mui/material';
@@ -21,16 +21,6 @@ export default function FarmHeader() {
           <Trans>Your Farm Overview</Trans>
         </Typography>
       </Flex>
-      <More>
-        <MenuItem onClick={handleManageFarmingRewards} close>
-          <ListItemIcon>
-            <SettingsIcon fontSize="small" />
-          </ListItemIcon>
-          <Typography variant="inherit" noWrap>
-            <Trans>Manage Farming Rewards</Trans>
-          </Typography>
-        </MenuItem>
-      </More>
     </Flex>
   );
 }

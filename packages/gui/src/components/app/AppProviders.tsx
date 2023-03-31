@@ -1,4 +1,4 @@
-import { store, api } from '@chia-network/api-react';
+import { store, api } from '@bpx-network/api-react';
 import {
   useDarkMode,
   sleep,
@@ -10,7 +10,7 @@ import {
   dark,
   light,
   ErrorBoundary,
-} from '@chia-network/core';
+} from '@bpx-network/core';
 import { nativeTheme } from '@electron/remote';
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
@@ -23,7 +23,6 @@ import WebSocket from 'ws';
 import { i18n, defaultLocale, locales } from '../../config/locales';
 import LRUsProvider from '../lrus/LRUsProvider';
 import NotificationsProvider from '../notification/NotificationsProvider';
-import WalletConnectProvider, { WalletConnectChiaProjectId } from '../walletConnect/WalletConnectProvider';
 import AppState from './AppState';
 
 async function waitForConfig() {
@@ -83,12 +82,10 @@ export default function App(props: AppProps) {
               <ModalDialogsProvider>
                 {isReady ? (
                   <Suspense fallback={<LayoutLoading />}>
-                    <WalletConnectProvider projectId={WalletConnectChiaProjectId}>
                       <NotificationsProvider>
                         <AppState>{outlet ? <Outlet /> : children}</AppState>
                         <ModalDialogs />
                       </NotificationsProvider>
-                    </WalletConnectProvider>
                   </Suspense>
                 ) : (
                   <LayoutLoading>

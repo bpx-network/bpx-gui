@@ -1,13 +1,13 @@
 import { IpcRenderer } from 'electron';
 
-import { ConnectionState, ServiceHumanName, ServiceName, PassphrasePromptReason } from '@chia-network/api';
+import { ConnectionState, ServiceHumanName, ServiceName, PassphrasePromptReason } from '@bpx-network/api';
 import {
   useCloseMutation,
   useGetStateQuery,
   useGetKeyringStatusQuery,
   useServices,
   useGetVersionQuery,
-} from '@chia-network/api-react';
+} from '@bpx-network/api-react';
 import {
   Flex,
   LayoutHero,
@@ -17,7 +17,7 @@ import {
   useIsSimulator,
   useAppVersion,
   useCurrencyCode,
-} from '@chia-network/core';
+} from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Typography, Collapse } from '@mui/material';
 import isElectron from 'is-electron';
@@ -36,7 +36,7 @@ import AppVersionWarning from './AppVersionWarning';
 
 const ALL_SERVICES = [
   ServiceName.WALLET,
-  ServiceName.FULL_NODE,
+  ServiceName.BEACON,
   ServiceName.FARMER,
   ServiceName.HARVESTER,
   ServiceName.SIMULATOR,

@@ -55,7 +55,7 @@ msgid "<0>Use one (1) mojo to create a Profile.</0>"
 msgstr "<0>使用一个 (1) mojo 创建资料。</0>"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:77
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
 msgstr "收割机是一个在存有农田文件的机器上运行的服务。农民和收割机通过和全节点交互来得到链的状态。你可以在下面看到你网络所连接的收割机。了解更多"
 
 #: src/components/settings/SettingsDataLayer.tsx:79
@@ -85,9 +85,9 @@ msgstr "接受报价"
 msgid "Action"
 msgstr "操作"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:52
+#: src/components/farm/FarmBeaconConnections.tsx:52
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:52
-#: src/components/fullNode/FullNodeConnections.tsx:64
+#: src/components/beacon/BeaconConnections.tsx:64
 #: src/components/nfts/NFTContextualActions.tsx:623
 #: src/components/offers2/OfferIncomingTable.tsx:102
 msgid "Actions"
@@ -251,7 +251,7 @@ msgstr "你确定要删除这个农田吗？删除后将不可恢复。"
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "确定要删除未确认的交易吗？"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:28
+#: src/components/beacon/BeaconCloseConnection.tsx:28
 msgid "Are you sure you want to disconnect?"
 msgstr "是否要断开连接？"
 
@@ -362,7 +362,7 @@ msgstr "区块哈希{headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "哈希为 {headerHash} 的区块不存在。"
 
-#: src/components/fullNode/FullNode.jsx:105
+#: src/components/beacon/Beacon.jsx:105
 msgid "Blocks"
 msgstr "区块"
 
@@ -404,7 +404,7 @@ msgstr ""
 
 #: src/components/app/AppPassPrompt.tsx:183
 #: src/components/farm/FarmManageFarmingRewards.tsx:163
-#: src/components/fullNode/FullNodeAddConnection.tsx:100
+#: src/components/beacon/BeaconAddConnection.tsx:100
 #: src/components/nfts/MultipleDownloadDialog.tsx:120
 #: src/components/nfts/NFTBurnDialog.tsx:174
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:57
@@ -594,7 +594,7 @@ msgstr "收藏"
 msgid "Confirm"
 msgstr "确认"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:19
+#: src/components/beacon/BeaconCloseConnection.tsx:19
 msgid "Confirm Disconnect"
 msgstr "确认断开连接"
 
@@ -628,12 +628,12 @@ msgstr ""
 msgid "Confirmed"
 msgstr "已确认"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:103
+#: src/components/beacon/BeaconAddConnection.tsx:103
 msgid "Connect"
 msgstr "连接"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:82
-#: src/components/fullNode/FullNodeConnections.tsx:92
+#: src/components/beacon/BeaconAddConnection.tsx:82
+#: src/components/beacon/BeaconConnections.tsx:92
 msgid "Connect to other peers"
 msgstr "连接到其它节点"
 
@@ -641,7 +641,7 @@ msgstr "连接到其它节点"
 msgid "Connect to pool"
 msgstr "连接到农业合作社"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:85
 msgid "Connected"
 msgstr "已连接"
@@ -655,16 +655,16 @@ msgstr ""
 msgid "Connecting to daemon"
 msgstr "正在连接到进程"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:14
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:14
 msgid "Connection Status"
 msgstr "连接状态"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:87
+#: src/components/farm/FarmBeaconConnections.tsx:87
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:85
 msgid "Connection Status:"
 msgstr "连接状态："
 
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "Connection type"
 msgstr "连接类型"
 
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Cost to send notification to the NFT holder"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:55
+#: src/components/beacon/BeaconAddConnection.tsx:55
 msgid "Could not connect to host {host} on port {port}"
 msgstr ""
 
@@ -921,7 +921,7 @@ msgid "Dexie URL"
 msgstr "Dexie 链接"
 
 #: src/components/block/Block.jsx:181
-#: src/components/fullNode/card/FullNodeCardDifficulty.tsx:14
+#: src/components/beacon/card/BeaconCardDifficulty.tsx:14
 msgid "Difficulty"
 msgstr "难度"
 
@@ -953,7 +953,7 @@ msgstr ""
 msgid "Disable direct I/O on the temp 2 directory in order to extract maximum performance with RAM disk"
 msgstr ""
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:20
+#: src/components/beacon/BeaconCloseConnection.tsx:20
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:119
 #: src/components/walletConnect/WalletConnectConnections.tsx:87
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:151
@@ -1143,7 +1143,7 @@ msgstr ""
 msgid "Error: {0}"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:14
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:14
 msgid "Estimated Network Space"
 msgstr "全网已占用空间（估算）"
 
@@ -1152,7 +1152,7 @@ msgstr "全网已占用空间（估算）"
 msgid "Estimated Time to Win"
 msgstr "预计区块发现时间"
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:15
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:15
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr "估计网络中所有农民已开垦农田占用磁盘空间量"
 
@@ -1317,8 +1317,8 @@ msgstr "最终输出文件夹位置"
 msgid "Fingerprint"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:28
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:28
+#: src/components/beacon/Beacon.jsx:77
 msgid "Finished"
 msgstr "已完成"
 
@@ -1336,12 +1336,12 @@ msgstr "常见问题解答"
 
 #: src/components/app/AppStatusHeader.tsx:84
 #: src/components/dashboard/DashboardSideBar.tsx:76
-#: src/components/fullNode/FullNode.jsx:116
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:116
+msgid "Beacon Client"
 msgstr "全节点"
 
-#: src/components/fullNode/FullNodeConnections.tsx:89
-msgid "Full Node Connections"
+#: src/components/beacon/BeaconConnections.tsx:89
+msgid "Beacon Client Connections"
 msgstr ""
 
 #: src/electron/main.tsx:1022
@@ -1437,7 +1437,7 @@ msgstr ""
 msgid "Hashgreen DEX URL"
 msgstr "HashGreen 去中心化交易所网址"
 
-#: src/components/fullNode/FullNode.jsx:43
+#: src/components/beacon/Beacon.jsx:43
 msgid "Header Hash"
 msgstr "头部哈希"
 
@@ -1446,8 +1446,8 @@ msgid "Header hash"
 msgstr "头部哈希"
 
 #: src/components/block/Block.jsx:168
-#: src/components/fullNode/FullNode.jsx:61
-#: src/components/fullNode/FullNodeConnections.tsx:61
+#: src/components/beacon/Beacon.jsx:61
+#: src/components/beacon/BeaconConnections.tsx:61
 msgid "Height"
 msgstr "高度"
 
@@ -1486,7 +1486,7 @@ msgstr "提示"
 msgid "Hooray, no files here!"
 msgstr "今后，这里没有文件！"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:31
+#: src/components/farm/FarmBeaconConnections.tsx:31
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:31
 msgid "Host Name"
 msgstr "主机名"
@@ -1495,11 +1495,11 @@ msgstr "主机名"
 msgid "I Understand, Create Offer"
 msgstr "我理解，创建报价"
 
-#: src/components/fullNode/FullNodeConnections.tsx:32
+#: src/components/beacon/BeaconConnections.tsx:32
 msgid "IP address"
 msgstr "IP地址"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:89
+#: src/components/beacon/BeaconAddConnection.tsx:89
 msgid "IP address / host"
 msgstr "IP地址 / 主机"
 
@@ -1539,7 +1539,7 @@ msgstr ""
 msgid "Import"
 msgstr "导入"
 
-#: src/components/fullNode/FullNode.jsx:28
+#: src/components/beacon/Beacon.jsx:28
 msgid "In Progress"
 msgstr "处理中"
 
@@ -1676,7 +1676,7 @@ msgstr "Keybase 是一个安全的消息和文件共享应用程序。要在Keyb
 msgid "Keyring migration failed: {0}"
 msgstr "钥匙串迁移失败： {0}"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:49
+#: src/components/farm/FarmBeaconConnections.tsx:49
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:49
 msgid "KiB Up/Down"
 msgstr "KiB 上传/下载"
@@ -1689,7 +1689,7 @@ msgstr "最近尝试过的证明"
 msgid "Last Height Farmed"
 msgstr "最新收割的区块高度"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:16
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:16
 msgid "Last Transaction Block Time"
 msgstr "上一次交易块时间"
 
@@ -1736,7 +1736,7 @@ msgstr "许可证URL {0}"
 msgid "Limit cache size"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:99
+#: src/components/beacon/BeaconConnections.tsx:99
 msgid "List of connections is empty"
 msgstr ""
 
@@ -1829,7 +1829,7 @@ msgstr "元数据 URL {0}"
 msgid "Metadata hash mismatch"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:50
+#: src/components/beacon/BeaconConnections.tsx:50
 msgid "MiB Up/Down"
 msgstr "MiB 上传/下载"
 
@@ -2019,7 +2019,7 @@ msgstr "净收益"
 msgid "Network Fee (Optional)"
 msgstr "网络费用(可选)"
 
-#: src/components/fullNode/card/FullNodeCardNetworkName.tsx:14
+#: src/components/beacon/card/BeaconCardNetworkName.tsx:14
 msgid "Network Name"
 msgstr "网络名称"
 
@@ -2086,9 +2086,9 @@ msgstr "本机没有所输入地址对应的私钥。请确认是否要将奖励
 msgid "No standard wallet found"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:27
+#: src/components/farm/FarmBeaconConnections.tsx:27
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:27
-#: src/components/fullNode/FullNodeConnections.tsx:28
+#: src/components/beacon/BeaconConnections.tsx:28
 msgid "Node ID"
 msgstr "节点ID"
 
@@ -2114,12 +2114,12 @@ msgstr "你的农田还没有通过过滤器检查."
 msgid "Not Available"
 msgstr "不可用"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:14
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:44
+#: src/components/beacon/card/BeaconCardStatus.tsx:14
+#: src/components/beacon/card/BeaconCardStatus.tsx:44
 msgid "Not Synced"
 msgstr "未同步"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 msgid "Not connected"
 msgstr "未连接"
 
@@ -2128,7 +2128,7 @@ msgid "Note that this does not change your pooling payout addresses. This only a
 msgstr "请注意，这将不会改变你的合作社耕作支付地址。这只会影响旧农田文件，以及0.25XCH的合作社耕作奖励。"
 
 #: src/components/notification/NotificationSendDialog.tsx:145
-msgid "Notification has successfully been sent to a full node and included in the mempool."
+msgid "Notification has successfully been sent to a beacon client and included in the mempool."
 msgstr ""
 
 #: src/components/settings/Settings.tsx:78
@@ -2414,7 +2414,7 @@ msgstr ""
 msgid "Payout Address"
 msgstr "支付地址"
 
-#: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
+#: src/components/beacon/card/BeaconCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "最高高度"
 
@@ -2699,10 +2699,10 @@ msgstr "农业合作社："
 msgid "Pooling"
 msgstr "合作社耕作"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:37
+#: src/components/farm/FarmBeaconConnections.tsx:37
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:37
-#: src/components/fullNode/FullNodeAddConnection.tsx:95
-#: src/components/fullNode/FullNodeConnections.tsx:38
+#: src/components/beacon/BeaconAddConnection.tsx:95
+#: src/components/beacon/BeaconConnections.tsx:38
 msgid "Port"
 msgstr "端口"
 
@@ -2897,7 +2897,7 @@ msgid "Royalty Percentage"
 msgstr "版税百分比"
 
 #: src/components/app/AppSelectMode.tsx:139
-msgid "Runs the full node"
+msgid "Runs the beacon client"
 msgstr "运行全节点"
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:166
@@ -2920,7 +2920,7 @@ msgstr ""
 msgid "Save passphrase"
 msgstr "保存私钥密码"
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:38
+#: src/components/beacon/BeaconBlockSearch.tsx:38
 msgid "Search block by header hash"
 msgstr "按头部哈希搜索区块"
 
@@ -3223,12 +3223,12 @@ msgstr "正在启动服务..."
 msgid "Startup"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:79
+#: src/components/beacon/Beacon.jsx:79
 msgid "State"
 msgstr "状态"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:69
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:74
+#: src/components/beacon/card/BeaconCardStatus.tsx:69
+#: src/components/beacon/card/BeaconCardStatus.tsx:74
 #: src/components/offers/OfferManager.tsx:251
 #: src/components/plot/PlotHarvesterPlots.tsx:74
 #: src/components/plot/PlotPlotting.tsx:26
@@ -3258,7 +3258,7 @@ msgstr ""
 msgid "Successfully updated the derivation index. Your balances may take a while to update."
 msgstr "成功更新派生索引。您的余额可能需要一段时间才能更新。"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:50
+#: src/components/beacon/card/BeaconCardStatus.tsx:50
 msgid "Synced"
 msgstr "已同步"
 
@@ -3267,7 +3267,7 @@ msgstr "已同步"
 msgid "Syncing"
 msgstr "正在同步"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:27
+#: src/components/beacon/card/BeaconCardStatus.tsx:27
 msgid "Syncing <0/>/<1/>"
 msgstr "正在同步 <0/> / <1/>"
 
@@ -3324,8 +3324,8 @@ msgstr "衍生指数设置钱包链扫描钱包地址的范围。 如果您有�
 msgid "The folder is on a RAM Disk"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:77
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:77
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr "你的农场连接的全节点如下.<0>了解更多</0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:46
@@ -3337,12 +3337,12 @@ msgstr "主网要求的最小农田大小为k=32"
 msgid "The net proceeds include the asking price, minus any associated creator fees (if the NFT has royalty payments enabled)."
 msgstr "净收益包括收取价格，减去任何相关创作者收费(如果已经启用了版税付款)。"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:16
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:46
+#: src/components/beacon/card/BeaconCardStatus.tsx:16
+#: src/components/beacon/card/BeaconCardStatus.tsx:46
 msgid "The node is not synced"
 msgstr "节点没有同步"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:35
+#: src/components/beacon/card/BeaconCardStatus.tsx:35
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr "节点正在同步中, 也就是说它正在从其他节点下载区块, 以便达到最新的区块高度"
 
@@ -3427,7 +3427,7 @@ msgstr "此功能只在图形界面中提供。"
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "此时间是该区块被农民创建的时间，因此，此时间会早于其被时间认证机制最终确认的时间。"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:17
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:17
 msgid "This is the timestamp of the most recent transaction block."
 msgstr "这是最近交易块的时间戳。"
 
@@ -3441,7 +3441,7 @@ msgstr "这是此农田NFT自从上次支付奖励后在当前农业合作社中
 msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
 msgstr "这是你的农民在这个农田NFT对应的农田中找到的总积点数。一个k32的农田每天大约会得到10个积点。也就是说，如果你拥有10TiB的农田，你每天大约会获得1000积点，也就是每小时41积点。"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:52
+#: src/components/beacon/card/BeaconCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
 msgstr "本节点已完成同步，并已开始参与网络验证"
 
@@ -3485,7 +3485,7 @@ msgstr "第 2 阶段的线程倍数"
 msgid "Thumbnail hash mismatch"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:71
+#: src/components/beacon/Beacon.jsx:71
 msgid "Time Created"
 msgstr "创建时间"
 
@@ -3544,7 +3544,7 @@ msgstr "总共收获的奇亚"
 msgid "Total Harvesters"
 msgstr "总收获数"
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:14
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:14
 msgid "Total Iterations"
 msgstr "总迭代次数"
 
@@ -3572,7 +3572,7 @@ msgstr "总VDF迭代数"
 msgid "Total amount including royalties"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:15
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:15
 msgid "Total iterations since the start of the blockchain"
 msgstr "自区块开始以来的迭代数"
 
@@ -3678,7 +3678,7 @@ msgstr "未分配的 NFT"
 msgid "Unclaimed Rewards"
 msgstr "未申领奖励"
 
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:77
 msgid "Unfinished"
 msgstr "未完成"
 
@@ -3724,7 +3724,7 @@ msgstr ""
 msgid "User Transaction Fees"
 msgstr "交易费用"
 
-#: src/components/fullNode/card/FullNodeCardVDFSubSlotIterations.tsx:14
+#: src/components/beacon/card/BeaconCardVDFSubSlotIterations.tsx:14
 msgid "VDF Sub Slot Iterations"
 msgstr "VDF子项迭代数"
 
@@ -4049,8 +4049,8 @@ msgstr "你将会收到 <0/> 至 {address}"
 msgid "Your Farm Overview"
 msgstr "农场概览"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:74
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:74
+msgid "Your Beacon Client Connection"
 msgstr "你的全节点连接"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:74

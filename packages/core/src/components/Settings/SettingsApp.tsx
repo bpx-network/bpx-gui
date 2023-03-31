@@ -1,6 +1,6 @@
 import { type Shell } from 'electron';
 
-import { Farming } from '@chia-network/icons';
+import { Farming } from '@bpx-network/icons';
 import { Trans } from '@lingui/macro';
 import {
   WbSunny as WbSunnyIcon,

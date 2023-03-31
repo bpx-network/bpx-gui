@@ -1,16 +1,12 @@
-import { SelectKey, LayoutHero, LayoutDashboard, Mode, useMode } from '@chia-network/core';
-import { WalletAdd, WalletImport, Wallets } from '@chia-network/wallets';
+import { SelectKey, LayoutHero, LayoutDashboard, Mode, useMode } from '@bpx-network/core';
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Block from '../block/Block';
 import DashboardSideBar from '../dashboard/DashboardSideBar';
 import Farm from '../farm/Farm';
-import FullNode from '../fullNode/FullNode';
-import NFTs from '../nfts/NFTs';
-import { CreateOffer } from '../offers/OfferManager';
+import Beacon from '../beacon/Beacon';
 import Plot from '../plot/Plot';
-import Pool from '../pool/Pool';
 import Settings from '../settings/Settings';
 import SettingsPanel from '../settings/SettingsPanel';
 import AppProviders from './AppProviders';
@@ -59,7 +55,7 @@ export default function AppRouter() {
                 />
               }
             >
-              <Route path="dashboard" element={<FullNode />} />
+              <Route path="dashboard" element={<Beacon />} />
               <Route path="dashboard/block/:headerHash" element={<Block />} />
               <Route path="dashboard/wallets/*" element={<Wallets />} />
               <Route path="dashboard/offers/*" element={<CreateOffer />} />

@@ -1,7 +1,7 @@
-import { WalletType } from '@chia-network/api';
-import { useGetCatListQuery, useGetWalletsQuery } from '@chia-network/api-react';
-import type { CATToken, Wallet } from '@chia-network/core';
-import { useCurrencyCode } from '@chia-network/core';
+import { WalletType } from '@bpx-network/api';
+import { useGetCatListQuery, useGetWalletsQuery } from '@bpx-network/api-react';
+import type { CATToken, Wallet } from '@bpx-network/core';
+import { useCurrencyCode } from '@bpx-network/core';
 import { useMemo, useRef, useCallback } from 'react';
 
 export type AssetIdMapEntry = {

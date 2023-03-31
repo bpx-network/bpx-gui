@@ -1,6 +1,6 @@
-import type { OfferSummaryRecord, Wallet } from '@chia-network/api';
-import { useTakeOfferMutation } from '@chia-network/api-react';
-import { AlertDialog, chiaToMojo, useOpenDialog, useShowError } from '@chia-network/core';
+import type { OfferSummaryRecord, Wallet } from '@bpx-network/api';
+import { useTakeOfferMutation } from '@bpx-network/api-react';
+import { AlertDialog, chiaToMojo, useOpenDialog, useShowError } from '@bpx-network/core';
 import { Trans, t } from '@lingui/macro';
 import BigNumber from 'bignumber.js';
 import React from 'react';

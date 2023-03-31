@@ -31,8 +31,8 @@ msgid "128 buckets is recommended"
 msgstr "128 groepe word aanbeveel"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:58
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
-msgstr "'n Stroper (Harvester) is 'n robot wat werk op dieselfde masjien wat landerye (Plots) stoor. Die Werker (Farmer) en die Stroper (Harvester) kommunikeer met die Boer (Full Node) oor die stand van die boerdery. Sien jou netwerk van aktiewe Stropers onder. Leer meer"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
+msgstr "'n Stroper (Harvester) is 'n robot wat werk op dieselfde masjien wat landerye (Plots) stoor. Die Werker (Farmer) en die Stroper (Harvester) kommunikeer met die Boer (Beacon Client) oor die stand van die boerdery. Sien jou netwerk van aktiewe Stropers onder. Leer meer"
 
 #: src/electron/main.tsx:365
 #: src/electron/main.tsx:443
@@ -53,9 +53,9 @@ msgstr "Goedgekeurde tyd:"
 msgid "Action"
 msgstr "Aksie"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:43
+#: src/components/farm/FarmBeaconConnections.tsx:43
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:43
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "Actions"
 msgstr "Aksies"
 
@@ -123,7 +123,7 @@ msgstr "Bedrag vir die aanvanklike muntstuk"
 msgid "Are you sure you want to delete the plot? The plot cannot be recovered."
 msgstr "Is jy seker jy wil die landery verwyder? Die landery kan nie weer herwin word nie."
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:23
+#: src/components/beacon/BeaconCloseConnection.tsx:23
 msgid "Are you sure you want to disconnect?"
 msgstr "Is jy seker jy wil die konneksie toemaak?"
 
@@ -190,7 +190,7 @@ msgstr "Block VDF Iterasies"
 msgid "Block at height {0} in the Chia blockchain"
 msgstr "Blok is op hoogte {0} in die Chia blockchain"
 
-#: src/components/fullNode/FullNode.jsx:331
+#: src/components/beacon/Beacon.jsx:331
 #~ msgid "Block hash"
 #~ msgstr ""
 
@@ -202,7 +202,7 @@ msgstr "Block met hash {headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "Block met die hash {headerHash} bestaan nie."
 
-#: src/components/fullNode/FullNode.jsx:298
+#: src/components/beacon/Beacon.jsx:298
 msgid "Blocks"
 msgstr "Blokke"
 
@@ -240,7 +240,7 @@ msgstr ""
 
 #: src/components/core/components/ConfirmDialog/ConfirmDialog.tsx:50
 #: src/components/farm/FarmManageFarmingRewards.tsx:102
-#: src/components/fullNode/FullNodeAddConnection.tsx:67
+#: src/components/beacon/BeaconAddConnection.tsx:67
 #: src/components/trading/CreateOffer.jsx:153
 #: src/components/trading/TradingOverview.jsx:410
 #: src/components/trading/ViewOffer.jsx:78
@@ -329,7 +329,7 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:22
+#: src/components/beacon/BeaconCloseConnection.tsx:22
 msgid "Confirm Disconnect"
 msgstr ""
 
@@ -341,17 +341,17 @@ msgstr ""
 msgid "Confirmed at height {0}"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:70
+#: src/components/beacon/BeaconAddConnection.tsx:70
 msgid "Connect"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:55
-#: src/components/fullNode/FullNodeConnections.tsx:75
+#: src/components/beacon/BeaconAddConnection.tsx:55
+#: src/components/beacon/BeaconConnections.tsx:75
 msgid "Connect to other peers"
 msgstr ""
 
 #: src/components/core/components/FormatConnectionStatus/FormatConnectionStatus.tsx:47
-#: src/components/fullNode/FullNode.jsx:143
+#: src/components/beacon/Beacon.jsx:143
 msgid "Connected"
 msgstr ""
 
@@ -359,20 +359,20 @@ msgstr ""
 msgid "Connecting to wallet"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:141
+#: src/components/beacon/Beacon.jsx:141
 msgid "Connection Status"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:66
+#: src/components/farm/FarmBeaconConnections.tsx:66
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:65
 msgid "Connection Status:"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:50
+#: src/components/beacon/BeaconConnections.tsx:50
 msgid "Connection type"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:73
+#: src/components/beacon/BeaconConnections.tsx:73
 msgid "Connections"
 msgstr ""
 
@@ -544,7 +544,7 @@ msgid "Developer Tools"
 msgstr ""
 
 #: src/components/block/Block.jsx:216
-#: src/components/fullNode/FullNode.jsx:178
+#: src/components/beacon/Beacon.jsx:178
 msgid "Difficulty"
 msgstr ""
 
@@ -556,7 +556,7 @@ msgstr ""
 msgid "Disable bitfield plotting"
 msgstr ""
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:22
+#: src/components/beacon/BeaconCloseConnection.tsx:22
 msgid "Disconnect"
 msgstr ""
 
@@ -613,11 +613,11 @@ msgstr ""
 msgid "Estimated Time to Win"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:197
+#: src/components/beacon/Beacon.jsx:197
 msgid "Estimated network space"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:200
+#: src/components/beacon/Beacon.jsx:200
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr ""
 
@@ -722,8 +722,8 @@ msgstr ""
 msgid "Final folder location"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:41
-#: src/components/fullNode/FullNode.jsx:92
+#: src/components/beacon/Beacon.jsx:41
+#: src/components/beacon/Beacon.jsx:92
 msgid "Finished"
 msgstr ""
 
@@ -736,12 +736,12 @@ msgid "Frequently Asked Questions"
 msgstr ""
 
 #: src/components/dashboard/DashboardSideBar.tsx:23
-#: src/components/fullNode/FullNode.jsx:312
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:312
+msgid "Beacon Client"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:255
-msgid "Full Node Status"
+#: src/components/beacon/Beacon.jsx:255
+msgid "Beacon Client Status"
 msgstr ""
 
 #: src/electron/main.tsx:287
@@ -760,7 +760,7 @@ msgstr ""
 #~ msgid "Harvester ID"
 #~ msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:59
+#: src/components/beacon/Beacon.jsx:59
 msgid "Header Hash"
 msgstr ""
 
@@ -769,8 +769,8 @@ msgid "Header hash"
 msgstr ""
 
 #: src/components/block/Block.jsx:194
-#: src/components/fullNode/FullNode.jsx:75
-#: src/components/fullNode/FullNodeConnections.tsx:54
+#: src/components/beacon/Beacon.jsx:75
+#: src/components/beacon/BeaconConnections.tsx:54
 msgid "Height"
 msgstr ""
 
@@ -790,16 +790,16 @@ msgstr ""
 msgid "History"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:24
+#: src/components/farm/FarmBeaconConnections.tsx:24
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:24
 msgid "Host Name"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:27
+#: src/components/beacon/BeaconConnections.tsx:27
 msgid "IP address"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:61
+#: src/components/beacon/BeaconAddConnection.tsx:61
 msgid "IP address / host"
 msgstr ""
 
@@ -815,7 +815,7 @@ msgstr ""
 msgid "Import from Mnemonics (24 words)"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:43
+#: src/components/beacon/Beacon.jsx:43
 msgid "In Progress"
 msgstr ""
 
@@ -860,7 +860,7 @@ msgstr ""
 msgid "Keys"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:40
+#: src/components/farm/FarmBeaconConnections.tsx:40
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:40
 msgid "KiB Up/Down"
 msgstr ""
@@ -937,7 +937,7 @@ msgstr ""
 msgid "Manage Your Farming Rewards Target Addresses"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:43
+#: src/components/beacon/BeaconConnections.tsx:43
 msgid "MiB Up/Down"
 msgstr ""
 
@@ -953,13 +953,13 @@ msgstr ""
 msgid "My Pubkey"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:160
+#: src/components/beacon/Beacon.jsx:160
 msgid "Network Name"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:106
-#~ msgid "Network has not yet been launched, once it launches full node will start automatically."
-#~ msgstr "Network has not yet been launched, once it launches full node will start automatically."
+#: src/components/beacon/Beacon.jsx:106
+#~ msgid "Network has not yet been launched, once it launches beacon client will start automatically."
+#~ msgstr "Network has not yet been launched, once it launches beacon client will start automatically."
 
 #: src/components/app/AppRouter.tsx:24
 #~ msgid "Network not launched yet, waiting for genesis challenge!"
@@ -1005,9 +1005,9 @@ msgstr ""
 msgid "No private keys for one or both addresses. Safe only if you are sending rewards to another wallet."
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:20
+#: src/components/farm/FarmBeaconConnections.tsx:20
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:20
-#: src/components/fullNode/FullNodeConnections.tsx:23
+#: src/components/beacon/BeaconConnections.tsx:23
 msgid "Node ID"
 msgstr ""
 
@@ -1022,7 +1022,7 @@ msgstr ""
 msgid "Not Available"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:122
+#: src/components/beacon/Beacon.jsx:122
 msgid "Not Synced"
 msgstr ""
 
@@ -1035,8 +1035,8 @@ msgid "Not confirmed yet"
 msgstr ""
 
 #: src/components/core/components/FormatConnectionStatus/FormatConnectionStatus.tsx:48
-#: src/components/fullNode/FullNode.jsx:145
-#: src/components/fullNode/FullNode.jsx:152
+#: src/components/beacon/Beacon.jsx:145
+#: src/components/beacon/Beacon.jsx:152
 msgid "Not connected"
 msgstr ""
 
@@ -1068,15 +1068,15 @@ msgstr ""
 msgid "Outgoing"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:166
+#: src/components/beacon/Beacon.jsx:166
 msgid "Peak Height"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:204
+#: src/components/beacon/Beacon.jsx:204
 #~ msgid "Peak Sub-block Height"
 #~ msgstr "Peak Sub-block Height"
 
-#: src/components/fullNode/FullNode.jsx:171
+#: src/components/beacon/Beacon.jsx:171
 msgid "Peak Time"
 msgstr ""
 
@@ -1257,10 +1257,10 @@ msgstr ""
 msgid "Pool Reward Amount"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:30
+#: src/components/farm/FarmBeaconConnections.tsx:30
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:30
-#: src/components/fullNode/FullNodeAddConnection.tsx:62
-#: src/components/fullNode/FullNodeConnections.tsx:33
+#: src/components/beacon/BeaconAddConnection.tsx:62
+#: src/components/beacon/BeaconConnections.tsx:33
 msgid "Port"
 msgstr ""
 
@@ -1386,8 +1386,8 @@ msgstr ""
 #~ msgid "Restore Smart Wallets From Backup"
 #~ msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:57
-#: src/components/fullNode/FullNodeConnections.jsx:107
+#: src/components/beacon/Beacon.jsx:57
+#: src/components/beacon/BeaconConnections.jsx:107
 #~ msgid "SB Height"
 #~ msgstr "SB Height"
 
@@ -1400,11 +1400,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:338
+#: src/components/beacon/Beacon.jsx:338
 #~ msgid "Search"
 #~ msgstr ""
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:30
+#: src/components/beacon/BeaconBlockSearch.tsx:30
 msgid "Search block by header hash"
 msgstr ""
 
@@ -1539,14 +1539,14 @@ msgstr ""
 msgid "Spending Limit (chia per interval): {0}"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:94
+#: src/components/beacon/Beacon.jsx:94
 msgid "State"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:104
-#: src/components/fullNode/FullNode.jsx:121
-#: src/components/fullNode/FullNode.jsx:129
-#: src/components/fullNode/FullNode.jsx:151
+#: src/components/beacon/Beacon.jsx:104
+#: src/components/beacon/Beacon.jsx:121
+#: src/components/beacon/Beacon.jsx:129
+#: src/components/beacon/Beacon.jsx:151
 #: src/components/plot/overview/PlotOverviewPlots.tsx:65
 #: src/components/trading/TradingOverview.jsx:128
 #: src/components/wallet/WalletHistory.tsx:43
@@ -1591,7 +1591,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:130
+#: src/components/beacon/Beacon.jsx:130
 msgid "Synced"
 msgstr ""
 
@@ -1601,7 +1601,7 @@ msgstr ""
 msgid "Syncing"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:106
+#: src/components/beacon/Beacon.jsx:106
 msgid "Syncing {progress}/{tip}"
 msgstr ""
 
@@ -1637,8 +1637,8 @@ msgstr ""
 msgid "The application will stop working at block height 193536."
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:58
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:58
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr ""
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:30
@@ -1646,11 +1646,11 @@ msgstr ""
 msgid "The minimum required size for mainnet is k=32"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:124
+#: src/components/beacon/Beacon.jsx:124
 msgid "The node is not synced"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:112
+#: src/components/beacon/Beacon.jsx:112
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr ""
 
@@ -1696,7 +1696,7 @@ msgstr ""
 msgid "This is the sum of the incoming and outgoing pending transactions (not yet included into the blockchain). This does not include farming rewards."
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:173
+#: src/components/beacon/Beacon.jsx:173
 msgid "This is the time of the latest peak sub block."
 msgstr ""
 
@@ -1712,7 +1712,7 @@ msgstr ""
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:133
+#: src/components/beacon/Beacon.jsx:133
 msgid "This node is fully caught up and validating the network"
 msgstr ""
 
@@ -1736,7 +1736,7 @@ msgstr ""
 msgid "This version of Chia is no longer compatible with the blockchain and can not safely farm."
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:86
+#: src/components/beacon/Beacon.jsx:86
 msgid "Time Created"
 msgstr ""
 
@@ -1762,7 +1762,7 @@ msgstr ""
 #~ msgid "Total Chia Farmed"
 #~ msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:191
+#: src/components/beacon/Beacon.jsx:191
 msgid "Total Iterations"
 msgstr ""
 
@@ -1782,7 +1782,7 @@ msgstr ""
 msgid "Total VDF Iterations"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:193
+#: src/components/beacon/Beacon.jsx:193
 msgid "Total iterations since the start of the blockchain"
 msgstr ""
 
@@ -1826,7 +1826,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:92
+#: src/components/beacon/Beacon.jsx:92
 msgid "Unfinished"
 msgstr ""
 
@@ -1843,7 +1843,7 @@ msgstr ""
 msgid "User Pubkey"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:185
+#: src/components/beacon/Beacon.jsx:185
 msgid "VDF Sub Slot Iterations"
 msgstr ""
 
@@ -1879,7 +1879,7 @@ msgstr ""
 #~ msgid "Waiting for launch"
 #~ msgstr "Waiting for launch"
 
-#: src/components/fullNode/FullNode.jsx:103
+#: src/components/beacon/Beacon.jsx:103
 #: src/components/wallet/WalletStatusCard.tsx:20
 #~ msgid "Waiting for network to launch"
 #~ msgstr "Waiting for network to launch"
@@ -1995,8 +1995,8 @@ msgstr ""
 msgid "Your Farm Overview"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:56
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:56
+msgid "Your Beacon Client Connection"
 msgstr ""
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:56

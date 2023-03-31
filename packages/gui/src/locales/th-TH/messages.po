@@ -47,8 +47,8 @@ msgid "<0>Use one (1) mojo to create a Profile.</0>"
 msgstr ""
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:86
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
-msgstr "Harvester Service กำลังทำงานอยู่บนเครื่องที่เก็บไฟล์ Plot ซึ่ง Farmer และ Harvester เชื่อมต่อกับ Full Node เพื่อดูสถานะของ Chain ลองตรวจสอบเครือข่ายที่เชื่อมต่อกับ Harvesters ของคุณ โดยสามารถดูรายละเอียดเพิ่มเติมได้"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
+msgstr "Harvester Service กำลังทำงานอยู่บนเครื่องที่เก็บไฟล์ Plot ซึ่ง Farmer และ Harvester เชื่อมต่อกับ Beacon Client เพื่อดูสถานะของ Chain ลองตรวจสอบเครือข่ายที่เชื่อมต่อกับ Harvesters ของคุณ โดยสามารถดูรายละเอียดเพิ่มเติมได้"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:160
 msgid "A value of {0} is recommended"
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Action"
 msgstr "ดำเนินการ"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:64
+#: src/components/farm/FarmBeaconConnections.tsx:64
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:61
 #: src/components/nfts/NFTContextualActions.tsx:574
 msgid "Actions"
@@ -176,7 +176,7 @@ msgstr "พล็อตที่ถูกลบจะไม่สามารถ
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "คุณแน่ใจหรือไม่ว่าต้องการลบธุรกรรมที่ไม่ได้รับการยืนยัน?"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:26
+#: src/components/beacon/BeaconCloseConnection.tsx:26
 msgid "Are you sure you want to disconnect?"
 msgstr "คุณแน่ใจที่จะตัดการเชื่อมต่อใช่หรือไม่?"
 
@@ -258,7 +258,7 @@ msgstr "บล็อกที่มีค่าแฮช {headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "ไม่พบบล็อกที่มีค่าแฮช {headerHash}"
 
-#: src/components/fullNode/FullNode.jsx:121
+#: src/components/beacon/Beacon.jsx:121
 msgid "Blocks"
 msgstr "บล็อก"
 
@@ -297,9 +297,9 @@ msgstr ""
 #: src/components/app/AppPassPrompt.tsx:184
 #: src/components/backup/BackupCreate.tsx:51
 #: src/components/block/FarmManageFarmingRewards.tsx:175
-#: src/components/block/FullNodeAddConnection.tsx:85
+#: src/components/block/BeaconAddConnection.tsx:85
 #: src/components/farm/FarmManageFarmingRewards.tsx:188
-#: src/components/fullNode/FullNodeAddConnection.tsx:84
+#: src/components/beacon/BeaconAddConnection.tsx:84
 #: src/components/nfts/NFTBurnDialog.tsx:163
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:67
 #: src/components/nfts/NFTTransferConfirmationDialog.tsx:58
@@ -453,7 +453,7 @@ msgstr ""
 msgid "Confirm"
 msgstr "ยืน​ยัน"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:19
+#: src/components/beacon/BeaconCloseConnection.tsx:19
 msgid "Confirm Disconnect"
 msgstr "ยืนยันการตัดการเชื่อมต่อ"
 
@@ -487,13 +487,13 @@ msgstr ""
 msgid "Confirmed at Height"
 msgstr ""
 
-#: src/components/block/FullNodeAddConnection.tsx:88
-#: src/components/fullNode/FullNodeAddConnection.tsx:87
+#: src/components/block/BeaconAddConnection.tsx:88
+#: src/components/beacon/BeaconAddConnection.tsx:87
 msgid "Connect"
 msgstr "เชื่อมต่อ"
 
-#: src/components/block/FullNodeAddConnection.tsx:64
-#: src/components/fullNode/FullNodeAddConnection.tsx:63
+#: src/components/block/BeaconAddConnection.tsx:64
+#: src/components/beacon/BeaconAddConnection.tsx:63
 msgid "Connect to other peers"
 msgstr "เชื่อมต่อกับลูกข่ายอื่น"
 
@@ -501,7 +501,7 @@ msgstr "เชื่อมต่อกับลูกข่ายอื่น"
 msgid "Connect to pool"
 msgstr "จุดรวมการเชื่อมต่อ (Connection pool)"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:16
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:16
 msgid "Connected"
 msgstr "เชื่อมต่อแล้ว"
 
@@ -510,20 +510,20 @@ msgstr "เชื่อมต่อแล้ว"
 msgid "Connecting to daemon"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:14
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:14
 msgid "Connection Status"
 msgstr "สถานะการเชื่อมต่อ"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:102
+#: src/components/farm/FarmBeaconConnections.tsx:102
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:96
 msgid "Connection Status:"
 msgstr "สถานะการเชื่อมต่อ:"
 
-#: src/components/fullNode/FullNodeConnections.tsx:64
+#: src/components/beacon/BeaconConnections.tsx:64
 msgid "Connection type"
 msgstr "ประเภทการเชื่อมต่อ"
 
-#: src/components/fullNode/FullNodeConnections.tsx:106
+#: src/components/beacon/BeaconConnections.tsx:106
 #~ msgid "Connections"
 #~ msgstr "Connections"
 
@@ -718,7 +718,7 @@ msgid "Dexie URL"
 msgstr ""
 
 #: src/components/block/Block.jsx:204
-#: src/components/fullNode/card/FullNodeCardDifficulty.tsx:14
+#: src/components/beacon/card/BeaconCardDifficulty.tsx:14
 msgid "Difficulty"
 msgstr "ระดับความยาก"
 
@@ -746,7 +746,7 @@ msgstr ""
 msgid "Disable direct I/O on the temp 2 directory in order to extract maximum performance with RAM disk"
 msgstr ""
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:20
+#: src/components/beacon/BeaconCloseConnection.tsx:20
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
@@ -861,7 +861,7 @@ msgstr ""
 msgid "Error parsing json"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:14
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:14
 msgid "Estimated Network Space"
 msgstr ""
 
@@ -870,7 +870,7 @@ msgstr ""
 msgid "Estimated Time to Win"
 msgstr "เวลาที่ชนะโดยประมาณ"
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:16
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:16
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr "ประมาณค่าจากผลรวมขนาดขนาดของพล็อตทั้งหมดจากฟาร์มเมอร์ทั้งหมดในเครือข่าย"
 
@@ -1018,8 +1018,8 @@ msgstr ""
 msgid "Final folder location"
 msgstr "ตำแหน่งโฟลเดอร์ของไฟล์พล็อตสำเร็จ"
 
-#: src/components/fullNode/FullNode.jsx:39
-#: src/components/fullNode/FullNode.jsx:93
+#: src/components/beacon/Beacon.jsx:39
+#: src/components/beacon/Beacon.jsx:93
 msgid "Finished"
 msgstr "เสร็จสิ้น"
 
@@ -1033,12 +1033,12 @@ msgstr "คำถามที่พบบ่อย"
 
 #: src/components/app/AppStatusHeader.tsx:49
 #: src/components/dashboard/DashboardSideBar.tsx:80
-#: src/components/fullNode/FullNode.jsx:132
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:132
+msgid "Beacon Client"
 msgstr "ฟูลโหนด"
 
-#: src/components/fullNode/FullNodeConnections.tsx:76
-msgid "Full Node Connections"
+#: src/components/beacon/BeaconConnections.tsx:76
+msgid "Beacon Client Connections"
 msgstr ""
 
 #: src/electron/main.tsx:591
@@ -1086,7 +1086,7 @@ msgstr ""
 msgid "Hashgreen DEX URL"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:57
+#: src/components/beacon/Beacon.jsx:57
 msgid "Header Hash"
 msgstr "แฮชส่วนหัว"
 
@@ -1095,8 +1095,8 @@ msgid "Header hash"
 msgstr "แฮชส่วนหัว"
 
 #: src/components/block/Block.jsx:184
-#: src/components/fullNode/FullNode.jsx:75
-#: src/components/fullNode/FullNodeConnections.tsx:68
+#: src/components/beacon/Beacon.jsx:75
+#: src/components/beacon/BeaconConnections.tsx:68
 msgid "Height"
 msgstr "ความสูง"
 
@@ -1127,7 +1127,7 @@ msgstr ""
 msgid "Hooray, no files here!"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:33
+#: src/components/farm/FarmBeaconConnections.tsx:33
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:30
 msgid "Host Name"
 msgstr "ชื่อโฮสต์"
@@ -1136,12 +1136,12 @@ msgstr "ชื่อโฮสต์"
 msgid "I Understand, Create Offer"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:29
+#: src/components/beacon/BeaconConnections.tsx:29
 msgid "IP address"
 msgstr "เลขที่อยู่ไอพี"
 
-#: src/components/block/FullNodeAddConnection.tsx:71
-#: src/components/fullNode/FullNodeAddConnection.tsx:70
+#: src/components/block/BeaconAddConnection.tsx:71
+#: src/components/beacon/BeaconAddConnection.tsx:70
 msgid "IP address / host"
 msgstr "เลขที่อยู่ไอพี / โฮสต์"
 
@@ -1173,7 +1173,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:41
+#: src/components/beacon/Beacon.jsx:41
 msgid "In Progress"
 msgstr "กำลังดำเนินการ"
 
@@ -1275,7 +1275,7 @@ msgstr ""
 msgid "Keyring migration failed: {0}"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:61
+#: src/components/farm/FarmBeaconConnections.tsx:61
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:58
 msgid "KiB Up/Down"
 msgstr ""
@@ -1288,7 +1288,7 @@ msgstr "การพิสูจน์ที่พยายามล่าสุ
 msgid "Last Height Farmed"
 msgstr "ความสูงล่าสุดที่ถูกฟาร์ม"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:18
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:18
 msgid "Last Transaction Block Time"
 msgstr ""
 
@@ -1330,7 +1330,7 @@ msgstr ""
 msgid "License URL {0}"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:80
+#: src/components/beacon/BeaconConnections.tsx:80
 msgid "List of connections is empty"
 msgstr ""
 
@@ -1402,7 +1402,7 @@ msgstr ""
 msgid "Metadata hash mismatch"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "MiB Up/Down"
 msgstr ""
 
@@ -1551,7 +1551,7 @@ msgstr ""
 msgid "Network Fee (Optional)"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardNetworkName.tsx:14
+#: src/components/beacon/card/BeaconCardNetworkName.tsx:14
 msgid "Network Name"
 msgstr "ชื่อเครือข่าย"
 
@@ -1596,9 +1596,9 @@ msgstr "ไม่พบ private keys ในบัญชีที่กรอก 
 msgid "Node Count"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:29
+#: src/components/farm/FarmBeaconConnections.tsx:29
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:26
-#: src/components/fullNode/FullNodeConnections.tsx:25
+#: src/components/beacon/BeaconConnections.tsx:25
 msgid "Node ID"
 msgstr "โหนดไอดี"
 
@@ -1625,8 +1625,8 @@ msgstr "พล็อตที่มีของคุณยังไม่เค
 msgid "Not Available"
 msgstr "ไม่พร้อมใช้งาน"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:14
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:43
+#: src/components/beacon/card/BeaconCardStatus.tsx:14
+#: src/components/beacon/card/BeaconCardStatus.tsx:43
 msgid "Not Synced"
 msgstr "ไม่ได้ซิงค์"
 
@@ -1638,7 +1638,7 @@ msgstr ""
 msgid "Not confirmed"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:16
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:16
 msgid "Not connected"
 msgstr "ยังไม่เชื่อมต่อ"
 
@@ -1839,7 +1839,7 @@ msgstr ""
 msgid "Payout Address"
 msgstr "ที่อยู่การจ่ายเงิน"
 
-#: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
+#: src/components/beacon/card/BeaconCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "ความสูงจุดยอด"
 
@@ -2104,11 +2104,11 @@ msgstr ""
 msgid "Pooling"
 msgstr ""
 
-#: src/components/block/FullNodeAddConnection.tsx:76
-#: src/components/farm/FarmFullNodeConnections.tsx:39
+#: src/components/block/BeaconAddConnection.tsx:76
+#: src/components/farm/FarmBeaconConnections.tsx:39
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:36
-#: src/components/fullNode/FullNodeAddConnection.tsx:75
-#: src/components/fullNode/FullNodeConnections.tsx:35
+#: src/components/beacon/BeaconAddConnection.tsx:75
+#: src/components/beacon/BeaconConnections.tsx:35
 msgid "Port"
 msgstr "พอร์ต"
 
@@ -2263,7 +2263,7 @@ msgid "Royalty Percentage"
 msgstr ""
 
 #: src/components/app/AppSelectMode.tsx:149
-msgid "Runs the full node"
+msgid "Runs the beacon client"
 msgstr ""
 
 #: src/components/backup/BackupRestore.tsx:185
@@ -2287,7 +2287,7 @@ msgstr ""
 msgid "Save passphrase"
 msgstr ""
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:40
+#: src/components/beacon/BeaconBlockSearch.tsx:40
 msgid "Search block by header hash"
 msgstr "ค้นหาบล็อกด้วยแฮชส่วนหัว"
 
@@ -2478,12 +2478,12 @@ msgstr ""
 msgid "Startup"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:95
+#: src/components/beacon/Beacon.jsx:95
 msgid "State"
 msgstr "สถานะ"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:71
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:79
+#: src/components/beacon/card/BeaconCardStatus.tsx:71
+#: src/components/beacon/card/BeaconCardStatus.tsx:79
 #: src/components/nfts/gallery/NFTGallerySidebar.tsx:39
 #: src/components/nfts/gallery/NFTGallerySidebar.tsx:41
 #: src/components/offers/OfferManager.tsx:341
@@ -2515,7 +2515,7 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:49
+#: src/components/beacon/card/BeaconCardStatus.tsx:49
 msgid "Synced"
 msgstr "ซิงค์แล้ว"
 
@@ -2525,7 +2525,7 @@ msgstr "ซิงค์แล้ว"
 msgid "Syncing"
 msgstr "กำลังซิงค์"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:27
+#: src/components/beacon/card/BeaconCardStatus.tsx:27
 msgid "Syncing <0/>/<1/>"
 msgstr "กำลังซิงค์ <0/>/<1/>"
 
@@ -2572,8 +2572,8 @@ msgstr ""
 msgid "The folder is on a RAM Disk"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:89
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:89
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr "โนดที่ผู้ฟาร์มจะเชื่อมต่อนั้นไม่เสถียรมากพอ <0>เรียนรู้เพิ่มเติม<0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:47
@@ -2585,12 +2585,12 @@ msgstr "ขนาดขั้นต่ำที่ต้องการสำห
 msgid "The net proceeds include the asking price, minus any associated creator fees (if the NFT has royalty payments enabled)."
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:16
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:45
+#: src/components/beacon/card/BeaconCardStatus.tsx:16
+#: src/components/beacon/card/BeaconCardStatus.tsx:45
 msgid "The node is not synced"
 msgstr "โหนดไม่ได้รับการซิงค์"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:35
+#: src/components/beacon/card/BeaconCardStatus.tsx:35
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr "โหนดกำลังซิงค์ หมายถึงระบบกำลังดาวน์โหลดบล็อกจากโหนดอื่น ๆ จนถึงบล็อกล่าสุดในบล็อกเชน"
 
@@ -2671,7 +2671,7 @@ msgstr "ฟีเจอร์นี้สามารถใช้ได้เฉ
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "นี่เป็นเวลาที่ Farmer สร้าง Block ซึ่งก่อนที่จะสรุปผลด้วย Proof of Time"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:19
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:19
 msgid "This is the timestamp of the most recent transaction block."
 msgstr ""
 
@@ -2685,7 +2685,7 @@ msgstr "นี่คือจำนวนแต้มทั้งหมดที
 msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
 msgstr "นี่คือจำนสนแต้มทั้งหมดที่ Farmer ของคุณพบในพล็อต NFT นี้ พล็อต k32 แต่ละพล็อตจะได้ประมาณ 10 แต้มต่อวัน หมายถึงว่าถ้าคุณมี 10 TiB จะคาดว่าได้แต้มจำนวน 1000 แต้มต่อวันหรือ 41 แต้มต่อชั่วโมง"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:52
+#: src/components/beacon/card/BeaconCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
 msgstr "Node นี้ติดตั้งอย่างสมบูรณ์และได้รับการยืนยันความถูกต้องจากเครือข่ายแล้ว"
 
@@ -2727,7 +2727,7 @@ msgstr ""
 msgid "Thumbnail hash mismatch"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:87
+#: src/components/beacon/Beacon.jsx:87
 msgid "Time Created"
 msgstr "เวลาที่สร้าง"
 
@@ -2778,7 +2778,7 @@ msgstr ""
 msgid "Total Harvesters"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:14
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:14
 msgid "Total Iterations"
 msgstr "จำนวนวนซ้ำทั้งหมด"
 
@@ -2802,7 +2802,7 @@ msgstr "ขนาดพล็อตทั้งหมด"
 msgid "Total VDF Iterations"
 msgstr "VDF Iterations ทั้งหมด"
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:16
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:16
 msgid "Total iterations since the start of the blockchain"
 msgstr "จำนวนการวนซ้ำทั้งหมดนับตั้งแต่เริ่มต้นบล็อกเชน"
 
@@ -2866,7 +2866,7 @@ msgstr ""
 msgid "Unclaimed Rewards"
 msgstr "รางวัลที่ยังไม่ได้ถูกเคลม"
 
-#: src/components/fullNode/FullNode.jsx:93
+#: src/components/beacon/Beacon.jsx:93
 msgid "Unfinished"
 msgstr "ยังไม่เสร็จ"
 
@@ -2897,7 +2897,7 @@ msgstr ""
 msgid "User Transaction Fees"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardVDFSubSlotIterations.tsx:14
+#: src/components/beacon/card/BeaconCardVDFSubSlotIterations.tsx:14
 msgid "VDF Sub Slot Iterations"
 msgstr ""
 
@@ -3117,8 +3117,8 @@ msgstr "คุณจะได้รับ <0/> ถึง {address}"
 msgid "Your Farm Overview"
 msgstr "ภาพรวมของฟาร์มคุณ"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:86
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:86
+msgid "Your Beacon Client Connection"
 msgstr "การเชื่อมต่อฟูลโหนดของคุณ"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:83

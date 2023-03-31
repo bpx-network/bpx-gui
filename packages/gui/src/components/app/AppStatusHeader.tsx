@@ -1,12 +1,12 @@
-import { Flex, useMode, Mode, useDarkMode } from '@chia-network/core';
-import { WalletConnections, WalletStatus, WalletReceiveAddressField } from '@chia-network/wallets';
+import { Flex, useMode, Mode, useDarkMode } from '@bpx-network/core';
+import { WalletConnections, WalletStatus, WalletReceiveAddressField } from '@bpx-network/wallets';
 import { Trans } from '@lingui/macro';
 import { Box, ButtonGroup, Button, Popover, PopoverProps } from '@mui/material';
 import { useTheme, styled, alpha } from '@mui/material/styles';
 import React, { useState } from 'react';
 
-import Connections from '../fullNode/FullNodeConnections';
-import FullNodeStateIndicator from '../fullNode/FullNodeStateIndicator';
+import Connections from '../beacon/BeaconConnections';
+import BeaconStateIndicator from '../beacon/BeaconStateIndicator';
 import NotificationsDropdown from '../notification/NotificationsDropdown';
 import WalletConnectDropdown from '../walletConnect/WalletConnectDropdown';
 import AppTestnetIndicator from './AppTestnetIndicator';
@@ -112,8 +112,8 @@ export default function AppStatusHeader() {
           <>
             <Button onClick={handleClickFN} aria-describedby="fullnode-connections" sx={ButtonStyle}>
               <Flex gap={1} alignItems="center">
-                <FullNodeStateIndicator />
-                <Trans>Full Node</Trans>
+                <BeaconStateIndicator />
+                <Trans>Beacon Client</Trans>
               </Flex>
             </Button>
             <StyledPopover

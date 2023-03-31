@@ -55,7 +55,7 @@ msgid "<0>Use one (1) mojo to create a Profile.</0>"
 msgstr ""
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:77
-msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a full node to see the state of the chain. View your network of connected harvesters below Learn more"
+msgid "A harvester is a service running on a machine where plot(s) are actually stored. A farmer and harvester talk to a beacon client to see the state of the chain. View your network of connected harvesters below Learn more"
 msgstr "Korrësi eshte nje shërbim i cili është i integruar në pajisjen ku Plot(s) janë ruajtur. Një fermer dhe një korrës komunikojnë me një nyje që të shikojnë gjëndjen e zinxhirit. Shiko rrjetin e korrësave të lidhur më posht Mëso më shumë"
 
 #: src/components/settings/SettingsDataLayer.tsx:79
@@ -85,9 +85,9 @@ msgstr ""
 msgid "Action"
 msgstr "Veprim"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:52
+#: src/components/farm/FarmBeaconConnections.tsx:52
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:52
-#: src/components/fullNode/FullNodeConnections.tsx:64
+#: src/components/beacon/BeaconConnections.tsx:64
 #: src/components/nfts/NFTContextualActions.tsx:623
 #: src/components/offers2/OfferIncomingTable.tsx:102
 msgid "Actions"
@@ -251,7 +251,7 @@ msgstr "Je i sigurt që do ta fshish këtë Plot? Pasi nuk mund ta riktheni."
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "Je i sigurt që dëshiron të fshish transaksione të pakonfirmuara?"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:28
+#: src/components/beacon/BeaconCloseConnection.tsx:28
 msgid "Are you sure you want to disconnect?"
 msgstr "Je i sigurt që deshiron të shkëputesh?"
 
@@ -362,7 +362,7 @@ msgstr "Blloku me kodimin {headerHash}"
 msgid "Block with hash {headerHash} does not exist."
 msgstr "Blloku me kodimin {headerHash} nuk ekziston."
 
-#: src/components/fullNode/FullNode.jsx:105
+#: src/components/beacon/Beacon.jsx:105
 msgid "Blocks"
 msgstr "Blloqet"
 
@@ -404,7 +404,7 @@ msgstr ""
 
 #: src/components/app/AppPassPrompt.tsx:183
 #: src/components/farm/FarmManageFarmingRewards.tsx:163
-#: src/components/fullNode/FullNodeAddConnection.tsx:100
+#: src/components/beacon/BeaconAddConnection.tsx:100
 #: src/components/nfts/MultipleDownloadDialog.tsx:120
 #: src/components/nfts/NFTBurnDialog.tsx:174
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:57
@@ -594,7 +594,7 @@ msgstr ""
 msgid "Confirm"
 msgstr "Konfirmo"
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:19
+#: src/components/beacon/BeaconCloseConnection.tsx:19
 msgid "Confirm Disconnect"
 msgstr "Konfirmo shkëputjen"
 
@@ -628,12 +628,12 @@ msgstr ""
 msgid "Confirmed"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:103
+#: src/components/beacon/BeaconAddConnection.tsx:103
 msgid "Connect"
 msgstr "Lidhu"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:82
-#: src/components/fullNode/FullNodeConnections.tsx:92
+#: src/components/beacon/BeaconAddConnection.tsx:82
+#: src/components/beacon/BeaconConnections.tsx:92
 msgid "Connect to other peers"
 msgstr "Lidhu me te tjerët"
 
@@ -641,7 +641,7 @@ msgstr "Lidhu me te tjerët"
 msgid "Connect to pool"
 msgstr "Lidhu me pollin"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:85
 msgid "Connected"
 msgstr "Lidhur"
@@ -655,16 +655,16 @@ msgstr ""
 msgid "Connecting to daemon"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:14
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:14
 msgid "Connection Status"
 msgstr "Gjëndja Lidhjes"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:87
+#: src/components/farm/FarmBeaconConnections.tsx:87
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:85
 msgid "Connection Status:"
 msgstr "Gjëndja Lidhjes:"
 
-#: src/components/fullNode/FullNodeConnections.tsx:57
+#: src/components/beacon/BeaconConnections.tsx:57
 msgid "Connection type"
 msgstr "Tipi i Lidhjes"
 
@@ -700,7 +700,7 @@ msgstr ""
 msgid "Cost to send notification to the NFT holder"
 msgstr ""
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:55
+#: src/components/beacon/BeaconAddConnection.tsx:55
 msgid "Could not connect to host {host} on port {port}"
 msgstr ""
 
@@ -921,7 +921,7 @@ msgid "Dexie URL"
 msgstr ""
 
 #: src/components/block/Block.jsx:181
-#: src/components/fullNode/card/FullNodeCardDifficulty.tsx:14
+#: src/components/beacon/card/BeaconCardDifficulty.tsx:14
 msgid "Difficulty"
 msgstr "Vështirësia"
 
@@ -953,7 +953,7 @@ msgstr ""
 msgid "Disable direct I/O on the temp 2 directory in order to extract maximum performance with RAM disk"
 msgstr ""
 
-#: src/components/fullNode/FullNodeCloseConnection.tsx:20
+#: src/components/beacon/BeaconCloseConnection.tsx:20
 #: src/components/walletConnect/WalletConnectConnectedDialog.tsx:119
 #: src/components/walletConnect/WalletConnectConnections.tsx:87
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:151
@@ -1143,7 +1143,7 @@ msgstr ""
 msgid "Error: {0}"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:14
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:14
 msgid "Estimated Network Space"
 msgstr "Madhësia e Hapsirës së rrjetit"
 
@@ -1152,7 +1152,7 @@ msgstr "Madhësia e Hapsirës së rrjetit"
 msgid "Estimated Time to Win"
 msgstr "Koha e parashikuar për të fituar"
 
-#: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:15
+#: src/components/beacon/card/BeaconEstimatedNetworkSpace.tsx:15
 msgid "Estimated sum of all the plotted disk space of all farmers in the network"
 msgstr "Madhësia e hapsirës së ruajtur së të gjithë Ploteve të të gjithë fermerve në rrjet"
 
@@ -1317,8 +1317,8 @@ msgstr "Vëndi i vendosjes së Skedarit"
 msgid "Fingerprint"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:28
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:28
+#: src/components/beacon/Beacon.jsx:77
 msgid "Finished"
 msgstr "Përfundoi"
 
@@ -1336,12 +1336,12 @@ msgstr "Pyetjet më të shpeshta"
 
 #: src/components/app/AppStatusHeader.tsx:84
 #: src/components/dashboard/DashboardSideBar.tsx:76
-#: src/components/fullNode/FullNode.jsx:116
-msgid "Full Node"
+#: src/components/beacon/Beacon.jsx:116
+msgid "Beacon Client"
 msgstr "Nyja e plotë"
 
-#: src/components/fullNode/FullNodeConnections.tsx:89
-msgid "Full Node Connections"
+#: src/components/beacon/BeaconConnections.tsx:89
+msgid "Beacon Client Connections"
 msgstr ""
 
 #: src/electron/main.tsx:1022
@@ -1437,7 +1437,7 @@ msgstr ""
 msgid "Hashgreen DEX URL"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:43
+#: src/components/beacon/Beacon.jsx:43
 msgid "Header Hash"
 msgstr "Koka e kodit"
 
@@ -1446,8 +1446,8 @@ msgid "Header hash"
 msgstr "Koka e kodit"
 
 #: src/components/block/Block.jsx:168
-#: src/components/fullNode/FullNode.jsx:61
-#: src/components/fullNode/FullNodeConnections.tsx:61
+#: src/components/beacon/Beacon.jsx:61
+#: src/components/beacon/BeaconConnections.tsx:61
 msgid "Height"
 msgstr "Lartësia"
 
@@ -1486,7 +1486,7 @@ msgstr ""
 msgid "Hooray, no files here!"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:31
+#: src/components/farm/FarmBeaconConnections.tsx:31
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:31
 msgid "Host Name"
 msgstr "Emri i hostit"
@@ -1495,11 +1495,11 @@ msgstr "Emri i hostit"
 msgid "I Understand, Create Offer"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:32
+#: src/components/beacon/BeaconConnections.tsx:32
 msgid "IP address"
 msgstr "Adresa IP"
 
-#: src/components/fullNode/FullNodeAddConnection.tsx:89
+#: src/components/beacon/BeaconAddConnection.tsx:89
 msgid "IP address / host"
 msgstr "Adresa IP / Hosti"
 
@@ -1539,7 +1539,7 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:28
+#: src/components/beacon/Beacon.jsx:28
 msgid "In Progress"
 msgstr "Në progres"
 
@@ -1672,7 +1672,7 @@ msgstr ""
 msgid "Keyring migration failed: {0}"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:49
+#: src/components/farm/FarmBeaconConnections.tsx:49
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:49
 msgid "KiB Up/Down"
 msgstr "KiB Lart / Poshtë"
@@ -1685,7 +1685,7 @@ msgstr "Provë e fundit e provuar"
 msgid "Last Height Farmed"
 msgstr "Lartësia e Fundit e Fermuar"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:16
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:16
 msgid "Last Transaction Block Time"
 msgstr ""
 
@@ -1732,7 +1732,7 @@ msgstr ""
 msgid "Limit cache size"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:99
+#: src/components/beacon/BeaconConnections.tsx:99
 msgid "List of connections is empty"
 msgstr ""
 
@@ -1825,7 +1825,7 @@ msgstr ""
 msgid "Metadata hash mismatch"
 msgstr ""
 
-#: src/components/fullNode/FullNodeConnections.tsx:50
+#: src/components/beacon/BeaconConnections.tsx:50
 msgid "MiB Up/Down"
 msgstr "MiB Lart / Poshtë"
 
@@ -2015,7 +2015,7 @@ msgstr ""
 msgid "Network Fee (Optional)"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardNetworkName.tsx:14
+#: src/components/beacon/card/BeaconCardNetworkName.tsx:14
 msgid "Network Name"
 msgstr "Emër Rrjeti"
 
@@ -2082,9 +2082,9 @@ msgstr "Nuk ka çelësa privatë për një ose për të dy adresat. Sigurohu vet
 msgid "No standard wallet found"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:27
+#: src/components/farm/FarmBeaconConnections.tsx:27
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:27
-#: src/components/fullNode/FullNodeConnections.tsx:28
+#: src/components/beacon/BeaconConnections.tsx:28
 msgid "Node ID"
 msgstr "ID e nyjes"
 
@@ -2110,12 +2110,12 @@ msgstr "Asnjë nga plotet tuaja nuk e ka kaluar filtrin akoma."
 msgid "Not Available"
 msgstr "Jo i disponueshëm"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:14
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:44
+#: src/components/beacon/card/BeaconCardStatus.tsx:14
+#: src/components/beacon/card/BeaconCardStatus.tsx:44
 msgid "Not Synced"
 msgstr "Jo i sinkronizuar"
 
-#: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:15
+#: src/components/beacon/card/BeaconCardConnectionStatus.tsx:15
 msgid "Not connected"
 msgstr "Nuk është lidhur"
 
@@ -2124,7 +2124,7 @@ msgid "Note that this does not change your pooling payout addresses. This only a
 msgstr "Vini re se kjo nuk ndryshon adresat tuaja të grumbullimit të pagesave. Kjo ndikon vetëm në komplotet e formatit të vjetër dhe në shpërblimin 0.25XCH për komplotet e bashkimit."
 
 #: src/components/notification/NotificationSendDialog.tsx:145
-msgid "Notification has successfully been sent to a full node and included in the mempool."
+msgid "Notification has successfully been sent to a beacon client and included in the mempool."
 msgstr ""
 
 #: src/components/settings/Settings.tsx:78
@@ -2410,7 +2410,7 @@ msgstr ""
 msgid "Payout Address"
 msgstr "Adresa e pagesës"
 
-#: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
+#: src/components/beacon/card/BeaconCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "Lartësia e majës"
 
@@ -2695,10 +2695,10 @@ msgstr "Polli:"
 msgid "Pooling"
 msgstr "Lidhur"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:37
+#: src/components/farm/FarmBeaconConnections.tsx:37
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:37
-#: src/components/fullNode/FullNodeAddConnection.tsx:95
-#: src/components/fullNode/FullNodeConnections.tsx:38
+#: src/components/beacon/BeaconAddConnection.tsx:95
+#: src/components/beacon/BeaconConnections.tsx:38
 msgid "Port"
 msgstr "Porta"
 
@@ -2893,7 +2893,7 @@ msgid "Royalty Percentage"
 msgstr ""
 
 #: src/components/app/AppSelectMode.tsx:139
-msgid "Runs the full node"
+msgid "Runs the beacon client"
 msgstr ""
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:166
@@ -2916,7 +2916,7 @@ msgstr ""
 msgid "Save passphrase"
 msgstr ""
 
-#: src/components/fullNode/FullNodeBlockSearch.tsx:38
+#: src/components/beacon/BeaconBlockSearch.tsx:38
 msgid "Search block by header hash"
 msgstr "Blloku i kërkimit sipas kokës hash"
 
@@ -3219,12 +3219,12 @@ msgstr ""
 msgid "Startup"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:79
+#: src/components/beacon/Beacon.jsx:79
 msgid "State"
 msgstr "Krahina"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:69
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:74
+#: src/components/beacon/card/BeaconCardStatus.tsx:69
+#: src/components/beacon/card/BeaconCardStatus.tsx:74
 #: src/components/offers/OfferManager.tsx:251
 #: src/components/plot/PlotHarvesterPlots.tsx:74
 #: src/components/plot/PlotPlotting.tsx:26
@@ -3254,7 +3254,7 @@ msgstr ""
 msgid "Successfully updated the derivation index. Your balances may take a while to update."
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:50
+#: src/components/beacon/card/BeaconCardStatus.tsx:50
 msgid "Synced"
 msgstr "Sinkronizuar"
 
@@ -3263,7 +3263,7 @@ msgstr "Sinkronizuar"
 msgid "Syncing"
 msgstr "Sinkronizimi"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:27
+#: src/components/beacon/card/BeaconCardStatus.tsx:27
 msgid "Syncing <0/>/<1/>"
 msgstr "Sinkronizimi <0/>/<1/>"
 
@@ -3320,8 +3320,8 @@ msgstr ""
 msgid "The folder is on a RAM Disk"
 msgstr ""
 
-#: src/components/farm/FarmFullNodeConnections.tsx:77
-msgid "The full node that your farmer is connected to is below. <0>Learn more</0>"
+#: src/components/farm/FarmBeaconConnections.tsx:77
+msgid "The beacon client that your farmer is connected to is below. <0>Learn more</0>"
 msgstr "Nyja e plotë me të cilën është lidhur fermeri juaj është më poshtë. <0> Mësoni më shumë </0>"
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:46
@@ -3333,12 +3333,12 @@ msgstr "Madhësia minimale e kërkuar për rrjetin kryesor është k=32"
 msgid "The net proceeds include the asking price, minus any associated creator fees (if the NFT has royalty payments enabled)."
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:16
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:46
+#: src/components/beacon/card/BeaconCardStatus.tsx:16
+#: src/components/beacon/card/BeaconCardStatus.tsx:46
 msgid "The node is not synced"
 msgstr "Nyja nuk sinkronizohet"
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:35
+#: src/components/beacon/card/BeaconCardStatus.tsx:35
 msgid "The node is syncing, which means it is downloading blocks from other nodes, to reach the latest block in the chain"
 msgstr "Nyja po sinkronizohet, që do të thotë se po shkarkon blloqe nga nyjet e tjera, për të arritur bllokun më të fundit në zinxhir"
 
@@ -3423,7 +3423,7 @@ msgstr "Kjo veçori është në dispozicion vetëm nga GUI."
 msgid "This is the time the block was created by the farmer, which is before it is finalized with a proof of time"
 msgstr "Kjo është koha kur blloku është krijuar nga fermeri, e cila është para se të finalizohet me një provë të kohës"
 
-#: src/components/fullNode/card/FullNodeCardPeakTime.tsx:17
+#: src/components/beacon/card/BeaconCardPeakTime.tsx:17
 msgid "This is the timestamp of the most recent transaction block."
 msgstr ""
 
@@ -3437,7 +3437,7 @@ msgstr "Ky është numri i përgjithshëm i pikëve që ka kjo plotNFT me këtë
 msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
 msgstr "Ky është numri i përgjithshëm i pikëve që fermeri juaj ka gjetur për këtë plot NFT. Çdo plot i k32 do të marrë rreth 10 pikë në ditë, kështu që nëse keni 10TiB, duhet të prisni rreth 1000 pikë në ditë, ose 41 pikë në orë."
 
-#: src/components/fullNode/card/FullNodeCardStatus.tsx:52
+#: src/components/beacon/card/BeaconCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
 msgstr "Kjo nyje është kapur plotësisht dhe po vërteton rrjetin"
 
@@ -3481,7 +3481,7 @@ msgstr ""
 msgid "Thumbnail hash mismatch"
 msgstr ""
 
-#: src/components/fullNode/FullNode.jsx:71
+#: src/components/beacon/Beacon.jsx:71
 msgid "Time Created"
 msgstr "Koha qe u Kriua"
 
@@ -3540,7 +3540,7 @@ msgstr ""
 msgid "Total Harvesters"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:14
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:14
 msgid "Total Iterations"
 msgstr "Përsëritjet totale"
 
@@ -3568,7 +3568,7 @@ msgstr "Përsëritjet totale të VDF-së"
 msgid "Total amount including royalties"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:15
+#: src/components/beacon/card/BeaconCardTotalIterations.tsx:15
 msgid "Total iterations since the start of the blockchain"
 msgstr "Përsëritjet totale që nga fillimi i blockchain"
 
@@ -3674,7 +3674,7 @@ msgstr ""
 msgid "Unclaimed Rewards"
 msgstr "Shpërblime të pakërkuara"
 
-#: src/components/fullNode/FullNode.jsx:77
+#: src/components/beacon/Beacon.jsx:77
 msgid "Unfinished"
 msgstr "E papërfunduar"
 
@@ -3720,7 +3720,7 @@ msgstr ""
 msgid "User Transaction Fees"
 msgstr ""
 
-#: src/components/fullNode/card/FullNodeCardVDFSubSlotIterations.tsx:14
+#: src/components/beacon/card/BeaconCardVDFSubSlotIterations.tsx:14
 msgid "VDF Sub Slot Iterations"
 msgstr "Përsëritjet e VDF Nën Slot"
 
@@ -4045,8 +4045,8 @@ msgstr "Ju do të merrni <0/> te {address}"
 msgid "Your Farm Overview"
 msgstr "Pasqyra juaj e Fermës"
 
-#: src/components/farm/FarmFullNodeConnections.tsx:74
-msgid "Your Full Node Connection"
+#: src/components/farm/FarmBeaconConnections.tsx:74
+msgid "Your Beacon Client Connection"
 msgstr "Lidhja juaj e plotë e nyjes"
 
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:74

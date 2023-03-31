@@ -3,7 +3,7 @@ export { default as Chia, ChiaBlack } from './Chia';
 export { default as Farm } from './Farm';
 export { default as Farming } from './Farming';
 export { default as Fees } from './Fees';
-export { default as FullNode } from './FullNode';
+export { default as Beacon } from './Beacon';
 export { default as Home } from './Home';
 export { default as Keys } from './Keys';
 export { default as LinkSmall } from './Link';

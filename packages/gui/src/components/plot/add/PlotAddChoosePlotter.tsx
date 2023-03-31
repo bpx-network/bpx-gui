@@ -1,7 +1,7 @@
-import { defaultPlotter, PlotterName } from '@chia-network/api';
-import type { Plotter, PlotterMap } from '@chia-network/api';
-import { useGetPlottersQuery } from '@chia-network/api-react';
-import { CardStep, Select, StateColor } from '@chia-network/core';
+import { defaultPlotter, PlotterName } from '@bpx-network/api';
+import type { Plotter, PlotterMap } from '@bpx-network/api';
+import { useGetPlottersQuery } from '@bpx-network/api-react';
+import { CardStep, Select, StateColor } from '@bpx-network/core';
 import { t, Trans } from '@lingui/macro';
 import { FormControl, FormHelperText, Grid, InputLabel, MenuItem, Typography } from '@mui/material';
 import React, { useMemo } from 'react';

@@ -1,9 +1,7 @@
-import { ServiceName } from '@chia-network/api';
-import { Mode } from '@chia-network/core';
+import { ServiceName } from '@bpx-network/api';
+import { Mode } from '@bpx-network/core';
 
 export default {
-  [Mode.WALLET]: [ServiceName.WALLET],
-  [Mode.FARMING]: [ServiceName.WALLET, ServiceName.FULL_NODE, ServiceName.FARMER, ServiceName.HARVESTER],
+  [Mode.NODE]: [ServiceName.BEACON],
+  [Mode.FARMING]: [ServiceName.BEACON, ServiceName.FARMER, ServiceName.HARVESTER],
 };
-
-export const SimulatorServices = [ServiceName.WALLET, ServiceName.SIMULATOR];

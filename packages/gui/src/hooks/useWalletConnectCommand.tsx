@@ -1,5 +1,5 @@
-import api, { store, useGetLoggedInFingerprintQuery, useLogInAndSkipImportMutation } from '@chia-network/api-react';
-import { useOpenDialog } from '@chia-network/core';
+import api, { store, useGetLoggedInFingerprintQuery, useLogInAndSkipImportMutation } from '@bpx-network/api-react';
+import { useOpenDialog } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import debug from 'debug';
 import React, { ReactNode } from 'react';

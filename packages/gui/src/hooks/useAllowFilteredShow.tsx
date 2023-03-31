@@ -1,5 +1,5 @@
-import type NFTInfo from '@chia-network/api';
-import type LRU from '@chia-network/core';
+import type NFTInfo from '@bpx-network/api';
+import type LRU from '@bpx-network/core';
 import React, { useEffect, useState, useCallback } from 'react';
 
 import getRemoteFileContent from '../util/getRemoteFileContent';

@@ -7,7 +7,7 @@ import {
   Checkbox,
   TooltipIcon,
   Select,
-} from '@chia-network/core';
+} from '@bpx-network/core';
 import { Trans, t } from '@lingui/macro';
 import {
   Grid,
@@ -463,17 +463,6 @@ export default function PlotAddNumberOfPlots(props: Props) {
                 variant="filled"
                 placeholder="Hex public key of pool"
                 label={<Trans>Pool Public Key</Trans>}
-              />
-            </FormControl>
-          </Grid>
-          <Grid xs={12} item>
-            <FormControl variant="filled" fullWidth>
-              <TextField
-                name="plotNFTContractAddr"
-                type="text"
-                variant="filled"
-                placeholder={t`Plot NFT Plot Target Address`}
-                label={<Trans>Plot NFT Pool Contract Address</Trans>}
               />
             </FormControl>
           </Grid>

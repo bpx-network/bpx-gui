@@ -1,5 +1,5 @@
-import { useGetTotalHarvestersSummaryQuery } from '@chia-network/api-react';
-import { FormatLargeNumber, CardSimple } from '@chia-network/core';
+import { useGetTotalHarvestersSummaryQuery } from '@bpx-network/api-react';
+import { FormatLargeNumber, CardSimple } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import React from 'react';
 
