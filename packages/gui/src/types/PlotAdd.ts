@@ -14,7 +14,6 @@ type PlotAdd = {
   bladebit2Alternate?: boolean;
   bladebit2NoT1Direct?: boolean;
   bladebit2NoT2Direct?: boolean;
-  c: string;
   delay: number;
   disableBitfieldPlotting?: boolean;
   excludeFinalDir?: boolean;

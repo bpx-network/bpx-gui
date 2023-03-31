@@ -9,7 +9,7 @@ const path = require('path');
 const PY_MAC_DIST_FOLDER = '../../../app.asar.unpacked/daemon';
 const PY_WIN_DIST_FOLDER = '../../../app.asar.unpacked/daemon';
 const PY_DIST_FILE = 'daemon';
-const PY_FOLDER = '../../../chia/daemon';
+const PY_FOLDER = '../../../bpx/daemon';
 const PY_MODULE = 'server'; // without .py suffix
 
 let pyProc = null;
@@ -41,9 +41,9 @@ const getScriptPath = (dist_file) => {
   return getExecutablePath(dist_file);
 };
 
-const getChiaVersion = () => {
+const getBpxVersion = () => {
   let version = null;
-  const exePath = getExecutablePath('chia');
+  const exePath = getExecutablePath('bpx');
   // first see if we can get a chia exe in a standard location relative to where we are
   try {
     version = childProcess
@@ -67,7 +67,7 @@ const getChiaVersion = () => {
   return version;
 };
 
-const startChiaDaemon = () => {
+const startBpxDaemon = () => {
   const script = getScriptPath(PY_DIST_FILE);
   const processOptions = {};
   // processOptions.detached = true;
@@ -140,7 +140,7 @@ const startChiaDaemon = () => {
 };
 
 module.exports = {
-  startChiaDaemon,
-  getChiaVersion,
+  startBpxDaemon,
+  getBpxVersion,
   guessPackaged,
 };

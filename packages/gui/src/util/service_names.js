@@ -5,6 +5,4 @@ export const serviceConnectionTypes = {
   3: 'Farmer',
   4: 'Timelord',
   5: 'Introducer',
-  6: 'Wallet',
-  7: 'Data Layer',
 };
