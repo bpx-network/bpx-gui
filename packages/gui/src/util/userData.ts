@@ -24,7 +24,7 @@ export function migrateUserDataIfNecessary() {
   const defaultUserDataPath = app.getPath('userData');
   const bpxRootUserDataPath = getUserDataDir();
   const leveldbSrcPath = path.join(defaultUserDataPath, 'Local Storage', 'leveldb');
-  const leveldbDestPath = path.join(chiaRootUserDataPath, 'Local Storage', 'leveldb');
+  const leveldbDestPath = path.join(bpxRootUserDataPath, 'Local Storage', 'leveldb');
   const leveldbMigratedMarker = path.join(leveldbSrcPath, 'migrated');
   const sourceExists = fs.existsSync(leveldbSrcPath);
   const destinationExists = fs.existsSync(leveldbDestPath);

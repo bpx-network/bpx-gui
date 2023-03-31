@@ -44,7 +44,7 @@ const getScriptPath = (dist_file) => {
 const getBpxVersion = () => {
   let version = null;
   const exePath = getExecutablePath('bpx');
-  // first see if we can get a chia exe in a standard location relative to where we are
+  // first see if we can get a bpx exe in a standard location relative to where we are
   try {
     version = childProcess
       .execFileSync(exePath, ['version'], {
@@ -52,7 +52,7 @@ const getBpxVersion = () => {
       })
       .trim();
   } catch (e1) {
-    // that didn't work, let's try as if we're in the venv or chia is on the path
+    // that didn't work, let's try as if we're in the venv or bpx is on the path
     try {
       version = childProcess
         .execFileSync(path.basename(exePath), ['version'], {

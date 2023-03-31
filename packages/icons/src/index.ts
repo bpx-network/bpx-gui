@@ -1,5 +1,5 @@
 export { default as Burn } from './Burn';
-export { default as Chia, ChiaBlack } from './Chia';
+export { default as Bpx, BpxBlack } from './Bpx';
 export { default as Farm } from './Farm';
 export { default as Farming } from './Farming';
 export { default as Fees } from './Fees';

@@ -167,7 +167,7 @@ if (!handleSquirrelEvent()) {
 
     const createWindow = async () => {
       if (manageDaemonLifetime(NET)) {
-        chiaEnvironment.startChiaDaemon();
+        bpxEnvironment.startBpxDaemon();
       }
 
       ipcMain.handle('getConfig', () => loadConfig(NET));
