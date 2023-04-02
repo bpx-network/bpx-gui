@@ -2,11 +2,11 @@ import { useGetNetworkInfoQuery } from '@bpx-network/api-react';
 
 export default function useIsMainnet(): boolean | undefined {
   const { data: networkInfo } = useGetNetworkInfoQuery();
-  const networkPrefix = networkInfo?.networkPrefix;
+  const networkName = networkInfo?.networkName;
 
   if (!networkPrefix) {
     return undefined;
   }
 
-  return networkPrefix.toLowerCase() === 'xch';
+  return networkName === 'mainnet';
 }

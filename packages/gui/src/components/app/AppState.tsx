@@ -14,9 +14,8 @@ import {
   LayoutLoading,
   Mode,
   useMode,
-  useIsSimulator,
   useAppVersion,
-  useCurrencyCode,
+  useIsMainnet,
 } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Typography, Collapse } from '@mui/material';
@@ -55,7 +54,6 @@ export default function AppState(props: Props) {
   const { data: clientState = {}, isLoading: isClientStateLoading } = useGetStateQuery();
   const { data: keyringStatus, isLoading: isLoadingKeyringStatus } = useGetKeyringStatusQuery();
   const [mode] = useMode();
-  const isSimulator = useIsSimulator();
   const [enableDataLayerService] = useEnableDataLayerService();
   const [enableFilePropagationServer] = useEnableFilePropagationServer();
   // NOTE: We only start the DL at launch time for now
@@ -66,7 +64,7 @@ export default function AppState(props: Props) {
   const { data: backendVersion } = useGetVersionQuery();
   const { version } = useAppVersion();
   const lru = useNFTMetadataLRU();
-  const isTestnet = useCurrencyCode() === 'TXCH';
+  const isTestnet = useIsMainnet() ? false : true;
 
   const runServices = useMemo<ServiceName[] | undefined>(() => {
     if (mode) {
