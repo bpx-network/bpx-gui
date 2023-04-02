@@ -4,7 +4,7 @@ export default function useIsMainnet(): boolean | undefined {
   const { data: networkInfo } = useGetNetworkInfoQuery();
   const networkName = networkInfo?.networkName;
 
-  if (!networkPrefix) {
+  if (!networkName) {
     return undefined;
   }
 
