@@ -1,5 +1,5 @@
 import type { KeyData } from '@bpx-network/api';
-import { useFingerprintSettings, useGetLoggedInFingerprintQuery } from '@bpx-network/api-react';
+import { useFingerprintSettings } from '@bpx-network/api-react';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon, Visibility as VisibilityIcon, Edit as EditIcon } from '@mui/icons-material';
 import { Box, Typography, ListItemIcon, Chip } from '@mui/material';
@@ -15,7 +15,6 @@ import EmojiAndColorPicker from './EmojiAndColorPicker';
 import SelectKeyDetailDialog from './SelectKeyDetailDialog';
 import SelectKeyRenameForm from './SelectKeyRenameForm';
 import WalletDeleteDialog from './WalletDeleteDialog';
-import WalletStatus from './WalletStatus';
 
 type SelectKeyItemProps = {
   keyData: KeyData;
@@ -34,8 +33,6 @@ export default function SelectKeyItem(props: SelectKeyItemProps) {
   const { keyData, onSelect, disabled, loading, index } = props;
   const openDialog = useOpenDialog();
   const [isRenaming, setIsRenaming] = useState<boolean>(false);
-
-  const { data: currentFingerprint } = useGetLoggedInFingerprintQuery();
 
   const { fingerprint, label } = keyData;
 
@@ -249,51 +246,6 @@ export default function SelectKeyItem(props: SelectKeyItemProps) {
             borderRadius: '0 0 7px 7px',
           }}
         >
-          {currentFingerprint === fingerprint && (
-            <Box position="absolute" bottom={8} left={8}>
-              <Chip
-                size="small"
-                sx={{
-                  height: '22px',
-                  paddingRight: '5px',
-                  paddingTop: '1px',
-                  borderRadius: '4px',
-                  backgroundColor: 'transparent',
-                  '> div': {
-                    gap: '4px',
-                  },
-                  '> span': {
-                    padding: '0 3px 0 1px',
-                  },
-                  span: {
-                    fontSize: '10px',
-                  },
-                  '.checkmark-icon': {
-                    g: {
-                      circle: {
-                        stroke: color.accent,
-                      },
-                      path: {
-                        stroke: color.accent,
-                        fill: color.accent,
-                      },
-                    },
-                  },
-                  '.reload-icon,.cancel-icon': {
-                    g: {
-                      circle: {
-                        stroke: color.accent,
-                      },
-                      path: {
-                        fill: color.accent,
-                      },
-                    },
-                  },
-                }}
-                label={<WalletStatus variant="body2" indicator reversed color="textColor" />}
-              />
-            </Box>
-          )}
           {renderOptions()}
         </Box>
       </Flex>
