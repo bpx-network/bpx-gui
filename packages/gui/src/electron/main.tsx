@@ -404,6 +404,7 @@ if (!handleSquirrelEvent()) {
       createWindow();
       app.applicationMenu = createMenu();
       const prefs = readPrefs();
+    };
 
     app.on('ready', appReady);
 
