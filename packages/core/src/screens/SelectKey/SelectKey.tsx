@@ -26,10 +26,8 @@ import Loading from '../../components/Loading';
 import MenuItem from '../../components/MenuItem/MenuItem';
 import More from '../../components/More';
 import TooltipIcon from '../../components/TooltipIcon';
-import useKeyringMigrationPrompt from '../../hooks/useKeyringMigrationPrompt';
 import useOpenDialog from '../../hooks/useOpenDialog';
 import useShowError from '../../hooks/useShowError';
-import useSkipMigration from '../../hooks/useSkipMigration';
 // import Search from './Search';
 import SelectKeyItem from './SelectKeyItem';
 
@@ -50,8 +48,6 @@ export default function SelectKey() {
   const { data: keyringState, isLoading: isLoadingKeyringStatus } = useGetKeyringStatusQuery();
   const hasFingerprints = !!publicKeyFingerprints?.length;
   const [selectedFingerprint, setSelectedFingerprint] = useState<number | undefined>();
-  const [skippedMigration] = useSkipMigration();
-  const [promptForKeyringMigration] = useKeyringMigrationPrompt();
   const showError = useShowError();
   const [sortedWallets, setSortedWallets] = usePrefs('sortedWallets', []);
 
@@ -150,10 +146,7 @@ export default function SelectKey() {
   }
 
   async function handleKeyringMutator(): Promise<boolean> {
-    // If the keyring requires migration and the user previously skipped migration, prompt again
-    if (isLoadingKeyringStatus || (keyringState?.needsMigration && skippedMigration)) {
-      await promptForKeyringMigration();
-
+    if (isLoadingKeyringStatus) {
       return false;
     }
 

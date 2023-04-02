@@ -175,14 +175,7 @@ export default function AppState(props: Props) {
     );
   }
 
-  const { needsMigration, isKeyringLocked } = keyringStatus;
-  if (needsMigration) {
-    return (
-      <LayoutHero>
-        <AppKeyringMigrator />
-      </LayoutHero>
-    );
-  }
+  const { isKeyringLocked } = keyringStatus;
 
   if (isKeyringLocked) {
     return (

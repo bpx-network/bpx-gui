@@ -10,8 +10,6 @@ import Flex from '../../components/Flex';
 import Form from '../../components/Form';
 import Loading from '../../components/Loading';
 import TextField from '../../components/TextField';
-import useKeyringMigrationPrompt from '../../hooks/useKeyringMigrationPrompt';
-import useSkipMigration from '../../hooks/useSkipMigration';
 
 type FormData = {
   fingerprint: string;
@@ -30,8 +28,6 @@ export default function WalletDeleteDialog(props: WalletDeleteDialogProps) {
 
   const [deleteKey] = useDeleteKeyMutation();
   const [checkDeleteKey, { data: checkDeleteKeyData }] = useCheckDeleteKeyMutation();
-  const [skippedMigration] = useSkipMigration();
-  const [promptForKeyringMigration] = useKeyringMigrationPrompt();
 
   const methods = useForm<FormData>({
     defaultValues: {
@@ -42,10 +38,7 @@ export default function WalletDeleteDialog(props: WalletDeleteDialogProps) {
   const { isSubmitting } = methods.formState;
 
   async function handleKeyringMutator() {
-    // If the keyring requires migration and the user previously skipped migration, prompt again
-    if (isLoadingKeyringStatus || (keyringState?.needsMigration && skippedMigration)) {
-      await promptForKeyringMigration();
-
+    if (isLoadingKeyringStatus) {
       return false;
     }
 

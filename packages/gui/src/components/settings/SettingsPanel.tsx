@@ -6,7 +6,6 @@ import {
   AlertDialog,
   Suspender,
   useOpenDialog,
-  useSkipMigration,
   SettingsApp,
   SettingsLabel,
   Flex,
@@ -27,7 +26,6 @@ import SettingsStartup from './SettingsStartup';
 
 export default function SettingsPanel() {
   const openDialog = useOpenDialog();
-  const [, setSkipMigration] = useSkipMigration();
   const { data: keyringStatus, isLoading } = useGetKeyringStatusQuery();
   const [changePassphraseOpen, setChangePassphraseOpen] = React.useState(false);
   const [removePassphraseOpen, setRemovePassphraseOpen] = React.useState(false);
@@ -130,13 +128,6 @@ export default function SettingsPanel() {
   }
 
   function ActionButtons() {
-    if (needsMigration) {
-      return (
-        <Button onClick={() => setSkipMigration(false)} variant="outlined">
-          <Trans>Migrate Keyring</Trans>
-        </Button>
-      );
-    }
     if (userPassphraseIsSet) {
       return (
         <Button
