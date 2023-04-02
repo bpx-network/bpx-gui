@@ -110,7 +110,7 @@ export default function AppStatusHeader() {
       <ButtonGroup variant="outlined" color="secondary" size="small">
         {mode === Mode.FARMING && (
           <>
-            <Button onClick={handleClickFN} aria-describedby="fullnode-connections" sx={ButtonStyle}>
+            <Button onClick={handleClickFN} aria-describedby="beacon-connections" sx={ButtonStyle}>
               <Flex gap={1} alignItems="center">
                 <BeaconStateIndicator />
                 <Trans>Beacon Client</Trans>
