@@ -5,7 +5,6 @@ import {
   useDeleteAllKeysMutation,
   useLogInAndSkipImportMutation,
   useGetKeysQuery,
-  useLogout,
   type Serializable,
 } from '@bpx-network/api-react';
 import data from '@emoji-mart/data';
@@ -54,7 +53,6 @@ export default function SelectKey() {
   const [skippedMigration] = useSkipMigration();
   const [promptForKeyringMigration] = useKeyringMigrationPrompt();
   const showError = useShowError();
-  const cleanCache = useLogout();
   const [sortedWallets, setSortedWallets] = usePrefs('sortedWallets', []);
 
   const keyItemsSortable = React.useRef<any>(null);
@@ -119,8 +117,6 @@ export default function SelectKey() {
       await logIn({
         fingerprint,
       }).unwrap();
-
-      await cleanCache();
 
       navigate('/dashboard/wallets');
     } catch (err) {
