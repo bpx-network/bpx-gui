@@ -22,7 +22,6 @@ import WebSocket from 'ws';
 
 import { i18n, defaultLocale, locales } from '../../config/locales';
 import LRUsProvider from '../lrus/LRUsProvider';
-import NotificationsProvider from '../notification/NotificationsProvider';
 import AppState from './AppState';
 
 async function waitForConfig() {
@@ -82,10 +81,8 @@ export default function App(props: AppProps) {
               <ModalDialogsProvider>
                 {isReady ? (
                   <Suspense fallback={<LayoutLoading />}>
-                      <NotificationsProvider>
-                        <AppState>{outlet ? <Outlet /> : children}</AppState>
-                        <ModalDialogs />
-                      </NotificationsProvider>
+                    <AppState>{outlet ? <Outlet /> : children}</AppState>
+                    <ModalDialogs />
                   </Suspense>
                 ) : (
                   <LayoutLoading>

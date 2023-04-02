@@ -220,19 +220,6 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
                     </Flex>
                   </Flex>
                   <Box>
-                    {/*
-                        <DropdownIconButton
-                          icon={<Notifications />}
-                          title={t`Notifications`}
-                        >
-                          {({ onClose }) => (
-                            <MenuItem onClick={onClose}>
-                              CAT Wallet TEST is now available
-                            </MenuItem>
-                          )}
-                        </DropdownIconButton>
-                        &nbsp;
-                        */}
                     <Tooltip title={<Trans>Log Out</Trans>}>
                       <IconButton onClick={handleLogout} data-testid="LayoutDashboard-log-out">
                         <ExitIconStyled />

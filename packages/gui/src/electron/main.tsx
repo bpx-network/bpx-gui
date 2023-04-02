@@ -9,7 +9,6 @@ import {
   IncomingMessage,
   Menu,
   nativeImage,
-  Notification,
   protocol,
 } from 'electron';
 import fs from 'fs';
@@ -184,19 +183,6 @@ if (!handleSquirrelEvent()) {
         promptOnQuit = false;
         app.quit();
       });
-
-      ipcMain.handle(
-        'showNotification',
-        async (
-          _event,
-          options: {
-            title: string;
-            body: string;
-          }
-        ) => {
-          new Notification(options).show();
-        }
-      );
 
       ipcMain.handle('fetchTextResponse', async (_event, requestOptions, requestHeaders, requestData) => {
         const request = net.request(requestOptions as any);
