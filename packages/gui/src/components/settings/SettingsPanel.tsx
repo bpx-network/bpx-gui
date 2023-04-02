@@ -157,23 +157,6 @@ export default function SettingsPanel() {
 
   return (
     <SettingsApp>
-      <Flex flexDirection="column" gap={1}>
-        <SettingsLabel>
-          <Flex gap={1} alignItems="center">
-            <Trans>Derivation Index</Trans>
-            <TooltipIcon>
-              <Trans>
-                The derivation index sets the range of wallet addresses that the wallet scans the blockchain for. This
-                number is generally higher if you have a lot of transactions or canceled offers for XCH, CATs, or NFTs.
-                If you believe your balance is incorrect because it’s missing coins, then increasing the derivation
-                index could help the wallet include the missing coins in the balance total.
-              </Trans>
-            </TooltipIcon>
-          </Flex>
-        </SettingsLabel>
-
-        <SettingsDerivationIndex />
-      </Flex>
       <SettingsStartup />
       <Flex flexDirection="column" gap={1}>
         <SettingsLabel>
