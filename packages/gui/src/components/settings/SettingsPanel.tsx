@@ -21,8 +21,6 @@ import React from 'react';
 import ChangePassphrasePrompt from './ChangePassphrasePrompt';
 import RemovePassphrasePrompt from './RemovePassphrasePrompt';
 import SetPassphrasePrompt from './SetPassphrasePrompt';
-import SettingsDerivationIndex from './SettingsDerivationIndex';
-import SettingsStartup from './SettingsStartup';
 
 export default function SettingsPanel() {
   const openDialog = useOpenDialog();
@@ -35,7 +33,7 @@ export default function SettingsPanel() {
     return <Suspender />;
   }
 
-  const { userPassphraseIsSet, needsMigration = false } = keyringStatus;
+  const { userPassphraseIsSet } = keyringStatus;
 
   async function changePassphraseSucceeded() {
     closeChangePassphrase();
@@ -85,20 +83,14 @@ export default function SettingsPanel() {
       fontSize: 12,
     };
 
-    if (needsMigration) {
-      state = State.WARNING;
-      statusMessage = <Trans>Migration required to support passphrase protection</Trans>;
-      tooltipTitle = <Trans>Passphrase support requires migrating your keys to a new keyring</Trans>;
-    } else {
-      tooltipTitle = <Trans>Secure your keychain using a strong passphrase</Trans>;
-
-      if (userPassphraseIsSet) {
-        statusMessage = <Trans>Passphrase protection is enabled</Trans>;
-      } else {
-        state = State.WARNING;
-        statusMessage = <Trans>Passphrase protection is disabled</Trans>;
-      }
-    }
+	tooltipTitle = <Trans>Secure your keychain using a strong passphrase</Trans>;
+	
+	if (userPassphraseIsSet) {
+	  statusMessage = <Trans>Passphrase protection is enabled</Trans>;
+	} else {
+	  state = State.WARNING;
+	  statusMessage = <Trans>Passphrase protection is disabled</Trans>;
+	}
 
     return (
       <StateTypography variant="body2" state={state} color="textSecondary">
@@ -112,7 +104,7 @@ export default function SettingsPanel() {
   }
 
   function DisplayChangePassphrase() {
-    if (needsMigration === false && userPassphraseIsSet) {
+    if (userPassphraseIsSet) {
       return (
         <>
           <Button onClick={() => setChangePassphraseOpen(true)} variant="outlined" data-testid="changePassphraseAtt">
@@ -148,7 +140,6 @@ export default function SettingsPanel() {
 
   return (
     <SettingsApp>
-      <SettingsStartup />
       <Flex flexDirection="column" gap={1}>
         <SettingsLabel>
           <Trans>Passphrase</Trans>

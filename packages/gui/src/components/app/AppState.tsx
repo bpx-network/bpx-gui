@@ -23,7 +23,6 @@ import isElectron from 'is-electron';
 import React, { useState, useEffect, ReactNode, useMemo } from 'react';
 
 import ModeServices from '../../constants/ModeServices';
-import AppAutoLogin from './AppAutoLogin';
 import AppPassPrompt from './AppPassPrompt';
 import AppSelectMode from './AppSelectMode';
 import AppVersionWarning from './AppVersionWarning';
@@ -241,5 +240,5 @@ export default function AppState(props: Props) {
     );
   }
 
-  return <AppAutoLogin>{children}</AppAutoLogin>;
+  return <>{children}</>;
 }

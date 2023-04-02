@@ -10,7 +10,6 @@ async function migrateGUIPrefsFromLocalStorage() {
   const prefs: Record<string, any> = {};
   const targets: string[] = [
     'darkMode',
-    'enableAutoLogin',
     'finaldir',
     'fingerprintSettings',
     'isHidden',
