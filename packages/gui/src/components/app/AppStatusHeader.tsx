@@ -127,7 +127,6 @@ export default function AppStatusHeader() {
             <Connections />
           </Box>
         </StyledPopover>
-        </Flex>
       </ButtonGroup>
     </Flex>
   );
