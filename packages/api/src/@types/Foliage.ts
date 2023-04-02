@@ -1,7 +1,7 @@
 type Foliage = {
   foliage_block_data_signature: string;
   foliage_block_data: {
-	timestamp string;
+	timestamp: string;
     extension_data: string;
     unfinished_reward_block_hash: string;
   };
