@@ -22,9 +22,7 @@ import { Typography, Collapse } from '@mui/material';
 import isElectron from 'is-electron';
 import React, { useState, useEffect, ReactNode, useMemo } from 'react';
 
-import ModeServices, { SimulatorServices } from '../../constants/ModeServices';
-import useEnableDataLayerService from '../../hooks/useEnableDataLayerService';
-import useEnableFilePropagationServer from '../../hooks/useEnableFilePropagationServer';
+import ModeServices from '../../constants/ModeServices';
 import useNFTMetadataLRU from '../../hooks/useNFTMetadataLRU';
 import NFTContextualActionsEventEmitter from '../nfts/NFTContextualActionsEventEmitter';
 import AppAutoLogin from './AppAutoLogin';
@@ -38,9 +36,6 @@ const ALL_SERVICES = [
   ServiceName.BEACON,
   ServiceName.FARMER,
   ServiceName.HARVESTER,
-  ServiceName.SIMULATOR,
-  ServiceName.DATALAYER,
-  ServiceName.DATALAYER_SERVER,
 ];
 
 type Props = {
@@ -54,38 +49,19 @@ export default function AppState(props: Props) {
   const { data: clientState = {}, isLoading: isClientStateLoading } = useGetStateQuery();
   const { data: keyringStatus, isLoading: isLoadingKeyringStatus } = useGetKeyringStatusQuery();
   const [mode] = useMode();
-  const [enableDataLayerService] = useEnableDataLayerService();
-  const [enableFilePropagationServer] = useEnableFilePropagationServer();
-  // NOTE: We only start the DL at launch time for now
-  const [isDataLayerEnabled] = useState(enableDataLayerService);
-  const [isFilePropagationServerEnabled] = useState(enableFilePropagationServer);
   const [versionDialog, setVersionDialog] = useState<boolean>(true);
   const [updatedWindowTitle, setUpdatedWindowTitle] = useState<boolean>(false);
   const { data: backendVersion } = useGetVersionQuery();
   const { version } = useAppVersion();
-  const lru = useNFTMetadataLRU();
   const isTestnet = useIsMainnet() ? false : true;
 
   const runServices = useMemo<ServiceName[] | undefined>(() => {
     if (mode) {
-      const services: ServiceName[] = isSimulator ? SimulatorServices : ModeServices[mode];
-
-      if (isDataLayerEnabled) {
-        if (!services.includes(ServiceName.DATALAYER)) {
-          services.push(ServiceName.DATALAYER);
-        }
-
-        // File propagation server is dependent on the datalayer
-        if (isFilePropagationServerEnabled && !services.includes(ServiceName.DATALAYER_SERVER)) {
-          services.push(ServiceName.DATALAYER_SERVER);
-        }
-      }
-
-      return services;
+      return ModeServices[mode];
     }
 
     return undefined;
-  }, [mode, isSimulator, isDataLayerEnabled, isFilePropagationServerEnabled]);
+  }, [mode]);
 
   const isKeyringReady = !!keyringStatus && !keyringStatus.isKeyringLocked;
 
