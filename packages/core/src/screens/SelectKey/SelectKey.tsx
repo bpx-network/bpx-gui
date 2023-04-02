@@ -8,7 +8,6 @@ import {
   useLogout,
   type Serializable,
 } from '@bpx-network/api-react';
-import { BpxBlack, Coins } from '@bpx-network/icons';
 import data from '@emoji-mart/data';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon } from '@mui/icons-material';
@@ -232,7 +231,6 @@ export default function SelectKey() {
         sx={{ borderBottom: '1px solid #CCDDE1', paddingBottom: '30px' }}
       >
         <Flex alignItems="left">
-          <BpxBlack color="secondary" />
           <Typography variant="h4" component="h1" sx={{ position: 'relative', left: '15px', top: '5px' }}>
             <Trans>Wallet Keys</Trans>
           </Typography>

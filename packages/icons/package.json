@@ -1,8 +1,8 @@
 {
   "name": "@bpx-network/icons",
-  "author": "Chia Network <hello@chia.net> (https://chia.net/)",
-  "description": "Chia Icons Library",
-  "productName": "Chia Blockchain",
+  "author": "BPX Network <hello@bpxchain.cc> (https://bpxchain.cc/)",
+  "description": "BPX Icons Library",
+  "productName": "BPX Blockchain",
   "version": "1.0.0",
   "engines": {
     "node": ">=16.15.0"
