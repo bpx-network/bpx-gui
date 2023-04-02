@@ -2,7 +2,7 @@ import { Button, Flex, Logo, Card, useMode, Mode } from '@bpx-network/core';
 import { Farming as FarmingIcon } from '@bpx-network/icons';
 import { Trans } from '@lingui/macro';
 import {
-  AccountBalanceWallet as AccountBalanceWalletIcon,
+  Beacon as BeaconIcon,
   Settings as SettingsIcon,
   Check as CheckIcon,
 } from '@mui/icons-material';
@@ -32,11 +32,11 @@ const StyledContainer = styled(Container)`
   padding-bottom: 1rem;
 `;
 
-const StyledAccountBalanceWalletIconBase = styled(AccountBalanceWalletIcon)`
+const StyledBeaconIconBase = styled(BeaconIcon)`
   color: ${({ theme }) => (theme.palette.mode === 'dark' ? 'white' : 'rgba(0, 0, 0, 0.54)')};
 `;
 
-const StyledAccountBalanceWalletIcon = styled(StyledAccountBalanceWalletIconBase)`
+const StyledBeaconIcon = styled(StyledBeaconIconBase)`
   font-size: 3.4rem;
 `;
 
@@ -58,16 +58,16 @@ export default function AppSelectMode() {
 
         <Grid container spacing={5} alignItems="stretch">
           <Grid xs={12} sm={6} item>
-            <Card onSelect={() => handleModeChange(Mode.WALLET)} highlight={false} fullHeight>
+            <Card onSelect={() => handleModeChange(Mode.NODE)} highlight={false} fullHeight>
               <StyledCardContent>
                 <Flex flexDirection="column" gap={4} flexGrow={1} alignItems="center">
                   <Flex flexDirection="column" gap={1} alignItems="center">
                     <Box minHeight="3.5rem">
-                      <StyledAccountBalanceWalletIcon />
+                      <StyledBeaconIcon />
                     </Box>
 
                     <Typography variant="h5" align="center">
-                      <Trans>Wallet Mode</Trans>
+                      <Trans>Node</Trans>
                     </Typography>
                   </Flex>
 
@@ -93,7 +93,7 @@ export default function AppSelectMode() {
                   </Flex>
 
                   <Button variant="outlined" fullWidth>
-                    <Trans>Choose Wallet Mode</Trans>
+                    <Trans>Choose Node Mode</Trans>
                   </Button>
                 </Flex>
               </StyledCardContent>
@@ -117,9 +117,9 @@ export default function AppSelectMode() {
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Wallet Mode</Trans>
+                        <Trans>Node</Trans>
                       </Typography>
-                      <StyledAccountBalanceWalletIconBase fontSize="small" />
+                      <StyledBeaconIconBase fontSize="small" />
                     </Flex>
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />

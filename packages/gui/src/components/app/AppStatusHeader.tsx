@@ -1,5 +1,4 @@
 import { Flex, useMode, Mode, useDarkMode } from '@bpx-network/core';
-import { WalletConnections, WalletStatus, WalletReceiveAddressField } from '@bpx-network/wallets';
 import { Trans } from '@lingui/macro';
 import { Box, ButtonGroup, Button, Popover, PopoverProps } from '@mui/material';
 import { useTheme, styled, alpha } from '@mui/material/styles';
@@ -7,8 +6,6 @@ import React, { useState } from 'react';
 
 import Connections from '../beacon/BeaconConnections';
 import BeaconStateIndicator from '../beacon/BeaconStateIndicator';
-import NotificationsDropdown from '../notification/NotificationsDropdown';
-import WalletConnectDropdown from '../walletConnect/WalletConnectDropdown';
 import AppTestnetIndicator from './AppTestnetIndicator';
 
 const StyledPopover = styled((props: PopoverProps) => <Popover {...props} />)(({ theme }) => ({
@@ -106,45 +103,17 @@ export default function AppStatusHeader() {
   return (
     <Flex gap={2}>
       <AppTestnetIndicator />
-      <WalletReceiveAddressField variant="outlined" size="small" fullWidth isDarkMode={isDarkMode} />
       <ButtonGroup variant="outlined" color="secondary" size="small">
-        {mode === Mode.FARMING && (
-          <>
-            <Button onClick={handleClickFN} aria-describedby="beacon-connections" sx={ButtonStyle}>
-              <Flex gap={1} alignItems="center">
-                <BeaconStateIndicator />
-                <Trans>Beacon Client</Trans>
-              </Flex>
-            </Button>
-            <StyledPopover
-              open={!!anchorElFN}
-              anchorEl={anchorElFN}
-              onClose={handleCloseFN}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right',
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-            >
-              <Box sx={{ minWidth: 800 }}>
-                <Connections />
-              </Box>
-            </StyledPopover>
-          </>
-        )}
-        <Button onClick={handleClickW} sx={ButtonStyle}>
+        <Button onClick={handleClickFN} aria-describedby="beacon-connections" sx={ButtonStyle}>
           <Flex gap={1} alignItems="center">
-            <WalletStatus indicator hideTitle />
-            <Trans>Wallet</Trans>
+            <BeaconStateIndicator />
+            <Trans>Beacon Client</Trans>
           </Flex>
         </Button>
         <StyledPopover
-          open={!!anchorElW}
-          anchorEl={anchorElW}
-          onClose={handleCloseW}
+          open={!!anchorElFN}
+          anchorEl={anchorElFN}
+          onClose={handleCloseFN}
           anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'right',
@@ -155,19 +124,9 @@ export default function AppStatusHeader() {
           }}
         >
           <Box sx={{ minWidth: 800 }}>
-            <WalletConnections walletId={1} />
+            <Connections />
           </Box>
         </StyledPopover>
-        <Flex
-          sx={{
-            marginLeft: '15px',
-            '> div + div': {
-              marginLeft: '15px',
-            },
-          }}
-        >
-          <WalletConnectDropdown />
-          <NotificationsDropdown />
         </Flex>
       </ButtonGroup>
     </Flex>

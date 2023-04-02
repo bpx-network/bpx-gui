@@ -3,11 +3,11 @@ import { Typography } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
 
-import walletPackageJson from '../../../package.json';
+import guiPackageJson from '../../../package.json';
 import useAppVersion from '../../hooks/useAppVersion';
 import Flex from '../Flex';
 
-const { productName } = walletPackageJson;
+const { productName } = guiPackageJson;
 
 export default function LayoutFooter() {
   const { version } = useAppVersion();

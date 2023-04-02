@@ -7,7 +7,7 @@ export const ModeContext = createContext<{
   mode?: Mode;
   setMode: (mode: Mode) => void;
 }>({
-  mode: Mode.WALLET,
+  mode: Mode.NODE,
   setMode: () => {
     throw new Error('ModeProvider not found. Please wrap your app in a <ModeProvider>.');
   },

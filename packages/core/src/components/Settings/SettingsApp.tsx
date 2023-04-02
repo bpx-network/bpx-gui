@@ -5,7 +5,7 @@ import { Trans } from '@lingui/macro';
 import {
   WbSunny as WbSunnyIcon,
   NightsStay as NightsStayIcon,
-  AccountBalanceWallet as AccountBalanceWalletIcon,
+  Beacon as BeaconIcon,
 } from '@mui/icons-material';
 import { ButtonGroup } from '@mui/material';
 import React, { type ReactNode } from 'react';
@@ -35,8 +35,8 @@ export default function SettingsApp(props: SettingsAppProps) {
     setMode(Mode.FARMING);
   }
 
-  function handleSetWalletMode() {
-    setMode(Mode.WALLET);
+  function handleSetNodeMode() {
+    setMode(Mode.NODE);
   }
 
   return (
@@ -55,12 +55,12 @@ export default function SettingsApp(props: SettingsAppProps) {
             <Trans>Farming</Trans>
           </Button>
           <Button
-            startIcon={<AccountBalanceWalletIcon />}
-            selected={mode === Mode.WALLET}
-            onClick={handleSetWalletMode}
-            data-testid="SettingsApp-mode-wallet"
+            startIcon={<BeaconIcon />}
+            selected={mode === Mode.NODE}
+            onClick={handleSetNodeMode}
+            data-testid="SettingsApp-mode-node"
           >
-            <Trans>Wallet</Trans>
+            <Trans>Node</Trans>
           </Button>
         </ButtonGroup>
       </Flex>

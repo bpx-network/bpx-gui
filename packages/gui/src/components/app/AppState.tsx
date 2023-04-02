@@ -32,7 +32,6 @@ import AppSelectMode from './AppSelectMode';
 import AppVersionWarning from './AppVersionWarning';
 
 const ALL_SERVICES = [
-  ServiceName.WALLET,
   ServiceName.BEACON,
   ServiceName.FARMER,
   ServiceName.HARVESTER,
@@ -86,9 +85,9 @@ export default function AppState(props: Props) {
 
   useEffect(() => {
     const allRunningServices = servicesState.running.map((serviceState) => serviceState.service);
-    const nonWalletServiceRunning = allRunningServices.some((service) => service !== ServiceName.WALLET);
+    const nonNodeServiceRunning = allRunningServices.some((service) => service !== ServiceName.BEACON);
 
-    if (mode === Mode.WALLET && !nonWalletServiceRunning) {
+    if (mode === Mode.NODE && !nonNodeServiceRunning) {
       window.ipcRenderer.invoke('setPromptOnQuit', false);
     } else {
       window.ipcRenderer.invoke('setPromptOnQuit', true);
