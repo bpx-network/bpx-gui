@@ -22,10 +22,6 @@ export default function AppRouter() {
           <Route element={<LayoutHero settings={<SettingsPanel />} outlet />}>
             <Route index element={<SelectKey />} />
           </Route>
-          <Route element={<LayoutHero settings={<SettingsPanel />} back outlet />}>
-            <Route path="wallet/add" element={<WalletAdd />} />
-            <Route path="wallet/import" element={<WalletImport />} />
-          </Route>
           {mode === Mode.NODE ? (
             <Route
               element={
