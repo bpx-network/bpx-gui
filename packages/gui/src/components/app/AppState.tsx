@@ -15,7 +15,6 @@ import {
   Mode,
   useMode,
   useAppVersion,
-  useIsMainnet,
 } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Typography, Collapse } from '@mui/material';
@@ -26,6 +25,7 @@ import ModeServices from '../../constants/ModeServices';
 import AppPassPrompt from './AppPassPrompt';
 import AppSelectMode from './AppSelectMode';
 import AppVersionWarning from './AppVersionWarning';
+import useIsMainnet from '../../hooks/useIsMainnet';
 
 const ALL_SERVICES = [
   ServiceName.BEACON,

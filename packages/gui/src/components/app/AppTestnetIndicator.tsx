@@ -1,8 +1,10 @@
-import { AlertDialog, Flex, Tooltip, useIsMainnet, useOpenDialog } from '@bpx-network/core';
+import { AlertDialog, Flex, Tooltip, useOpenDialog } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Button, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React, { useState } from 'react';
+
+import useIsMainnet from '../../hooks/useIsMainnet';
 
 export default function AppTestnetIndicator() {
   const isTestnet = useIsMainnet() ? false : true;
