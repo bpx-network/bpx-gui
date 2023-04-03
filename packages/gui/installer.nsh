@@ -20,7 +20,7 @@ Page custom finish finishLeave
 ; Add a page offering to uninstall an older build installed into the bpx-blockchain dir
 Function detectOldBpxVersion
   ; Check the registry for old bpx-blockchain installer keys
-  ReadRegStr BpxSquirrelInstallLocation HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "InstallLocation"
+  ReadRegStr $BpxSquirrelInstallLocation HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "InstallLocation"
   ReadRegStr $BpxSquirrelInstallVersion HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "DisplayVersion"
   ReadRegStr $BpxSquirrelUninstaller HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "QuietUninstallString"
 
