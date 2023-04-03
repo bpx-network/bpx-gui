@@ -1,5 +1,4 @@
-import { useGetLoggedInFingerprintQuery, useGetKeyQuery, useFingerprintSettings } from '@bpx-network/api-react';
-import { Exit as ExitIcon } from '@bpx-network/icons';
+import { useGetKeyQuery, useFingerprintSettings } from '@bpx-network/api-react';
 import { t, Trans } from '@lingui/macro';
 import { ExitToApp as ExitToAppIcon, Edit as EditIcon } from '@mui/icons-material';
 import { Box, AppBar, Toolbar, Drawer, Container, IconButton, Typography, CircularProgress } from '@mui/material';
@@ -54,13 +53,6 @@ const StyledInlineTypography = styled(Typography)`
   display: inline-block;
 `;
 
-const ExitIconStyled = styled(ExitIcon)`
-  fill: none !important;
-  position: relative;
-  top: 2px;
-  left: 4px;
-`;
-
 export type LayoutDashboardProps = {
   children?: ReactNode;
   sidebar?: ReactNode;
@@ -75,7 +67,6 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
   const navigate = useNavigate();
   const [editWalletName, setEditWalletName] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
-  const { data: fingerprint, isLoading: isLoadingFingerprint } = useGetLoggedInFingerprintQuery();
   const { data: keyData, isLoading: isLoadingKeyData } = useGetKeyQuery(
     {
       fingerprint,
@@ -96,14 +87,7 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
     color: 'green',
   });
 
-  const isLoading = isLoadingFingerprint || isLoadingKeyData;
-
-  async function handleLogout() {
-    localStorage.setItem('visibilityFilters', JSON.stringify(['visible']));
-    localStorage.setItem('typeFilter', JSON.stringify([]));
-
-    navigate('/');
-  }
+  const isLoading = isLoadingKeyData;
 
   function handleEditWalletName() {
     setEditWalletName(true);
@@ -219,13 +203,6 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
                       {actions}
                     </Flex>
                   </Flex>
-                  <Box>
-                    <Tooltip title={<Trans>Log Out</Trans>}>
-                      <IconButton onClick={handleLogout} data-testid="LayoutDashboard-log-out">
-                        <ExitIconStyled />
-                      </IconButton>
-                    </Tooltip>
-                  </Box>
                 </Flex>
               </StyledToolbar>
             </StyledAppBar>
@@ -238,11 +215,6 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
                 <Flex alignItems="center">
                   <Logo width="100px" />
                   <Flex flexGrow={1} />
-                  <Tooltip title={<Trans>Logout</Trans>}>
-                    <IconButton color="inherit" onClick={handleLogout} title={t`Log Out`}>
-                      <ExitToAppIcon />
-                    </IconButton>
-                  </Tooltip>
                   <Settings>{settings}</Settings>
                 </Flex>
               </Container>
