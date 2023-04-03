@@ -21,8 +21,8 @@ type Props = {
 
 export default function FarmManageFarmingRewards(props: Props) {
   const { onClose, open } = props;
-  const [setRewardTargets] = useSetRewardTargetsMutation();
-  const { data, isLoading } = useGetRewardTargetsQuery();
+  const [setRewardTargets] = null; //useSetRewardTargetsMutation();
+  const { data, isLoading } = props; //useGetRewardTargetsQuery();
 
   const [error, setError] = useState<Error | null>(null);
   const methods = useForm<FormData>({
