@@ -70,6 +70,7 @@ export const {
   useCloseBeaconConnectionMutation,
   useGetBlockQuery,
   useGetBlockRecordQuery,
+  useGetNetworkInfoQuery,
 } = beacon;
 
 // harvester hooks

@@ -145,6 +145,12 @@ export const beaconApi = apiWithTag.injectEndpoints({
       }),
       transformResponse: (response: any) => response?.blockRecord,
     }),
+    getNetworkInfo: build.query<any, undefined>({
+      query: () => ({
+        command: 'getNetworkInfo',
+        service: Beacon,
+      }),
+    }),
   }),
 });
 
@@ -158,4 +164,5 @@ export const {
   useCloseBeaconConnectionMutation,
   useGetBlockQuery,
   useGetBlockRecordQuery,
+  useGetNetworkInfoQuery,
 } = beaconApi;
