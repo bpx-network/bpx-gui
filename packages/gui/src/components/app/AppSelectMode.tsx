@@ -1,8 +1,10 @@
 import { Button, Flex, Logo, Card, useMode, Mode } from '@bpx-network/core';
-import { Farming as FarmingIcon } from '@bpx-network/icons';
+import {
+  Farming as FarmingIcon,
+  Beacon as BeaconIcon,
+} from '@bpx-network/icons';
 import { Trans } from '@lingui/macro';
 import {
-  Beacon as BeaconIcon,
   Settings as SettingsIcon,
   Check as CheckIcon,
 } from '@mui/icons-material';
@@ -32,14 +34,6 @@ const StyledContainer = styled(Container)`
   padding-bottom: 1rem;
 `;
 
-const StyledBeaconIconBase = styled(BeaconIcon)`
-  color: ${({ theme }) => (theme.palette.mode === 'dark' ? 'white' : 'rgba(0, 0, 0, 0.54)')};
-`;
-
-const StyledBeaconIcon = styled(StyledBeaconIconBase)`
-  font-size: 3.4rem;
-`;
-
 export default function AppSelectMode() {
   const [, setMode] = useMode();
 
@@ -63,7 +57,7 @@ export default function AppSelectMode() {
                 <Flex flexDirection="column" gap={4} flexGrow={1} alignItems="center">
                   <Flex flexDirection="column" gap={1} alignItems="center">
                     <Box minHeight="3.5rem">
-                      <StyledBeaconIcon />
+                      <BeaconIcon fontSize="extraLarge" />
                     </Box>
 
                     <Typography variant="h5" align="center">
@@ -119,7 +113,7 @@ export default function AppSelectMode() {
                       <Typography variant="body2">
                         <Trans>Node</Trans>
                       </Typography>
-                      <StyledBeaconIconBase fontSize="small" />
+                      <BeaconIcon fontSize="small" />
                     </Flex>
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
