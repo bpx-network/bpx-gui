@@ -52,6 +52,10 @@ export default class Beacon extends Service {
       headerHash,
     });
   }
+  
+  async getNetworkInfo() {
+    return this.command('get_network_info');
+  }
 
   onBlockchainState(callback: (data: any, message: Message) => void, processData?: (data: any) => any) {
     return this.onCommand('get_blockchain_state', callback, processData);
