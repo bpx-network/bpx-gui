@@ -29,7 +29,6 @@ export default function AppRouter() {
               />
             }
           >
-            <Route index element={<Navigate to="/dashboard" />} />
             <Route path="dashboard" element={<Beacon />} />
             <Route path="dashboard/block/:headerHash" element={<Block />} />
             <Route path="dashboard/settings/*" element={<Settings />} />
