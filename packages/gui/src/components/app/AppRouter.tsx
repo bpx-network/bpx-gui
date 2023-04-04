@@ -35,6 +35,8 @@ export default function AppRouter() {
             <Route path="dashboard/settings/*" element={<Settings />} />
             {mode === Mode.FARMING ? (
               <Route path="dashboard/plot/*" element={<Plot />} />
+            ) : ()}
+            {mode === Mode.FARMING ? (
               <Route path="dashboard/farm/*" element={<Farm />} />
             ) : ()}
           </Route>
