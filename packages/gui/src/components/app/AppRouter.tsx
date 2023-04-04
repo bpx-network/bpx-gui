@@ -19,26 +19,39 @@ export default function AppRouter() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<AppProviders outlet />}>
-          <Route
-            element={
-              <LayoutDashboard
-                settings={<SettingsPanel />}
-                sidebar={<DashboardSideBar />}
-                actions={<AppStatusHeader />}
-                outlet
-              />
-            }
-          >
-            <Route path="dashboard" element={<Beacon />} />
-            <Route path="dashboard/block/:headerHash" element={<Block />} />
-            <Route path="dashboard/settings/*" element={<Settings />} />
-            {mode === Mode.FARMING && (
+          {mode === Mode.NODE ? (
+            <Route
+              element={
+                <LayoutDashboard
+                  settings={<SettingsPanel />}
+                  sidebar={<DashboardSideBar simple />}
+                  actions={<AppStatusHeader />}
+                  outlet
+                />
+              }
+            >
+              <Route index path="dashboard" element={<Beacon />} />
+              <Route path="dashboard/block/:headerHash" element={<Block />} />
+              <Route path="dashboard/settings/*" element={<Settings />} />
+            </Route>
+          ) : (
+            <Route
+              element={
+                <LayoutDashboard
+                  settings={<SettingsPanel />}
+                  sidebar={<DashboardSideBar />}
+                  actions={<AppStatusHeader />}
+                  outlet
+                />
+              }
+            >
+              <Route index path="dashboard" element={<Beacon />} />
+              <Route path="dashboard/block/:headerHash" element={<Block />} />
+              <Route path="dashboard/settings/*" element={<Settings />} />
               <Route path="dashboard/plot/*" element={<Plot />} />
-            )}
-            {mode === Mode.FARMING && (
               <Route path="dashboard/farm/*" element={<Farm />} />
-            )}
-          </Route>
+            </Route>
+          )}
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
