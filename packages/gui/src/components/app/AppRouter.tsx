@@ -1,4 +1,4 @@
-import { LayoutDashboard, Mode, useMode } from '@bpx-network/core';
+import { LayoutHero, LayoutDashboard, Mode, useMode } from '@bpx-network/core';
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -19,6 +19,9 @@ export default function AppRouter() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<AppProviders outlet />}>
+          <Route element={<LayoutHero settings={<SettingsPanel />} outlet />}>
+            <Route index element={<Beacon />} />
+          </Route>
           {mode === Mode.NODE ? (
             <Route
               element={
