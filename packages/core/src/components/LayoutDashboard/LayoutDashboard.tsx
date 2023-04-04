@@ -1,6 +1,6 @@
 import { t, Trans } from '@lingui/macro';
 import { ExitToApp as ExitToAppIcon, Edit as EditIcon } from '@mui/icons-material';
-import { Box, AppBar, Toolbar, Drawer, Container, IconButton, Typography, CircularProgress } from '@mui/material';
+import { Box, Toolbar, Drawer, Container, IconButton, Typography, CircularProgress } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React, { type ReactNode, useState, Suspense, useCallback } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
@@ -10,20 +10,12 @@ import Flex from '../Flex';
 import Loading from '../Loading';
 import Logo from '../Logo';
 import Settings from '../Settings';
-import ToolbarSpacing from '../ToolbarSpacing';
 import Tooltip from '../Tooltip';
 // import LayoutFooter from '../LayoutMain/LayoutFooter';
 
 const StyledRoot = styled(Flex)`
   height: 100%;
   // overflow: hidden;
-`;
-
-const StyledAppBar = styled(({ drawer, ...rest }) => <AppBar {...rest} />)`
-  border-bottom: 1px solid ${({ theme }) => theme.palette.divider};
-  width: ${({ theme, drawer }) => (drawer ? `calc(100% - ${theme.drawer.width})` : '100%')};
-  margin-left: ${({ theme, drawer }) => (drawer ? theme.drawer.width : 0)};
-  z-index: ${({ theme }) => theme.zIndex.drawer + 1};};
 `;
 
 const StyledDrawer = styled(Drawer)`
@@ -74,7 +66,6 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
         )}
 
         <StyledBody flexDirection="column" flexGrow={1}>
-          <ToolbarSpacing />
           <Flex flexDirection="column" gap={2} flexGrow={1} overflow="auto">
             <Suspense fallback={<Loading center />}>{outlet ? <Outlet /> : children}</Suspense>
           </Flex>
