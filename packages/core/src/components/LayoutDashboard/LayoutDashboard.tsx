@@ -1,4 +1,3 @@
-import { useGetKeyQuery, useFingerprintSettings } from '@bpx-network/api-react';
 import { t, Trans } from '@lingui/macro';
 import { ExitToApp as ExitToAppIcon, Edit as EditIcon } from '@mui/icons-material';
 import { Box, AppBar, Toolbar, Drawer, Container, IconButton, Typography, CircularProgress } from '@mui/material';
@@ -7,8 +6,6 @@ import React, { type ReactNode, useState, Suspense, useCallback } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
-import EmojiAndColorPicker from '../../screens/SelectKey/EmojiAndColorPicker';
-import SelectKeyRenameForm from '../../screens/SelectKey/SelectKeyRenameForm';
 import Flex from '../Flex';
 import Loading from '../Loading';
 import Logo from '../Logo';
@@ -65,162 +62,24 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
   const { children, sidebar, settings, outlet = false, actions } = props;
 
   const navigate = useNavigate();
-  const [editWalletName, setEditWalletName] = useState(false);
-  const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
-  const { data: keyData, isLoading: isLoadingKeyData } = useGetKeyQuery(
-    {
-      fingerprint,
-    },
-    {
-      skip: !fingerprint,
-    }
-  );
-  type WalletKeyTheme = {
-    emoji: string | null;
-    color: string | null;
-  };
   const theme: any = useTheme();
   const isColor = useCallback((color: string) => Object.keys(theme.palette.colors).includes(color), [theme]);
   const isDark = theme.palette.mode === 'dark';
-  const [walletKeyTheme, setWalletKeyTheme] = useFingerprintSettings<WalletKeyTheme>(fingerprint, 'walletKeyTheme', {
-    emoji: `🌱`,
-    color: 'green',
-  });
-
-  const isLoading = isLoadingKeyData;
-
-  function handleEditWalletName() {
-    setEditWalletName(true);
-  }
-
-  function handleCloseEditWalletName() {
-    setEditWalletName(false);
-  }
 
   return (
     <StyledRoot>
       <Suspense fallback={<Loading center />}>
-        {sidebar ? (
-          <>
-            <StyledAppBar position="fixed" color="transparent" elevation={0} drawer>
-              <StyledToolbar>
-                <Flex width="100%" alignItems="center" justifyContent="space-between" gap={2}>
-                  <Flex
-                    alignItems="center"
-                    flexGrow={1}
-                    justifyContent="space-between"
-                    flexWrap="wrap"
-                    minWidth={0}
-                    gap={1}
-                  >
-                    <Flex flexGrow={1} minWidth={0}>
-                      {isLoading ? (
-                        <Box>
-                          <CircularProgress size={32} color="secondary" />
-                        </Box>
-                      ) : editWalletName ? (
-                        <Box flexGrow={1} maxWidth={{ md: '80%' }}>
-                          <SelectKeyRenameForm keyData={keyData} onClose={handleCloseEditWalletName} />
-                        </Box>
-                      ) : (
-                        <Flex minWidth={0} alignItems="baseline">
-                          <span
-                            style={{ display: showEmojiPicker ? 'inline' : 'none', position: 'fixed', zIndex: 10 }}
-                            onClick={() => {}}
-                          >
-                            {showEmojiPicker && (
-                              <EmojiAndColorPicker
-                                onSelect={(result: any) => {
-                                  if (isColor(result)) {
-                                    setWalletKeyTheme({ ...walletKeyTheme, color: result });
-                                  } else if (result !== '') {
-                                    setWalletKeyTheme({ ...walletKeyTheme, emoji: result });
-                                  }
-                                  setShowEmojiPicker(false);
-                                }}
-                                onClickOutside={() => {
-                                  setShowEmojiPicker(false);
-                                }}
-                                currentColor={walletKeyTheme.color}
-                                currentEmoji={walletKeyTheme.emoji}
-                                themeColors={theme.palette.colors}
-                                isDark={isDark}
-                              />
-                            )}
-                          </span>
-                          <Flex flexDirection="row">
-                            <Box
-                              sx={{
-                                fontSize: '48px',
-                                marginRight: '10px',
-                                width: '64px',
-                                height: '64px',
-                                lineHeight: '67px',
-                                textAlign: 'center',
-                                ':hover': {
-                                  cursor: 'pointer',
-                                  backgroundColor: theme.palette.colors[walletKeyTheme.color].main,
-                                  borderRadius: '5px',
-                                },
-                              }}
-                              onClick={() => setShowEmojiPicker(true)}
-                            >
-                              {walletKeyTheme.emoji}
-                            </Box>
-                            <Flex flexDirection="column">
-                              <Flex flexDirection="row" sx={{ height: '39px' }}>
-                                <Typography variant="h4" display="flex-inline" noWrap>
-                                  {keyData?.label || <Trans>Wallet</Trans>}
-                                </Typography>
-                                <IconButton
-                                  onClick={handleEditWalletName}
-                                  size="small"
-                                  data-testid="LayoutDashboard-edit-walletName"
-                                  sx={{ padding: '8px' }}
-                                >
-                                  <EditIcon color="disabled" />
-                                </IconButton>
-                              </Flex>
-                              {fingerprint && (
-                                <Flex flexDirection="row" alignItems="center" gap={0.5}>
-                                  <StyledInlineTypography
-                                    color="textSecondary"
-                                    component="span"
-                                    data-testid="LayoutDashboard-fingerprint"
-                                    sx={{ fontSize: '16px' }}
-                                  >
-                                    &nbsp;
-                                    {fingerprint}
-                                  </StyledInlineTypography>
-                                </Flex>
-                              )}
-                            </Flex>
-                          </Flex>
-                        </Flex>
-                      )}
-                    </Flex>
-                    <Flex alignItems="center" gap={1}>
-                      {actions}
-                    </Flex>
-                  </Flex>
-                </Flex>
-              </StyledToolbar>
-            </StyledAppBar>
-            <StyledDrawer variant="permanent">{sidebar}</StyledDrawer>
-          </>
-        ) : (
-          <StyledAppBar position="fixed" color="transparent" elevation={0}>
-            <StyledToolbar>
-              <Container maxWidth="lg">
-                <Flex alignItems="center">
-                  <Logo width="100px" />
-                  <Flex flexGrow={1} />
-                  <Settings>{settings}</Settings>
-                </Flex>
-              </Container>
-            </StyledToolbar>
-          </StyledAppBar>
-        )}
+        <StyledAppBar position="fixed" color="transparent" elevation={0}>
+          <StyledToolbar>
+            <Container maxWidth="lg">
+              <Flex alignItems="center">
+                <Logo width="100px" />
+                <Flex flexGrow={1} />
+                <Settings>{settings}</Settings>
+              </Flex>
+            </Container>
+          </StyledToolbar>
+        </StyledAppBar>
 
         <StyledBody flexDirection="column" flexGrow={1}>
           <ToolbarSpacing />
