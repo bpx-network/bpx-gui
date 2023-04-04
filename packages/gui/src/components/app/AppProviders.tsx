@@ -21,7 +21,6 @@ import { Outlet } from 'react-router-dom';
 import WebSocket from 'ws';
 
 import { i18n, defaultLocale, locales } from '../../config/locales';
-import LRUsProvider from '../lrus/LRUsProvider';
 import AppState from './AppState';
 
 async function waitForConfig() {
@@ -77,23 +76,21 @@ export default function App(props: AppProps) {
       <LocaleProvider i18n={i18n} defaultLocale={defaultLocale} locales={locales}>
         <ThemeProvider theme={theme} fonts global>
           <ErrorBoundary>
-            <LRUsProvider>
-              <ModalDialogsProvider>
-                {isReady ? (
-                  <Suspense fallback={<LayoutLoading />}>
-                    <AppState>{outlet ? <Outlet /> : children}</AppState>
-                    <ModalDialogs />
-                  </Suspense>
-                ) : (
-                  <LayoutLoading>
-                    <Typography variant="body1">
-                      <Trans>Loading configuration</Trans>
-                    </Typography>
-                    <ModalDialogs />
-                  </LayoutLoading>
-                )}
-              </ModalDialogsProvider>
-            </LRUsProvider>
+            <ModalDialogsProvider>
+              {isReady ? (
+                <Suspense fallback={<LayoutLoading />}>
+                  <AppState>{outlet ? <Outlet /> : children}</AppState>
+                  <ModalDialogs />
+                </Suspense>
+              ) : (
+                <LayoutLoading>
+                  <Typography variant="body1">
+                    <Trans>Loading configuration</Trans>
+                  </Typography>
+                  <ModalDialogs />
+                </LayoutLoading>
+              )}
+            </ModalDialogsProvider>
           </ErrorBoundary>
         </ThemeProvider>
       </LocaleProvider>

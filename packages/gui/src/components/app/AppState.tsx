@@ -109,7 +109,6 @@ export default function AppState(props: Props) {
       const { ipcRenderer } = window as unknown as { ipcRenderer: IpcRenderer };
 
       ipcRenderer.on('exit-daemon', handleClose);
-      ipcRenderer.on('removed-cache-file', handleRemovedCachedFile);
 
       // Handle files/URLs opened at launch now that the app is ready
       ipcRenderer.invoke('processLaunchTasks');
@@ -125,7 +124,7 @@ export default function AppState(props: Props) {
       };
     }
     return undefined;
-  }, [close, closing, lru, isTestnet, updatedWindowTitle]);
+  }, [close, closing, isTestnet, updatedWindowTitle]);
 
   if (closing) {
     return (

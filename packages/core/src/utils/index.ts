@@ -4,4 +4,3 @@ export { default as getPercentPointsSuccessfull } from './getPercentPointsSucces
 export { default as isWindows } from './isWindows';
 export { default as sleep } from './sleep';
 export { default as useColorModeValue, getColorModeValue } from './useColorModeValue';
-export { default as LRU, lruCreate } from './lru';
