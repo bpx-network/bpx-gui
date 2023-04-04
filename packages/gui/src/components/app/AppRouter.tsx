@@ -1,4 +1,4 @@
-import { LayoutHero, LayoutDashboard, Mode, useMode } from '@bpx-network/core';
+import { LayoutDashboard, Mode, useMode } from '@bpx-network/core';
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -19,9 +19,6 @@ export default function AppRouter() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<AppProviders outlet />}>
-          <Route element={<LayoutHero settings={<SettingsPanel />} outlet />}>
-            <Route index element={<Beacon />} />
-          </Route>
           {mode === Mode.NODE ? (
             <Route
               element={
@@ -33,7 +30,8 @@ export default function AppRouter() {
                 />
               }
             >
-              <Route index path="dashboard" element={<Beacon />} />
+              <Route index element={<Beacon />} />
+              <Route path="dashboard" element={<Beacon />} />
               <Route path="dashboard/block/:headerHash" element={<Block />} />
               <Route path="dashboard/settings/*" element={<Settings />} />
             </Route>
@@ -48,7 +46,8 @@ export default function AppRouter() {
                 />
               }
             >
-              <Route index path="dashboard" element={<Beacon />} />
+              <Route index element={<Beacon />} />
+              <Route path="dashboard" element={<Beacon />} />
               <Route path="dashboard/block/:headerHash" element={<Block />} />
               <Route path="dashboard/settings/*" element={<Settings />} />
               <Route path="dashboard/plot/*" element={<Plot />} />
