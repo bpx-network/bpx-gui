@@ -69,17 +69,9 @@ export default function LayoutDashboard(props: LayoutDashboardProps) {
   return (
     <StyledRoot>
       <Suspense fallback={<Loading center />}>
-        <StyledAppBar position="fixed" color="transparent" elevation={0}>
-          <StyledToolbar>
-            <Container maxWidth="lg">
-              <Flex alignItems="center">
-                <Logo width="100px" />
-                <Flex flexGrow={1} />
-                <Settings>{settings}</Settings>
-              </Flex>
-            </Container>
-          </StyledToolbar>
-        </StyledAppBar>
+        {sidebar && (
+          <StyledDrawer variant="permanent">{sidebar}</StyledDrawer>
+        )}
 
         <StyledBody flexDirection="column" flexGrow={1}>
           <ToolbarSpacing />
