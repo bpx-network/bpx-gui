@@ -33,12 +33,12 @@ export default function AppRouter() {
             <Route path="dashboard" element={<Beacon />} />
             <Route path="dashboard/block/:headerHash" element={<Block />} />
             <Route path="dashboard/settings/*" element={<Settings />} />
-            {mode === Mode.FARMING ? (
+            {mode === Mode.FARMING && (
               <Route path="dashboard/plot/*" element={<Plot />} />
-            ) : ()}
-            {mode === Mode.FARMING ? (
+            )}
+            {mode === Mode.FARMING && (
               <Route path="dashboard/farm/*" element={<Farm />} />
-            ) : ()}
+            )}
           </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
