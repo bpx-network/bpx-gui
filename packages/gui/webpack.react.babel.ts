@@ -105,7 +105,7 @@ export default {
       chunks: 'all',
     },
     usedExports: true,
-    minimize: !DEV,
+    minimize: false, //!DEV,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
