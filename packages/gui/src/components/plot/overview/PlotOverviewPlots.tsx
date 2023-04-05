@@ -7,7 +7,8 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 
 import PlotAddDirectoryDialog from '../PlotAddDirectoryDialog';
-
+import PlotHarvesters from '../PlotHarvesters';
+import PlotPlotting from '../PlotPlotting';
 
 export default function PlotOverviewPlots() {
   const navigate = useNavigate();
@@ -58,10 +59,9 @@ export default function PlotOverviewPlots() {
             </More>
           </Flex>
         </Flex>
-        
       </Flex>
-      
-      
+      <PlotPlotting />
+      <PlotHarvesters />
     </Flex>
   );
 }
