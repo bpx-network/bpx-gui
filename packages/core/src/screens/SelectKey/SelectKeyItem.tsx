@@ -11,7 +11,6 @@ import Flex from '../../components/Flex';
 import { MenuItem } from '../../components/MenuItem';
 import More from '../../components/More';
 import useOpenDialog from '../../hooks/useOpenDialog';
-import EmojiAndColorPicker from './EmojiAndColorPicker';
 import SelectKeyDetailDialog from './SelectKeyDetailDialog';
 import SelectKeyRenameForm from './SelectKeyRenameForm';
 import WalletDeleteDialog from './WalletDeleteDialog';
@@ -24,36 +23,12 @@ type SelectKeyItemProps = {
   onSelect: (fingerprint: number) => void;
 };
 
-type WalletKeyTheme = {
-  emoji: string | null;
-  color: string | null;
-};
-
 export default function SelectKeyItem(props: SelectKeyItemProps) {
   const { keyData, onSelect, disabled, loading, index } = props;
   const openDialog = useOpenDialog();
   const [isRenaming, setIsRenaming] = useState<boolean>(false);
 
   const { fingerprint, label } = keyData;
-
-  const [walletKeyTheme, setWalletKeyTheme] = useFingerprintSettings<WalletKeyTheme>(fingerprint, 'walletKeyTheme', {
-    emoji: `🌱`,
-    color: 'green',
-  });
-
-  const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
-
-  const theme: any = useTheme();
-
-  const isColor = useCallback((color: string) => Object.keys(theme.palette.colors).includes(color), [theme]);
-  const isDark = theme.palette.mode === 'dark';
-  const color = isColor(walletKeyTheme.color)
-    ? theme.palette.colors[walletKeyTheme.color]
-    : theme.palette.colors.default;
-
-  async function handleLogin() {
-    onSelect(fingerprint);
-  }
 
   function handleShowKey() {
     openDialog(<SelectKeyDetailDialog fingerprint={fingerprint} index={index} />);
@@ -160,25 +135,6 @@ export default function SelectKeyItem(props: SelectKeyItemProps) {
               }}
               onClick={preventBubble}
             >
-              {showEmojiPicker && (
-                <EmojiAndColorPicker
-                  onSelect={(result: any) => {
-                    if (isColor(result)) {
-                      setWalletKeyTheme({ ...walletKeyTheme, color: result });
-                    } else if (result !== '') {
-                      setWalletKeyTheme({ ...walletKeyTheme, emoji: result });
-                    }
-                    setShowEmojiPicker(false);
-                  }}
-                  onClickOutside={() => {
-                    setShowEmojiPicker(false);
-                  }}
-                  currentColor={walletKeyTheme.color}
-                  currentEmoji={walletKeyTheme.emoji}
-                  themeColors={theme.palette.colors}
-                  isDark={isDark}
-                />
-              )}
             </span>
             <Flex
               sx={{
