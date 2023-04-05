@@ -1,10 +1,9 @@
 import { IpcRenderer } from 'electron';
 
-import { ConnectionState, ServiceHumanName, ServiceName, PassphrasePromptReason } from '@bpx-network/api';
+import { ConnectionState, ServiceHumanName, ServiceName } from '@bpx-network/api';
 import {
   useCloseMutation,
   useGetStateQuery,
-  useGetKeyringStatusQuery,
   useServices,
   useGetVersionQuery,
 } from '@bpx-network/api-react';
@@ -22,7 +21,6 @@ import isElectron from 'is-electron';
 import React, { useState, useEffect, ReactNode, useMemo } from 'react';
 
 import ModeServices from '../../constants/ModeServices';
-import AppPassPrompt from './AppPassPrompt';
 import AppSelectMode from './AppSelectMode';
 import AppVersionWarning from './AppVersionWarning';
 import useIsMainnet from '../../hooks/useIsMainnet';
@@ -42,7 +40,6 @@ export default function AppState(props: Props) {
   const [close] = useCloseMutation();
   const [closing, setClosing] = useState<boolean>(false);
   const { data: clientState = {}, isLoading: isClientStateLoading } = useGetStateQuery();
-  const { data: keyringStatus, isLoading: isLoadingKeyringStatus } = useGetKeyringStatusQuery();
   const [mode] = useMode();
   const [versionDialog, setVersionDialog] = useState<boolean>(true);
   const [updatedWindowTitle, setUpdatedWindowTitle] = useState<boolean>(false);
@@ -58,11 +55,9 @@ export default function AppState(props: Props) {
     return undefined;
   }, [mode]);
 
-  const isKeyringReady = !!keyringStatus && !keyringStatus.isKeyringLocked;
-
   const servicesState = useServices(ALL_SERVICES, {
     keepRunning: !closing ? runServices : [],
-    disabled: !isKeyringReady,
+    disabled: false,
   });
 
   const allServicesRunning = useMemo<boolean>(() => {
@@ -161,26 +156,6 @@ export default function AppState(props: Props) {
         </LayoutHero>
       );
     }
-  }
-
-  if (isLoadingKeyringStatus || !keyringStatus) {
-    return (
-      <LayoutLoading>
-        <Typography variant="body1">
-          <Trans>Loading keyring status</Trans>
-        </Typography>
-      </LayoutLoading>
-    );
-  }
-
-  const { isKeyringLocked } = keyringStatus;
-
-  if (isKeyringLocked) {
-    return (
-      <LayoutHero>
-        <AppPassPrompt reason={PassphrasePromptReason.KEYRING_LOCKED} />
-      </LayoutHero>
-    );
   }
 
   if (!isConnected) {

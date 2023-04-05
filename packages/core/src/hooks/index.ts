@@ -11,5 +11,4 @@ export { default as useShowSaveDialog } from './useShowSaveDialog';
 export { default as useShowDebugInformation } from './useShowDebugInformation';
 export { default as useShowError } from './useShowError';
 export { default as useTrans } from './useTrans';
-export { default as useValidateChangePassphraseParams } from './useValidateChangePassphraseParams';
 export { default as useThemeColor } from './useThemeColor';
