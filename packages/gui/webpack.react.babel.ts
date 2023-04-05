@@ -8,7 +8,7 @@ import LodashModuleReplacementPlugin from 'lodash-webpack-plugin';
 
 const PORT = 3000;
 const CONTEXT = __dirname;
-const DEV = false; //process.env.NODE_ENV !== 'production';
+const DEV = process.env.NODE_ENV !== 'production';
 
 const babelQuery = {
   babelrc: false,
@@ -105,7 +105,7 @@ export default {
       chunks: 'all',
     },
     usedExports: true,
-    minimize: false, //!DEV,
+    minimize: !DEV,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
