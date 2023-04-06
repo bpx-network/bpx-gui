@@ -360,6 +360,17 @@ export const farmerApi = apiWithTag.injectEndpoints({
       ],
     }),
     
+    deleteAllKeys: build.mutation<any, undefined>({
+      query: () => ({
+        command: 'deleteAllKeys',
+        service: FarmerService,
+      }),
+      invalidatesTags: [
+        { type: 'Keys', id: 'LIST' },
+        { type: 'DaemonKey', id: 'LIST' },
+      ],
+    }),
+    
     getPrivateKey: build.query<
       {
         farmerPk: string;
