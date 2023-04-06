@@ -3,11 +3,11 @@ import { Trans } from '@lingui/macro';
 import React from 'react';
 
 import FarmerStatus from '../../../constants/FarmerStatus';
-import useFarmerStatus from '../../../hooks/useFarmerStatus';
+//import useFarmerStatus from '../../../hooks/useFarmerStatus';
 import FarmCardNotAvailable from './FarmCardNotAvailable';
 
 export default function FarmCardStatus() {
-  const farmerStatus = useFarmerStatus();
+  const farmerStatus = FarmerStatus.FARMING; //useFarmerStatus();
 
   if (farmerStatus === FarmerStatus.SYNCHING) {
     return (
