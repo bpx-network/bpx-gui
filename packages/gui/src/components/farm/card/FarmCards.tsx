@@ -3,7 +3,7 @@ import React from 'react';
 
 import FarmCardExpectedTimeToWin from './FarmCardExpectedTimeToWin';
 import FarmCardPlotCount from './FarmCardPlotCount';
-import FarmCardStatus from './FarmCardStatus';
+
 import FarmCardTotalNetworkSpace from './FarmCardTotalNetworkSpace';
 import FarmCardTotalSizeOfPlots from './FarmCardTotalSizeOfPlots';
 
@@ -12,7 +12,7 @@ export default function FarmCards() {
     <div>
       <Grid spacing={2} alignItems="stretch" container>
         <Grid xs={12} sm={6} md={4} item>
-          <FarmCardStatus />
+
         </Grid>
         <Grid xs={12} sm={6} md={4} item>
           <FarmCardPlotCount />
