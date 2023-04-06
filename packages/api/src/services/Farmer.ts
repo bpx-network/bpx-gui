@@ -89,6 +89,42 @@ export default class Farmer extends Service {
   async getHarvestersSummary() {
     return this.command('get_harvesters_summary');
   }
+  
+  async generateMnemonic(): Promise<{
+    mnemonic: string[];
+    success: boolean;
+  }> {
+    return this.command('generate_mnemonic');
+  }
+
+  async getPublicKeys(): Promise<{
+    publicKeyFingerprints: number[];
+    success: boolean;
+  }> {
+    return this.command('get_public_keys');
+  }
+
+  async addKey(mnemonic: string[]) {
+    return this.command('add_key', {
+      mnemonic,
+    });
+  }
+
+  async deleteKey(fingerprint: string) {
+    return this.command('delete_key', {
+      fingerprint,
+    });
+  }
+  
+  async getPrivateKey(fingerprint: string) {
+    return this.command('get_private_key', {
+      fingerprint,
+    });
+  }
+
+  async deleteAllKeys() {
+    return this.command('delete_all_keys');
+  }
 
   onConnections(callback: (data: any, message: Message) => void, processData?: (data: any) => any) {
     return this.onCommand('get_connections', callback, processData);

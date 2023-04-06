@@ -16,6 +16,8 @@ export const apiWithTag = api.enhanceEndpoints({
     'HarvestersSummary',
     'HarvesterPlotsKeysMissing',
     'HarvesterPlotsDuplicates',
+    'Keys',
+    'DaemonKey'
   ],
 });
 
@@ -318,6 +320,66 @@ export const farmerApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
+    
+    generateMnemonic: build.mutation<string[], undefined>({
+      query: () => ({
+        command: 'generateMnemonic',
+        service: FarmerService,
+      }),
+      transformResponse: (response: any) => response?.mnemonic,
+    }),
+
+    getPublicKeys: build.query<number[], undefined>({
+      query: () => ({
+        command: 'getPublicKeys',
+        service: FarmerService,
+      }),
+      transformResponse: (response: any) => response?.publicKeyFingerprints,
+      providesTags: (keys) =>
+        keys
+          ? [...keys.map((key) => ({ type: 'Keys', id: key } as const)), { type: 'Keys', id: 'LIST' }]
+          : [{ type: 'Keys', id: 'LIST' }],
+    }),
+
+    deleteKey: build.mutation<
+      any,
+      {
+        fingerprint: number;
+      }
+    >({
+      query: ({ fingerprint }) => ({
+        command: 'deleteKey',
+        service: FarmerService,
+        args: [fingerprint],
+      }),
+      invalidatesTags: (_result, _error, { fingerprint }) => [
+        { type: 'Keys', id: fingerprint },
+        { type: 'Keys', id: 'LIST' },
+        { type: 'DaemonKey', id: fingerprint },
+        { type: 'DaemonKey', id: 'LIST' },
+      ],
+    }),
+    
+    getPrivateKey: build.query<
+      {
+        farmerPk: string;
+        fingerprint: number;
+        pk: string;
+        poolPk: string;
+        seed?: string;
+        sk: string;
+      },
+      {
+        fingerprint: string;
+      }
+    >({
+      query: ({ fingerprint }) => ({
+        command: 'getPrivateKey',
+        service: FarmerService,
+        args: [fingerprint],
+      }),
+      transformResponse: (response: any) => response?.privateKey,
+    }),
   }),
 });
 
@@ -336,4 +398,9 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
+  useGenerateMnemonicMutation,
+  useGetPublicKeysQuery,
+  useDeleteKeyMutation,
+  useDeleteAllKeysMutation,
+  useGetPrivateKeyQuery,
 } = farmerApi;
