@@ -142,12 +142,13 @@ export default function PlotKeys() {
             <TooltipIcon>{error.message}</TooltipIcon>
           </Alert>
         ) (
-          <>{renderTopSection()}</>
+          <>
+            {renderTopSection()}
+            <Flex flexDirection="column" gap={3} alignItems="stretch" alignSelf="stretch">
+              <Table cols={cols} rows={keyData} />
+            </Flex>
+          </>
         )}
-        
-        <Flex flexDirection="column" gap={3} alignItems="stretch" alignSelf="stretch">
-          <Table cols={cols} rows={keyData} />
-        </Flex>
       </Flex>
     </>
   );
