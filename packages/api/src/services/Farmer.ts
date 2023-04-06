@@ -89,13 +89,6 @@ export default class Farmer extends Service {
   async getHarvestersSummary() {
     return this.command('get_harvesters_summary');
   }
-  
-  async generateMnemonic(): Promise<{
-    mnemonic: string[];
-    success: boolean;
-  }> {
-    return this.command('generate_mnemonic');
-  }
 
   async getPublicKeys(): Promise<{
     publicKeyFingerprints: number[];
