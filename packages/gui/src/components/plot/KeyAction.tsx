@@ -1,4 +1,5 @@
 import type { KeyData } from '@bpx-network/api';
+import { useDeleteKeyMutation } from '@bpx-network/api-react';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon, Visibility as VisibilityIcon, Edit as EditIcon } from '@mui/icons-material';
 import { Box, Typography, ListItemIcon } from '@mui/material';
@@ -7,31 +8,39 @@ import {
   Flex,
   MenuItem,
   More,
-  useOpenDialog
+  useOpenDialog,
+  ConfirmDialog
 } from '@bpx-network/core';
 import KeyDetailDialog from './KeyDetailDialog';
-import KeyRenameDialog from './KeyRenameDialog';
-import KeyDeleteDialog from './KeyDeleteDialog';
+//import KeyRenameDialog from './KeyRenameDialog';
 
 export type KeyActionProps = {
   keyData: KeyData;
 };
 
 export default function KeyAction(props: KeyActionProps) {
-  const {
-    fingerprint: { fingerprint },
-  } = props;
+  const { fingerprint } = props;
+  const [deleteKey] = useDeleteKeyMutation();
   
   function handleShowKey() {
     openDialog(<KeyDetailDialog fingerprint={fingerprint} />);
   }
 
   function handleRename() {
-    await openDialog(<KeyRenameDialog fingerprint={fingerprint} />);
+    //await openDialog(<KeyRenameDialog fingerprint={fingerprint} />);
   }
 
   async function handleDeletePrivateKey() {
-    await openDialog(<KeyDeleteDialog fingerprint={fingerprint} />);
+    await openDialog(
+      <ConfirmDialog
+        title={<Trans>Delete Key</Trans>}
+        confirmTitle={<Trans>Delete</Trans>}
+        confirmColor="danger"
+        onConfirm={() => deleteKey({ fingerprint }).unwrap()}
+      >
+        <Trans>Are you sure you want to delete the key?</Trans>
+      </ConfirmDialog>
+    );
   }
 
   return (
