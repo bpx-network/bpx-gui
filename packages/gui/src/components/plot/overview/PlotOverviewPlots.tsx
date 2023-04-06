@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router';
 
 import PlotAddDirectoryDialog from '../PlotAddDirectoryDialog';
 import PlotHarvesters from '../PlotHarvesters';
+import PlotKeys from '../PlotKeys';
 import PlotPlotting from '../PlotPlotting';
 import PlotOverviewCards from './PlotOverviewCards';
 
@@ -63,6 +64,7 @@ export default function PlotOverviewPlots() {
         <PlotOverviewCards />
       </Flex>
       <PlotPlotting />
+      <PlotKeys />
       <PlotHarvesters />
     </Flex>
   );

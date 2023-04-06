@@ -12,6 +12,7 @@ export default function Plot() {
         <Routes>
           <Route index element={<PlotOverview />} />
           <Route path="add" element={<PlotAdd />} />
+          <Route path="key-add" element={<PlotAdd />} />
         </Routes>
       </Flex>
     </LayoutDashboardSub>

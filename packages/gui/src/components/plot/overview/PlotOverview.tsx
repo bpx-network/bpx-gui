@@ -1,30 +1,27 @@
-import { useGetThrottlePlotQueueQuery, useGetTotalHarvestersSummaryQuery } from '@bpx-network/api-react';
+import {
+  useGetThrottlePlotQueueQuery,
+  useGetTotalHarvestersSummaryQuery,
+  useGetKeysQuery,
+} from '@bpx-network/api-react';
 import { Loading, Flex } from '@bpx-network/core';
 import { Grid } from '@mui/material';
 import React from 'react';
 
-import PlotHero from './PlotOverviewHero';
 import PlotOverviewPlots from './PlotOverviewPlots';
 
 export default function PlotOverview() {
-  const { isLoading: isLoadingQueue, hasQueue } = useGetThrottlePlotQueueQuery();
-  const { isLoading: isLoadingTotalHarvestrSummary, harvesters } = useGetTotalHarvestersSummaryQuery();
+  const { isLoading: isLoadingQueue } = useGetThrottlePlotQueueQuery();
+  const { isLoading: isLoadingTotalHarvestrSummary } = useGetTotalHarvestersSummaryQuery();
+  const { isLoading: isLoadingPublicKeys } = useGetKeysQuery();
 
-  const isLoading = isLoadingQueue || isLoadingTotalHarvestrSummary;
-  const hasData = hasQueue || !!harvesters;
+  const isLoading = isLoadingQueue || isLoadingTotalHarvestrSummary || isLoadingPublicKeys;
 
   return (
     <Flex flexDirection="column" gap={3}>
       {isLoading ? (
         <Loading center />
-      ) : hasData ? (
-        <PlotOverviewPlots />
       ) : (
-        <Grid container spacing={3}>
-          <Grid xs={12} item>
-            <PlotHero />
-          </Grid>
-        </Grid>
+        <PlotOverviewPlots />
       )}
     </Flex>
   );
