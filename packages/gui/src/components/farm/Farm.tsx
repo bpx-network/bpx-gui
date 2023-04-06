@@ -26,7 +26,7 @@ export default function Farm() {
           </Loading>
         ) : hasPlots ? (
           <>
-            <FarmHeader />
+            
             <Flex flexDirection="column" gap={4}>
               <FarmCards />
               <FarmLastAttemptedProof />
@@ -41,7 +41,7 @@ export default function Farm() {
           </>
         ) : (
           <>
-            <FarmHeader />
+            
             <Flex flexDirection="column" gap={4}>
               <FarmHero />
               <FarmLatestBlockChallenges />
