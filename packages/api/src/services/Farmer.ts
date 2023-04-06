@@ -90,13 +90,6 @@ export default class Farmer extends Service {
     return this.command('get_harvesters_summary');
   }
 
-  async getPublicKeys(): Promise<{
-    publicKeyFingerprints: number[];
-    success: boolean;
-  }> {
-    return this.command('get_public_keys');
-  }
-
   async addKey(mnemonic: string[]) {
     return this.command('add_key', {
       mnemonic,

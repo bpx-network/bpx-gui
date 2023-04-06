@@ -53,7 +53,6 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
-  useGetPublicKeysQuery,
   useDeleteKeyMutation,
   useDeleteAllKeysMutation,
   useGetPrivateKeyQuery,

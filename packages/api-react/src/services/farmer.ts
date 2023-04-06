@@ -321,18 +321,6 @@ export const farmerApi = apiWithTag.injectEndpoints({
       ]),
     }),
 
-    getPublicKeys: build.query<number[], undefined>({
-      query: () => ({
-        command: 'getPublicKeys',
-        service: FarmerService,
-      }),
-      transformResponse: (response: any) => response?.publicKeyFingerprints,
-      providesTags: (keys) =>
-        keys
-          ? [...keys.map((key) => ({ type: 'Keys', id: key } as const)), { type: 'Keys', id: 'LIST' }]
-          : [{ type: 'Keys', id: 'LIST' }],
-    }),
-
     deleteKey: build.mutation<
       any,
       {
@@ -401,7 +389,6 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
-  useGetPublicKeysQuery,
   useDeleteKeyMutation,
   useDeleteAllKeysMutation,
   useGetPrivateKeyQuery,
