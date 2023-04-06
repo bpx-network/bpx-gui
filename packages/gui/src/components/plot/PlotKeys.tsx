@@ -145,7 +145,7 @@ export default function PlotKeys() {
           <>
             {renderTopSection()}
             <Flex flexDirection="column" gap={3} alignItems="stretch" alignSelf="stretch">
-              <Table cols={cols} rows={keyData} />
+              <Table cols={cols} rows={publicKeyFingerprints} />
             </Flex>
           </>
         )}
