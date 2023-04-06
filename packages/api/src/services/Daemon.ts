@@ -83,32 +83,6 @@ export default class Daemon extends Service {
     return this.command('keyring_status');
   }
 
-  setKeyringPassphrase(
-    currentPassphrase?: string | null,
-    newPassphrase?: string,
-    passphraseHint?: string,
-    savePassphrase?: boolean
-  ) {
-    return this.command('set_keyring_passphrase', {
-      currentPassphrase,
-      newPassphrase,
-      passphraseHint,
-      savePassphrase,
-    });
-  }
-
-  removeKeyringPassphrase(currentPassphrase: string) {
-    return this.command('remove_keyring_passphrase', {
-      currentPassphrase,
-    });
-  }
-
-  unlockKeyring(key: string) {
-    return this.command('unlock_keyring', {
-      key,
-    });
-  }
-
   getPlotters() {
     return this.command('get_plotters');
   }

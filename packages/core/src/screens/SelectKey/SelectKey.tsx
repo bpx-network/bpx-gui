@@ -7,7 +7,6 @@ import {
   useGetKeysQuery,
   type Serializable,
 } from '@bpx-network/api-react';
-import data from '@emoji-mart/data';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon } from '@mui/icons-material';
 import { Alert, Typography, Container, ListItemIcon } from '@mui/material';

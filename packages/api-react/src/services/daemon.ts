@@ -177,54 +177,6 @@ export const daemonApi = apiWithTag.injectEndpoints({
       providesTags: [{ type: 'RunningServices', id: 'LIST' }],
     }),
 
-    setKeyringPassphrase: build.mutation<
-      boolean,
-      {
-        currentPassphrase?: string;
-        newPassphrase?: string;
-        passphraseHint?: string;
-        savePassphrase?: boolean;
-      }
-    >({
-      query: ({ currentPassphrase, newPassphrase, passphraseHint, savePassphrase }) => ({
-        command: 'setKeyringPassphrase',
-        service: Daemon,
-        args: [currentPassphrase, newPassphrase, passphraseHint, savePassphrase],
-      }),
-      invalidatesTags: () => ['KeyringStatus'],
-      transformResponse: (response: any) => response?.success,
-    }),
-
-    removeKeyringPassphrase: build.mutation<
-      boolean,
-      {
-        currentPassphrase: string;
-      }
-    >({
-      query: ({ currentPassphrase }) => ({
-        command: 'removeKeyringPassphrase',
-        service: Daemon,
-        args: [currentPassphrase],
-      }),
-      invalidatesTags: () => ['KeyringStatus'],
-      transformResponse: (response: any) => response?.success,
-    }),
-
-    unlockKeyring: build.mutation<
-      boolean,
-      {
-        key: string;
-      }
-    >({
-      query: ({ key }) => ({
-        command: 'unlockKeyring',
-        service: Daemon,
-        args: [key],
-      }),
-      invalidatesTags: () => ['KeyringStatus'],
-      transformResponse: (response: any) => response?.success,
-    }),
-
     getPlotters: build.query<Object, undefined>({
       query: () => ({
         command: 'getPlotters',
@@ -418,9 +370,6 @@ export const {
   useStopServiceMutation,
   useIsServiceRunningQuery,
   useRunningServicesQuery,
-  useSetKeyringPassphraseMutation,
-  useRemoveKeyringPassphraseMutation,
-  useUnlockKeyringMutation,
   useGetVersionQuery,
 
   useGetPlottersQuery,

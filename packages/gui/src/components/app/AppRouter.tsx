@@ -8,9 +8,7 @@ import Farm from '../farm/Farm';
 import Beacon from '../beacon/Beacon';
 import Plot from '../plot/Plot';
 import Settings from '../settings/Settings';
-import SettingsPanel from '../settings/SettingsPanel';
 import AppProviders from './AppProviders';
-import AppStatusHeader from './AppStatusHeader';
 
 export default function AppRouter() {
   const [mode] = useMode();
@@ -23,9 +21,7 @@ export default function AppRouter() {
             <Route
               element={
                 <LayoutDashboard
-                  settings={<SettingsPanel />}
                   sidebar={<DashboardSideBar simple />}
-                  actions={<AppStatusHeader />}
                   outlet
                 />
               }
@@ -39,9 +35,7 @@ export default function AppRouter() {
             <Route
               element={
                 <LayoutDashboard
-                  settings={<SettingsPanel />}
                   sidebar={<DashboardSideBar />}
-                  actions={<AppStatusHeader />}
                   outlet
                 />
               }

@@ -23,9 +23,6 @@ export const {
   useStopServiceMutation,
   useIsServiceRunningQuery,
   useRunningServicesQuery,
-  useSetKeyringPassphraseMutation,
-  useRemoveKeyringPassphraseMutation,
-  useUnlockKeyringMutation,
   useGetVersionQuery,
 
   useGetPlottersQuery,

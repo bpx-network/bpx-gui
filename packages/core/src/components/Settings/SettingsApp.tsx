@@ -1,11 +1,13 @@
 import { type Shell } from 'electron';
 
-import { Farming } from '@bpx-network/icons';
+import {
+  Farming as FarmingIcon,
+  Beacon as BeaconIcon,
+} from '@bpx-network/icons';
 import { Trans } from '@lingui/macro';
 import {
   WbSunny as WbSunnyIcon,
   NightsStay as NightsStayIcon,
-  Beacon as BeaconIcon,
 } from '@mui/icons-material';
 import { ButtonGroup } from '@mui/material';
 import React, { type ReactNode } from 'react';
@@ -47,7 +49,7 @@ export default function SettingsApp(props: SettingsAppProps) {
         </SettingsLabel>
         <ButtonGroup fullWidth>
           <Button
-            startIcon={<Farming />}
+            startIcon={<FarmingIcon />}
             selected={mode === Mode.FARMING}
             onClick={handleSetFarmingMode}
             data-testid="SettingsApp-mode-farming"

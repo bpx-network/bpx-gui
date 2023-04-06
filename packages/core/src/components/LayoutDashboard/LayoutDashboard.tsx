@@ -1,6 +1,6 @@
 import { t, Trans } from '@lingui/macro';
 import { ExitToApp as ExitToAppIcon, Edit as EditIcon } from '@mui/icons-material';
-import { Box, Toolbar, Drawer, Container, IconButton, Typography, CircularProgress } from '@mui/material';
+import { Box, Drawer, Container, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React, { type ReactNode, useState, Suspense, useCallback } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
@@ -33,30 +33,14 @@ const StyledBody = styled(Flex)`
   min-width: 0;
 `;
 
-const StyledToolbar = styled(Toolbar)`
-  padding-left: calc(${({ theme }) => theme.spacing(3)} - 12px);
-  padding-right: ${({ theme }) => theme.spacing(3)};
-`;
-
-const StyledInlineTypography = styled(Typography)`
-  display: inline-block;
-`;
-
 export type LayoutDashboardProps = {
   children?: ReactNode;
   sidebar?: ReactNode;
   outlet?: boolean;
-  settings?: ReactNode;
-  actions?: ReactNode;
 };
 
 export default function LayoutDashboard(props: LayoutDashboardProps) {
-  const { children, sidebar, settings, outlet = false, actions } = props;
-
-  const navigate = useNavigate();
-  const theme: any = useTheme();
-  const isColor = useCallback((color: string) => Object.keys(theme.palette.colors).includes(color), [theme]);
-  const isDark = theme.palette.mode === 'dark';
+  const { children, sidebar, outlet = false } = props;
 
   return (
     <StyledRoot>
