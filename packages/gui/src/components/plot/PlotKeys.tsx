@@ -141,7 +141,7 @@ export default function PlotKeys() {
             &nbsp;
             <TooltipIcon>{error.message}</TooltipIcon>
           </Alert>
-        ) (
+        ) : (
           <>
             {renderTopSection()}
             <Flex flexDirection="column" gap={3} alignItems="stretch" alignSelf="stretch">
