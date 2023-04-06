@@ -52,6 +52,11 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
+  useGenerateMnemonicMutation,
+  useGetPublicKeysQuery,
+  useDeleteKeyMutation,
+  useDeleteAllKeysMutation,
+  useGetPrivateKeyQuery,
 } = farmer;
 
 // beacon hooks
