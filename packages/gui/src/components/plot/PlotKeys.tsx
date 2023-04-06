@@ -5,7 +5,7 @@ import {
 } from '@bpx-network/api-react';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon } from '@mui/icons-material';
-import { Alert, Typography, Container, ListItemIcon } from '@mui/material';
+import { Alert, Typography, ListItemIcon } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -23,12 +23,23 @@ import {
   TooltipIcon,
   useOpenDialog,
   useShowError,
+  Table,
 } from '@bpx-network/core';
 
-const StyledContainer = styled(Container)`
-  padding-bottom: 1rem;
-  max-width: 968px;
-`;
+const cols = [
+  {
+    minWidth: '100px',
+    field: 'fingerprint',
+    tooltip: 'fingerprint',
+    title: <Trans>Fingerprint</Trans>,
+  },
+  {
+    minWidth: '100px',
+    field: 'label',
+    tooltip: 'label',
+    title: <Trans>Label</Trans>,
+  },
+];
 
 export default function PlotKeys() {
   const openDialog = useOpenDialog();
@@ -55,9 +66,9 @@ export default function PlotKeys() {
     );
   }
 
-  const NewWalletButtonGroup = (
+  const NewKeyButtonGroup = (
     <Flex alignItems="right">
-      <DropdownActions label={<Trans>Add wallet</Trans>} variant="contained">
+      <DropdownActions label={<Trans>Add key</Trans>} variant="contained">
         <MenuItem close onClick={() => navigate('/dashboard/plot/key-add')}>
           <Typography variant="inherit" noWrap>
             <Trans>Create New</Trans>
@@ -99,20 +110,19 @@ export default function PlotKeys() {
       <Flex
         justifyContent="space-between"
         width="100%"
-        sx={{ borderBottom: '1px solid #CCDDE1', paddingBottom: '30px' }}
       >
         <Flex alignItems="left">
-          <Typography variant="h4" component="h1" sx={{ position: 'relative', left: '15px', top: '5px' }}>
-            <Trans>Wallet Keys</Trans>
+          <Typography variant="h6">
+            <Trans>Plot Keys</Trans>
           </Typography>
         </Flex>
-        {NewWalletButtonGroup}
+        {NewKeyButtonGroup}
       </Flex>
     );
   }
 
   return (
-    <StyledContainer>
+    <>
       <Flex flexDirection="column" alignItems="flex-start" gap={3}>
         {isLoadingPublicKeys ? (
           <Loading center>
@@ -131,71 +141,14 @@ export default function PlotKeys() {
             &nbsp;
             <TooltipIcon>{error.message}</TooltipIcon>
           </Alert>
-        ) : hasFingerprints ? (
+        ) (
           <>{renderTopSection()}</>
-        ) : (
-          <>
-            {renderTopSection()}
-            <Flex alignItems="center" flexDirection="column">
-              <Typography component="div" variant="h4" color="textPrimary" sx={{ fontWeight: 600, fontSize: '40px' }}>
-                <Trans>Open a world of possibilities.</Trans>
-              </Typography>
-              <Typography
-                component="div"
-                variant="subtitle2"
-                color="textSecondary"
-                sx={{ fontWeight: 400, fontSize: '18px' }}
-              >
-                <Trans>Create a new wallet key to get started with Chia.</Trans>
-              </Typography>
-              <Button
-                onClick={() => navigate('/dashboard/plot/key-add')}
-                variant="outlined"
-                color="primary"
-                sx={{ margin: '15px 0' }}
-              >
-                <Trans>Create a new wallet key</Trans>
-              </Button>
-              <Coins />
-            </Flex>
-          </>
         )}
-        {/* <Search /> */}
+        
         <Flex flexDirection="column" gap={3} alignItems="stretch" alignSelf="stretch">
-          {hasFingerprints && (
-            <Flex
-              id="key-items-container"
-              sx={{
-                marginTop: '5px',
-                flexWrap: 'wrap',
-                rowGap: '22px',
-                columnGap: '22px',
-                paddingBottom: '230px',
-                '> div': {
-                  '@media (min-width: 983px)': {
-                    flexBasis: '292px',
-                    maxWidth: '292px',
-                  },
-                  '@media (max-width: 982px) and (min-width: 569px)': {
-                    flexBasis: 'none',
-                    flex: 'calc(50% - 22px)',
-                    minWidth: '250px',
-                    maxWidth: 'calc(50vw - 42px);',
-                  },
-                  '@media (max-width: 568px)': {
-                    flexBasis: 'none',
-                    minWidth: '250px',
-                  },
-                },
-              }}
-            >
-              {publicKeyFingerprints.map((keyData: KeyData, index: number) => (
-                <p>{keyData.fingerprint}</p>
-              ))}
-            </Flex>
-          )}
+          <Table cols={cols} rows={keyData} />
         </Flex>
       </Flex>
-    </StyledContainer>
+    </>
   );
 }
