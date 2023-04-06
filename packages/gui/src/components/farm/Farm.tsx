@@ -9,7 +9,7 @@ import FarmHero from './FarmHero';
 import FarmLastAttemptedProof from './FarmLastAttemptedProof';
 import FarmLatestBlockChallenges from './FarmLatestBlockChallenges';
 import FarmYourHarvesterNetwork from './FarmYourHarvesterNetwork';
-import FarmCards from './card/FarmCards';
+
 
 export default function Farm() {
   const { hasPlots, initialized, isLoading } = useGetTotalHarvestersSummaryQuery();
@@ -28,7 +28,7 @@ export default function Farm() {
           <>
             <FarmHeader />
             <Flex flexDirection="column" gap={4}>
-              <FarmCards />
+              
               <FarmLastAttemptedProof />
               <FarmLatestBlockChallenges />
               <AdvancedOptions>
