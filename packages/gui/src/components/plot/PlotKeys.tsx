@@ -39,6 +39,10 @@ const cols = [
     tooltip: 'label',
     title: <Trans>Label</Trans>,
   },
+  {
+    field: (keyData: KeyData) => <KeyAction keyData={keyData} />,
+    title: <Trans>Action</Trans>,
+  },
 ];
 
 export default function PlotKeys() {
