@@ -34,6 +34,7 @@ export const {
   useGetKeysQuery,
   useSetLabelMutation,
   useDeleteLabelMutation,
+  useGenerateMnemonicMutation,
 } = daemon;
 
 // farmer hooks
@@ -52,7 +53,6 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
-  useGenerateMnemonicMutation,
   useGetPublicKeysQuery,
   useDeleteKeyMutation,
   useDeleteAllKeysMutation,

@@ -320,14 +320,6 @@ export const farmerApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
-    
-    generateMnemonic: build.mutation<string[], undefined>({
-      query: () => ({
-        command: 'generateMnemonic',
-        service: FarmerService,
-      }),
-      transformResponse: (response: any) => response?.mnemonic,
-    }),
 
     getPublicKeys: build.query<number[], undefined>({
       query: () => ({
@@ -409,7 +401,6 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
-  useGenerateMnemonicMutation,
   useGetPublicKeysQuery,
   useDeleteKeyMutation,
   useDeleteAllKeysMutation,
