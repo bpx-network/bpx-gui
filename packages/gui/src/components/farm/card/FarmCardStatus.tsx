@@ -7,9 +7,7 @@ export default function FarmCardStatus() {
     <CardSimple
       title={<Trans>Farming Status</Trans>}
       value={
-        <StateIndicator state={State.SUCCESS} indicator>
-          <Trans>Farming</Trans>
-        </StateIndicator>
+        <Trans>Test</Trans>
       }
     />
   );
