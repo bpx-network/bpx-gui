@@ -90,28 +90,6 @@ export default class Farmer extends Service {
     return this.command('get_harvesters_summary');
   }
 
-  async addKey(mnemonic: string[]) {
-    return this.command('add_key', {
-      mnemonic,
-    });
-  }
-
-  async deleteKey(fingerprint: string) {
-    return this.command('delete_key', {
-      fingerprint,
-    });
-  }
-  
-  async getPrivateKey(fingerprint: string) {
-    return this.command('get_private_key', {
-      fingerprint,
-    });
-  }
-
-  async deleteAllKeys() {
-    return this.command('delete_all_keys');
-  }
-
   onConnections(callback: (data: any, message: Message) => void, processData?: (data: any) => any) {
     return this.onCommand('get_connections', callback, processData);
   }

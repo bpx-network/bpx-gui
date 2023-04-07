@@ -320,57 +320,6 @@ export const farmerApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
-
-    deleteKey: build.mutation<
-      any,
-      {
-        fingerprint: number;
-      }
-    >({
-      query: ({ fingerprint }) => ({
-        command: 'deleteKey',
-        service: Farmer,
-        args: [fingerprint],
-      }),
-      invalidatesTags: (_result, _error, { fingerprint }) => [
-        { type: 'Keys', id: fingerprint },
-        { type: 'Keys', id: 'LIST' },
-        { type: 'DaemonKey', id: fingerprint },
-        { type: 'DaemonKey', id: 'LIST' },
-      ],
-    }),
-    
-    deleteAllKeys: build.mutation<any, undefined>({
-      query: () => ({
-        command: 'deleteAllKeys',
-        service: Farmer,
-      }),
-      invalidatesTags: [
-        { type: 'Keys', id: 'LIST' },
-        { type: 'DaemonKey', id: 'LIST' },
-      ],
-    }),
-    
-    getPrivateKey: build.query<
-      {
-        farmerPk: string;
-        fingerprint: number;
-        pk: string;
-        poolPk: string;
-        seed?: string;
-        sk: string;
-      },
-      {
-        fingerprint: string;
-      }
-    >({
-      query: ({ fingerprint }) => ({
-        command: 'getPrivateKey',
-        service: Farmer,
-        args: [fingerprint],
-      }),
-      transformResponse: (response: any) => response?.privateKey,
-    }),
   }),
 });
 
@@ -389,7 +338,4 @@ export const {
   useCloseFarmerConnectionMutation,
   useGetSignagePointsQuery,
   useGetFarmingInfoQuery,
-  useDeleteKeyMutation,
-  useDeleteAllKeysMutation,
-  useGetPrivateKeyQuery,
 } = farmerApi;

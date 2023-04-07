@@ -1,4 +1,4 @@
-import { useGetPrivateKeyQuery, useGetKeyQuery } from '@bpx-network/api-react';
+import { useGetKeyQuery } from '@bpx-network/api-react';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
@@ -23,12 +23,10 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
 
   const [showPrivateKey, setShowPrivateKey] = useState<boolean>(false);
   const [showSeed, setShowSeed] = useState<boolean>(false);
-  const { data: privateKey, isLoading: isLoadingPrivateKey } = useGetPrivateKeyQuery({
-    fingerprint,
-  });
 
-  const { data: keyData, isLoading: isLoadingKeyData } = useGetKeyQuery({
+  const { data: keyData, isLoading: isLoading } = useGetKeyQuery({
     fingerprint,
+    true
   });
 
   function toggleShowPrivateKey() {
@@ -38,8 +36,6 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
   function toggleShowSeed() {
     setShowSeed(!showSeed);
   }
-
-  const isLoading = isLoadingPrivateKey || isLoadingKeyData;
 
   if (isLoading) {
     return (
@@ -81,7 +77,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               <Trans>Public Key</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {privateKey.pk}
+              {keyData.pk}
             </StyledTypographyDD>
           </Grid>
           <Grid item>
@@ -89,7 +85,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               <Trans>Farmer Public Key</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {privateKey.farmerPk}
+              {keyData.farmerPk}
             </StyledTypographyDD>
           </Grid>
           <Grid item>
@@ -97,7 +93,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               <Trans>Pool Public Key</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {privateKey.poolPk}
+              {keyData.poolPk}
             </StyledTypographyDD>
           </Grid>
         </Grid>
@@ -113,7 +109,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
               {showPrivateKey ? (
-                privateKey.sk
+                keyData.sk
               ) : (
                 <Box borderTop="2px dotted" marginTop={1} marginBottom={1} height="1px" />
               )}
@@ -131,8 +127,8 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
               {showSeed ? (
-                privateKey.seed ? (
-                  privateKey.seed
+                keyData.seed ? (
+                  keyData.seed
                 ) : (
                   <Trans>No 24 word seed, since this key is imported.</Trans>
                 )
