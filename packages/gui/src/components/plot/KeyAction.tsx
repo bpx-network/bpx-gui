@@ -22,6 +22,7 @@ export default function KeyAction(props: KeyActionProps) {
   const { keyData } = props;
   const { fingerprint } = keyData;
   const [deleteKey] = useDeleteKeyMutation();
+  const openDialog = useOpenDialog();
   
   async function handleShowKey() {
     await openDialog(<KeyDetailDialog fingerprint={fingerprint} />);
