@@ -9,7 +9,7 @@ import {
   MenuItem,
   More,
   useOpenDialog,
-  ConfirmDialog
+  ConfirmDialog,
 } from '@bpx-network/core';
 import KeyDetailDialog from './KeyDetailDialog';
 import KeyRenameDialog from './KeyRenameDialog';
@@ -23,11 +23,11 @@ export default function KeyAction(props: KeyActionProps) {
   const { fingerprint } = keyData;
   const [deleteKey] = useDeleteKeyMutation();
   
-  function handleShowKey() {
-    openDialog(<KeyDetailDialog fingerprint={fingerprint} />);
+  async function handleShowKey() {
+    await openDialog(<KeyDetailDialog fingerprint={fingerprint} />);
   }
 
-  function handleRename() {
+  async function handleRename() {
     await openDialog(<KeyRenameDialog keyData={keyData} />);
   }
 
