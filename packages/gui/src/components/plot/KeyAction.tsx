@@ -1,5 +1,5 @@
 import type { KeyData } from '@bpx-network/api';
-import { useDeleteKeyMutation } from '@bpx-network/api-react';
+import { useDeleteKeyByFingerprintMutation } from '@bpx-network/api-react';
 import { Trans } from '@lingui/macro';
 import { Delete as DeleteIcon, Visibility as VisibilityIcon, Edit as EditIcon } from '@mui/icons-material';
 import { Box, Typography, ListItemIcon } from '@mui/material';
@@ -21,7 +21,7 @@ export type KeyActionProps = {
 export default function KeyAction(props: KeyActionProps) {
   const { keyData } = props;
   const { fingerprint } = keyData;
-  const [deleteKey] = useDeleteKeyMutation();
+  const [deleteKey] = useDeleteKeyByFingerprintMutation();
   const openDialog = useOpenDialog();
   
   async function handleShowKey() {

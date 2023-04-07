@@ -78,6 +78,16 @@ export default class Daemon extends Service {
       fingerprint,
     });
   }
+  
+  async deleteKeyByFingerprint(fingerprint: string) {
+    return this.command('delete_key_by_fingerprint', {
+      fingerprint,
+    });
+  }
+  
+  async deleteAllKeys() {
+    return this.command('delete_all_keys');
+  }
 
   keyringStatus() {
     return this.command('keyring_status');

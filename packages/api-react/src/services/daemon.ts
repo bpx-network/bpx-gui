@@ -87,6 +87,36 @@ export const daemonApi = apiWithTag.injectEndpoints({
       invalidatesTags: () => ['DaemonKey'],
       transformResponse: (response: any) => response?.success,
     }),
+    
+    deleteKeyByFingerprint: build.mutation<
+      any,
+      {
+        fingerprint: number;
+      }
+    >({
+      query: ({ fingerprint }) => ({
+        command: 'deleteKeyByFingerprint',
+        service: Daemon,
+        args: [fingerprint],
+      }),
+      invalidatesTags: (_result, _error, { fingerprint }) => [
+        { type: 'Keys', id: fingerprint },
+        { type: 'Keys', id: 'LIST' },
+        { type: 'DaemonKey', id: fingerprint },
+        { type: 'DaemonKey', id: 'LIST' },
+      ],
+    }),
+    
+    deleteAllKeys: build.mutation<any, undefined>({
+      query: () => ({
+        command: 'deleteAllKeys',
+        service: Daemon,
+      }),
+      invalidatesTags: [
+        { type: 'Keys', id: 'LIST' },
+        { type: 'DaemonKey', id: 'LIST' },
+      ],
+    }),
 
     daemonPing: build.query<boolean, {}>({
       query: () => ({
@@ -381,4 +411,6 @@ export const {
   useGetKeysQuery,
   useSetLabelMutation,
   useDeleteLabelMutation,
+  useDeleteKeyByFingerprintMutation,
+  useDeleteAllKeysMutation,
 } = daemonApi;

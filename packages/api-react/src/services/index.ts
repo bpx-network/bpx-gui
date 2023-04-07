@@ -34,6 +34,8 @@ export const {
   useGetKeysQuery,
   useSetLabelMutation,
   useDeleteLabelMutation,
+  useDeleteKeyByFingerprintMutation,
+  useDeleteAllKeysMutation,
 } = daemon;
 
 // farmer hooks

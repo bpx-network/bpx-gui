@@ -16,8 +16,6 @@ export const apiWithTag = api.enhanceEndpoints({
     'HarvestersSummary',
     'HarvesterPlotsKeysMissing',
     'HarvesterPlotsDuplicates',
-    'Keys',
-    'DaemonKey'
   ],
 });
 
