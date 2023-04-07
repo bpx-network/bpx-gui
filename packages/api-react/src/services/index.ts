@@ -34,6 +34,7 @@ export const {
   useGetKeysQuery,
   useSetLabelMutation,
   useDeleteLabelMutation,
+  useGenerateMnemonicMutation,
   useDeleteKeyByFingerprintMutation,
   useDeleteAllKeysMutation,
 } = daemon;

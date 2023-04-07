@@ -79,6 +79,13 @@ export default class Daemon extends Service {
     });
   }
   
+  async generateMnemonic(): Promise<{
+    mnemonic: string[];
+    success: boolean;
+  }> {
+    return this.command('generate_mnemonic');
+  }
+  
   async deleteKeyByFingerprint(fingerprint: string) {
     return this.command('delete_key_by_fingerprint', {
       fingerprint,

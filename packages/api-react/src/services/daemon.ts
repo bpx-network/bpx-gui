@@ -88,6 +88,14 @@ export const daemonApi = apiWithTag.injectEndpoints({
       transformResponse: (response: any) => response?.success,
     }),
     
+    generateMnemonic: build.mutation<string[], undefined>({
+      query: () => ({
+        command: 'generateMnemonic',
+        service: Daemon,
+      }),
+      transformResponse: (response: any) => response?.mnemonic,
+    }),
+    
     deleteKeyByFingerprint: build.mutation<
       any,
       {
@@ -411,6 +419,7 @@ export const {
   useGetKeysQuery,
   useSetLabelMutation,
   useDeleteLabelMutation,
+  useGenerateMnemonicMutation,
   useDeleteKeyByFingerprintMutation,
   useDeleteAllKeysMutation,
 } = daemonApi;
