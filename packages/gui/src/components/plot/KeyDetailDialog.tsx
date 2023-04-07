@@ -1,7 +1,7 @@
 import { useGetKeyQuery } from '@bpx-network/api-react';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import {
@@ -21,23 +21,12 @@ export type KeyDetailDialogProps = {
 export default function KeyDetailDialog(props: KeyDetailDialogProps) {
   const { fingerprint, ...rest } = props;
 
-  const [showPrivateKey, setShowPrivateKey] = useState<boolean>(false);
-  const [showSeed, setShowSeed] = useState<boolean>(false);
-
   const { data: keyData, isLoading: isLoading } = useGetKeyQuery({
     fingerprint,
     includeSecrets: true,
   });
   
   console.log(keyData);
-
-  function toggleShowPrivateKey() {
-    setShowPrivateKey(!showPrivateKey);
-  }
-
-  function toggleShowSeed() {
-    setShowSeed(!showSeed);
-  }
 
   if (isLoading) {
     return (
@@ -100,54 +89,28 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               {keyData.poolPk}
             </StyledTypographyDD>
           </Grid>
-        </Grid>
-
-        <Typography>
-          <Trans>NEVER SHARE THESE WITH ANYONE</Trans>
-        </Typography>
-
-        <Flex flexDirection="column" gap={2}>
-          <Flex flexDirection="column">
+          <Grid item>
             <Typography component="dt" variant="subtitle2">
               <Trans>Secret Key</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {showPrivateKey ? (
-                keyData.sk
-              ) : (
-                <Box borderTop="2px dotted" marginTop={1} marginBottom={1} height="1px" />
-              )}
+              {keyData.sk}
             </StyledTypographyDD>
-            <Box>
-              <Button onClick={toggleShowPrivateKey} variant="outlined">
-                {showPrivateKey ? <Trans>Hide</Trans> : <Trans>Reveal</Trans>}
-              </Button>
-            </Box>
-          </Flex>
-
-          <Flex flexDirection="column">
+          </Grid>
+          <Grid item>
             <Typography component="dt" variant="subtitle2">
               <Trans>Seed Phrase</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {showSeed ? (
-                keyData.seed ? (
-                  keyData.seed
-                ) : (
-                  <Trans>No 24 word seed, since this key is imported.</Trans>
-                )
+              {keyData.seed ? (
+                keyData.seed
               ) : (
-                <Box borderTop="2px dotted" marginTop={1} marginBottom={1} height="1px" />
+                <Trans>No 24 word seed, since this key is imported.</Trans>
               )}
             </StyledTypographyDD>
-            <Box>
-              <Button onClick={toggleShowSeed} variant="outlined">
-                {showSeed ? <Trans>Hide</Trans> : <Trans>Reveal</Trans>}
-              </Button>
-            </Box>
-          </Flex>
-        </Flex>
-
+          </Grid>
+        </Grid>
+        
         <Grid item />
       </Flex>
     </AlertDialog>
