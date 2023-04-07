@@ -329,7 +329,7 @@ export const farmerApi = apiWithTag.injectEndpoints({
     >({
       query: ({ fingerprint }) => ({
         command: 'deleteKey',
-        service: FarmerService,
+        service: Farmer,
         args: [fingerprint],
       }),
       invalidatesTags: (_result, _error, { fingerprint }) => [
@@ -343,7 +343,7 @@ export const farmerApi = apiWithTag.injectEndpoints({
     deleteAllKeys: build.mutation<any, undefined>({
       query: () => ({
         command: 'deleteAllKeys',
-        service: FarmerService,
+        service: Farmer,
       }),
       invalidatesTags: [
         { type: 'Keys', id: 'LIST' },
@@ -366,7 +366,7 @@ export const farmerApi = apiWithTag.injectEndpoints({
     >({
       query: ({ fingerprint }) => ({
         command: 'getPrivateKey',
-        service: FarmerService,
+        service: Farmer,
         args: [fingerprint],
       }),
       transformResponse: (response: any) => response?.privateKey,
