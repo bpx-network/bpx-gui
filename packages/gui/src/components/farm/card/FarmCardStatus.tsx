@@ -8,8 +8,6 @@ import FarmCardNotAvailable from './FarmCardNotAvailable';
 
 export default function FarmCardStatus() {
   const farmerStatus = useFarmerStatus();
-  
-  console.log(farmerStatus);
 
   if (farmerStatus === FarmerStatus.SYNCHING) {
     return (
