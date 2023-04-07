@@ -20,10 +20,12 @@ type FormData = {
 
 export type KeyRenameDialogProps = {
   keyData: KeyData;
+  open?: boolean;
+  onClose?: () => void;
 };
 
 export default function KeyRenameDialog(props: KeyRenameDialogProps) {
-  const { keyData } = props;
+  const { keyData, onClose = () => ({}), open = false } = props;
   
   const [deleteLabel] = useDeleteLabelMutation();
   const [setLabel] = useSetLabelMutation();
@@ -45,6 +47,7 @@ export default function KeyRenameDialog(props: KeyRenameDialogProps) {
     const newLabel = label.trim();
 
     if (keyData.label === newLabel) {
+      onClose?.();
       return;
     }
 
@@ -58,12 +61,18 @@ export default function KeyRenameDialog(props: KeyRenameDialogProps) {
         fingerprint,
       }).unwrap();
     }
+    
+    onClose?.();
+  }
+  
+  function handleCancel() {
+    onClose?.();
   }
   
   const canSubmit = !isSubmitting;
 
   return (
-    <Dialog open>
+    <Dialog open={open} onClose={onClose}>
       <Form methods={methods} onSubmit={handleSubmit} sx={{ flexGrow: 1 }} noValidate>
         <DialogTitle>
           <Trans>Rename key {fingerprint}</Trans>
@@ -90,7 +99,7 @@ export default function KeyRenameDialog(props: KeyRenameDialogProps) {
           </Flex>
         </DialogContent>
         <DialogActions>
-          <Button variant="outlined" color="secondary">
+          <Button variant="outlined" onClick={handleCancel} color="secondary">
             <Trans>Back</Trans>
           </Button>
           <ButtonLoading

@@ -19,7 +19,7 @@ export type KeyDetailDialogProps = {
 };
 
 export default function KeyDetailDialog(props: KeyDetailDialogProps) {
-  const { fingerprint } = props;
+  const { fingerprint, ...rest } = props;
 
   const [showPrivateKey, setShowPrivateKey] = useState<boolean>(false);
   const [showSeed, setShowSeed] = useState<boolean>(false);
@@ -43,7 +43,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
         title={<Trans>Loading details</Trans>}
         confirmTitle={<Trans>Close</Trans>}
         confirmVariant="contained"
-        open
+        {...rest}
       >
         <Loading center />
       </AlertDialog>
@@ -66,7 +66,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
       }
       confirmTitle={<Trans>Close</Trans>}
       confirmVariant="contained"
-      open
+      {...rest}
     >
       <Flex flexDirection="column" gap={3}>
         <Grid
