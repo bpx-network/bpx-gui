@@ -43,6 +43,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
         title={<Trans>Loading details</Trans>}
         confirmTitle={<Trans>Close</Trans>}
         confirmVariant="contained"
+        open
       >
         <Loading center />
       </AlertDialog>
@@ -65,6 +66,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
       }
       confirmTitle={<Trans>Close</Trans>}
       confirmVariant="contained"
+      open
     >
       <Flex flexDirection="column" gap={3}>
         <Grid

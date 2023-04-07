@@ -63,7 +63,7 @@ export default function KeyRenameDialog(props: KeyRenameDialogProps) {
   const canSubmit = !isSubmitting;
 
   return (
-    <Dialog>
+    <Dialog open>
       <Form methods={methods} onSubmit={handleSubmit} sx={{ flexGrow: 1 }} noValidate>
         <DialogTitle>
           <Trans>Rename key {fingerprint}</Trans>
