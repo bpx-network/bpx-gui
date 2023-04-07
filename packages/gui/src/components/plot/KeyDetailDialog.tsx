@@ -70,7 +70,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               <Trans>Public Key</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {keyData.pk}
+              {keyData.publicKey}
             </StyledTypographyDD>
           </Grid>
           <Grid item>
@@ -94,7 +94,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               <Trans>Secret Key</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {keyData.sk}
+              {keyData.secrets.privateKey}
             </StyledTypographyDD>
           </Grid>
           <Grid item>
@@ -102,8 +102,8 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
               <Trans>Seed Phrase</Trans>
             </Typography>
             <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
-              {keyData.seed ? (
-                keyData.seed
+              {keyData.secrets.mnemonic ? (
+                keyData.secrets.mnemonic.join(' ')
               ) : (
                 <Trans>No 24 word seed, since this key is imported.</Trans>
               )}
