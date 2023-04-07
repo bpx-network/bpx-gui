@@ -1,4 +1,4 @@
-import { useGetPlottersQuery } from '@bpx-network/api-react';
+import { useGetPlottersQuery, useGetKeysQuery } from '@bpx-network/api-react';
 import { Alert } from '@mui/material';
 import { Trans } from '@lingui/macro';
 import {
