@@ -26,7 +26,7 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
 
   const { data: keyData, isLoading: isLoading } = useGetKeyQuery({
     fingerprint,
-    true
+    includeSecrets: true,
   });
 
   function toggleShowPrivateKey() {
