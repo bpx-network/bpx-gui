@@ -99,13 +99,13 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
             <Typography component="dt" variant="subtitle2">
               <Trans>Seed Phrase</Trans>
             </Typography>
-            <StyledTypographyDD component="dd" variant="body2" color="textSecondary">
+            <Typography component="dd" variant="body2" color="textSecondary">
               {keyData.secrets.mnemonic ? (
                 keyData.secrets.mnemonic.join(' ')
               ) : (
                 <Trans>No 24 word seed, since this key is imported.</Trans>
               )}
-            </StyledTypographyDD>
+            </Typography>
           </Grid>
         </Grid>
         
