@@ -12,14 +12,15 @@ import {
   ConfirmDialog
 } from '@bpx-network/core';
 import KeyDetailDialog from './KeyDetailDialog';
-//import KeyRenameDialog from './KeyRenameDialog';
+import KeyRenameDialog from './KeyRenameDialog';
 
 export type KeyActionProps = {
   keyData: KeyData;
 };
 
 export default function KeyAction(props: KeyActionProps) {
-  const { fingerprint } = props;
+  const { keyData } = props;
+  const { fingerprint } = keyData;
   const [deleteKey] = useDeleteKeyMutation();
   
   function handleShowKey() {
@@ -27,7 +28,7 @@ export default function KeyAction(props: KeyActionProps) {
   }
 
   function handleRename() {
-    //await openDialog(<KeyRenameDialog fingerprint={fingerprint} />);
+    await openDialog(<KeyRenameDialog keyData={keyData} />);
   }
 
   async function handleDeletePrivateKey() {
