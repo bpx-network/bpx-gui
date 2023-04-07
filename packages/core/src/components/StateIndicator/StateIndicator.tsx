@@ -16,7 +16,7 @@ const StyledFlexContainer = styled(({ ...rest }) => <Flex {...rest} />)`
   gap: 4px;
 `;
 
-export type StateIndicatorProps = {
+export type StateComponentProps = {
   children?: ReactNode;
   state: State;
   indicator?: boolean;
@@ -26,7 +26,7 @@ export type StateIndicatorProps = {
   hideTitle?: boolean;
 };
 
-export default function StateIndicator(props: StateIndicatorProps) {
+export default function StateComponent(props: StateIndicatorProps) {
   const {
     children,
     state,
