@@ -38,7 +38,7 @@ import manageDaemonLifetime from '../util/manageDaemonLifetime';
 import { setUserDataDir } from '../util/userData';
 import { parseExtensionFromUrl } from '../util/utils';
 import handleSquirrelEvent from './handleSquirrelEvent';
-import { readPrefs, savePrefs, migratePrefs } from './prefs';
+import { readPrefs, savePrefs } from './prefs';
 
 const isPlaywrightTesting = process.env.PLAYWRIGHT_TESTS === 'true';
 const NET = 'mainnet';
@@ -296,8 +296,6 @@ if (!handleSquirrelEvent()) {
       ipcMain.handle('savePrefs', async (_event, prefsObj) => {
         savePrefs(prefsObj);
       });
-
-      ipcMain.handle('migratePrefs', async (_event, prefsObj) => migratePrefs(prefsObj));
 
       /* ======================================================================== */
 
