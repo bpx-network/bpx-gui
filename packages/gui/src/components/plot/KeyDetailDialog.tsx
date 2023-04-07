@@ -28,6 +28,8 @@ export default function KeyDetailDialog(props: KeyDetailDialogProps) {
     fingerprint,
     includeSecrets: true,
   });
+  
+  console.log(keyData);
 
   function toggleShowPrivateKey() {
     setShowPrivateKey(!showPrivateKey);
