@@ -59,6 +59,8 @@ export default function KeyRenameDialog(props: KeyRenameDialogProps) {
       }).unwrap();
     }
   }
+  
+  const canSubmit = !isSubmitting;
 
   return (
     <Dialog>
