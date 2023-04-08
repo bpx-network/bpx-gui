@@ -146,6 +146,10 @@ export default function Block() {
       value: blockRecord.headerHash,
     },
     {
+      name: <Trans>Execution block hash</Trans>,
+      value: block.foliage.executionBlockHash,
+    },
+    {
       name: <Trans>Timestamp</Trans>,
       value: moment(blockRecord.timestamp * 1000).format('LLL'),
       tooltip: (

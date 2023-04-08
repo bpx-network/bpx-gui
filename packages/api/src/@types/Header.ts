@@ -1,6 +1,6 @@
 type Header = {
   data: {
-    extension_data: string;
+    execution_block_hash: string;
     finish_time: number;
     finished: boolean;
     header_hash: string;
