@@ -147,7 +147,7 @@ export default function Block() {
     },
     {
       name: <Trans>Execution block hash</Trans>,
-      value: block.foliage.foliage_block_data.execution_block_hash,
+      value: blockRecord.executionBlockHash,
     },
     {
       name: <Trans>Timestamp</Trans>,
