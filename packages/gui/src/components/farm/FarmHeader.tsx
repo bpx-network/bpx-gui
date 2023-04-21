@@ -21,6 +21,16 @@ export default function FarmHeader() {
           <Trans>Your Farm Overview</Trans>
         </Typography>
       </Flex>
+      <More>
+        <MenuItem onClick={handleManageFarmingRewards} close>
+          <ListItemIcon>
+            <SettingsIcon fontSize="small" />
+          </ListItemIcon>
+          <Typography variant="inherit" noWrap>
+            <Trans>Manage Farming Rewards</Trans>
+          </Typography>
+        </MenuItem>
+      </More>
     </Flex>
   );
 }

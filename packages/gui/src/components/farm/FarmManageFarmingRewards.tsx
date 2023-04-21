@@ -1,4 +1,4 @@
-//import { useSetRewardTargetsMutation, useGetRewardTargetsQuery } from '@bpx-network/api-react';
+import { useSetCoinbaseMutation, useGetCoinbaseQuery } from '@bpx-network/api-react';
 import { Button, Flex, Form, TextField, Loading } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Alert, Dialog, DialogActions, DialogTitle, DialogContent, Typography } from '@mui/material';
@@ -11,7 +11,7 @@ const StyledTextField = styled(TextField)`
 `;
 
 type FormData = {
-  farmerTarget: string;
+  coinbase: string;
 };
 
 type Props = {
@@ -21,21 +21,21 @@ type Props = {
 
 export default function FarmManageFarmingRewards(props: Props) {
   const { onClose, open } = props;
-  const [setRewardTargets] = null; //useSetRewardTargetsMutation();
-  const { data, isLoading } = props; //useGetRewardTargetsQuery();
+  const [setCoinbase] = useSetCoinbaseMutation();
+  const { data, isLoading } = useGetCoinbaseQuery();
 
   const [error, setError] = useState<Error | null>(null);
   const methods = useForm<FormData>({
     mode: 'onChange',
     defaultValues: {
-      farmerTarget: data?.farmerTarget ?? '',
+      coinbase: data?.coinbase ?? '',
     },
   });
 
   useEffect(() => {
     if (data) {
       methods.reset({
-        farmerTarget: data.farmerTarget,
+        coinbase: data.coinbase,
       });
     }
   }, [data, methods]);
@@ -60,13 +60,13 @@ export default function FarmManageFarmingRewards(props: Props) {
   }
 
   async function handleSubmit(values: FormData) {
-    const { farmerTarget } = values;
+    const { coinbase } = values;
     setError(null);
 
     try {
-      //await setRewardTargets({
-      //  farmerTarget,
-      //}).unwrap();
+      await setCoinbase({
+        coinbase,
+      }).unwrap();
       handleClose();
     } catch (err) {
       setError(err);
@@ -86,22 +86,22 @@ export default function FarmManageFarmingRewards(props: Props) {
             ) : (
               <>
                 {error && <Alert severity="error">{error.message}</Alert>}
-                {errors.farmerTarget && errors.farmerTarget.type === 'required' && (
+                {errors.coinbase && errors.coinbase.type === 'required' && (
                   <Alert severity="error">
                     <Trans>Reward Address must not be empty.</Trans>
                   </Alert>
                 )}
-                {errors.farmerTarget && errors.farmerTarget.type === 'validate' && (
+                {errors.coinbase && errors.coinbase.type === 'validate' && (
                   <Alert severity="error">
                     <Trans>Reward Address is not properly formatted.</Trans>
                   </Alert>
                 )}
                 <StyledTextField
                   label={<Trans>Reward Address</Trans>}
-                  name="farmerTarget"
+                  name="coinbase"
                   variant="filled"
                   inputProps={{ spellCheck: false }}
-                  {...register('farmerTarget', {
+                  {...register('coinbase', {
                     required: true,
                     validate: checkAddress,
                   })}

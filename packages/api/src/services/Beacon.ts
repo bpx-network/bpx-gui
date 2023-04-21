@@ -56,6 +56,16 @@ export default class Beacon extends Service {
   async getNetworkInfo() {
     return this.command('get_network_info');
   }
+  
+  async getCoinbase() {
+    return this.command('get_coinbase');
+  }
+
+  async setCoinbase(coinbase: string) {
+    return this.command('set_coinbase', {
+      coinbase,
+    });
+  }
 
   onBlockchainState(callback: (data: any, message: Message) => void, processData?: (data: any) => any) {
     return this.onCommand('get_blockchain_state', callback, processData);

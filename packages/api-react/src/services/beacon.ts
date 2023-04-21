@@ -151,6 +151,25 @@ export const beaconApi = apiWithTag.injectEndpoints({
         service: Beacon,
       }),
     }),
+    getCoinbase: build.query<string, undefined>({
+      query: () => ({
+        command: 'getCoinbase',
+        service: Beacon,
+      }),
+      transformResponse: (response: any) => response?.coinbase,
+    }),
+    setCoinbase: build.mutation<
+      undefined,
+      {
+        coinbase: string;
+      }
+    >({
+      query: ({ coinbase }) => ({
+        command: 'setCoinbase',
+        service: Beacon,
+        args: [coinbase],
+      }),
+    }),
   }),
 });
 
@@ -165,4 +184,6 @@ export const {
   useGetBlockQuery,
   useGetBlockRecordQuery,
   useGetNetworkInfoQuery,
+  useGetCoinbaseQuery,
+  useSetCoinbaseMutation,
 } = beaconApi;
