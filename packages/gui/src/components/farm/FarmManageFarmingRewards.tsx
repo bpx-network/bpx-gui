@@ -22,23 +22,23 @@ type Props = {
 export default function FarmManageFarmingRewards(props: Props) {
   const { onClose, open } = props;
   const [setCoinbase] = useSetCoinbaseMutation();
-  const { data, isLoading } = useGetCoinbaseQuery();
+  const { coinbase, isLoading } = useGetCoinbaseQuery();
 
   const [error, setError] = useState<Error | null>(null);
   const methods = useForm<FormData>({
     mode: 'onChange',
     defaultValues: {
-      coinbase: data?.coinbase ?? '',
+      coinbase: coinbase,
     },
   });
 
   useEffect(() => {
-    if (data) {
+    if (coinbase) {
       methods.reset({
-        coinbase: data.coinbase,
+        coinbase: coinbase,
       });
     }
-  }, [data, methods]);
+  }, [coinbase, methods]);
 
   const {
     register,
