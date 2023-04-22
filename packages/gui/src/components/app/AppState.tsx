@@ -45,7 +45,8 @@ export default function AppState(props: Props) {
   const [updatedWindowTitle, setUpdatedWindowTitle] = useState<boolean>(false);
   const { data: backendVersion } = useGetVersionQuery();
   const { version } = useAppVersion();
-  const isTestnet = useIsMainnet() ? false : true;
+  const isMainnet = useIsMainnet();
+  const isTestnet = isMainnet === undefined ? false : (isMainnet ? false : true);
 
   const runServices = useMemo<ServiceName[] | undefined>(() => {
     if (mode) {

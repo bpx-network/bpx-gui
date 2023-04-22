@@ -7,7 +7,8 @@ import React, { useState } from 'react';
 import useIsMainnet from '../../hooks/useIsMainnet';
 
 export default function AppTestnetIndicator() {
-  const isTestnet = useIsMainnet() ? false : true;
+  const isMainnet = useIsMainnet();
+  const isTestnet = isMainnet === undefined ? false : (isMainnet ? false : true);
   const theme = useTheme();
   const borderColor = (theme.palette as any).colors.blue.border;
   const [clickCount, setClickCount] = useState(0);
