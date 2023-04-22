@@ -71,6 +71,8 @@ export const {
   useGetBlockQuery,
   useGetBlockRecordQuery,
   useGetNetworkInfoQuery,
+  useGetCoinbaseQuery,
+  useSetCoinbaseMutation,
 } = beacon;
 
 // harvester hooks
