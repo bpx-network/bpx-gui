@@ -571,12 +571,12 @@ function getMenuTemplate() {
   ];
 
   if (process.platform === 'darwin') {
-    // BPX Blockchain menu (Mac)
+    // BPX Beacon Client menu (Mac)
     template.unshift({
       label: i18n._(/* i18n */ { id: 'BPX' }),
       submenu: [
         {
-          label: i18n._(/* i18n */ { id: 'About BPX Blockchain' }),
+          label: i18n._(/* i18n */ { id: 'About BPX Beacon Client' }),
           click: () => {
             openAbout();
           },
@@ -663,7 +663,7 @@ function getMenuTemplate() {
         type: 'separator',
       },
       {
-        label: i18n._(/* i18n */ { id: 'About BPX Blockchain' }),
+        label: i18n._(/* i18n */ { id: 'About BPX Beacon Client' }),
         click() {
           openAbout();
         },

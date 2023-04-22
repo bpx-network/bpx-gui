@@ -109,7 +109,7 @@ export default function AppState(props: Props) {
       ipcRenderer.invoke('processLaunchTasks');
 
       if (isTestnet && !updatedWindowTitle) {
-        ipcRenderer.invoke('setWindowTitle', 'BPX Blockchain (Testnet)');
+        ipcRenderer.invoke('setWindowTitle', 'BPX Beacon Client (Testnet)');
         setUpdatedWindowTitle(true);
       }
 

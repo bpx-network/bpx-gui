@@ -17,12 +17,12 @@ Var NextButton
 Page custom detectOldBpxVersion detectOldBpxVersionPageLeave
 Page custom finish finishLeave
 
-; Add a page offering to uninstall an older build installed into the bpx-blockchain dir
+; Add a page offering to uninstall an older build installed into the bpx-beacon-client dir
 Function detectOldBpxVersion
-  ; Check the registry for old bpx-blockchain installer keys
-  ReadRegStr $BpxSquirrelInstallLocation HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "InstallLocation"
-  ReadRegStr $BpxSquirrelInstallVersion HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "DisplayVersion"
-  ReadRegStr $BpxSquirrelUninstaller HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-blockchain" "QuietUninstallString"
+  ; Check the registry for old bpx-beacon-client installer keys
+  ReadRegStr $BpxSquirrelInstallLocation HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-beacon-client" "InstallLocation"
+  ReadRegStr $BpxSquirrelInstallVersion HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-beacon-client" "DisplayVersion"
+  ReadRegStr $BpxSquirrelUninstaller HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\bpx-beacon-client" "QuietUninstallString"
 
   StrCpy $UninstallBpxSquirrelInstall ${BST_UNCHECKED} ; Initialize to unchecked so that a silent install skips uninstalling
 
@@ -48,12 +48,12 @@ Function detectOldBpxVersion
     Abort
   ${EndIf}
 
-  !insertmacro MUI_HEADER_TEXT "Uninstall Old Version" "Would you like to uninstall the old version of BPX Blockchain?"
+  !insertmacro MUI_HEADER_TEXT "Uninstall Old Version" "Would you like to uninstall the old version of BPX Beacon Client?"
 
-  ${NSD_CreateLabel} 0 35 100% 12u "Found BPX Blockchain $BpxSquirrelInstallVersion installed in an old location:"
+  ${NSD_CreateLabel} 0 35 100% 12u "Found BPX Beacon Client $BpxSquirrelInstallVersion installed in an old location:"
   ${NSD_CreateLabel} 12 57 100% 12u "$BpxSquirrelInstallLocation"
 
-  ${NSD_CreateCheckBox} 12 81 100% 12u "Uninstall BPX Blockchain $BpxSquirrelInstallVersion"
+  ${NSD_CreateCheckBox} 12 81 100% 12u "Uninstall BPX Beacon Client $BpxSquirrelInstallVersion"
   Pop $CheckboxUninstall
   ${NSD_SetState} $CheckboxUninstall $UninstallBpxSquirrelInstall
   ${NSD_OnClick} $CheckboxUninstall SetUninstall

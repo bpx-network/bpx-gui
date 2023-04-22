@@ -1,9 +1,9 @@
 {
   "name": "@bpx-network/gui",
   "author": "BPX Network <hello@bpxchain.cc> (https://bpxchain.cc/)",
-  "description": "GUI for BPX Blockchain",
+  "description": "GUI for BPX Beacon Client",
   "license": "Apache-2.0",
-  "productName": "BPX Blockchain",
+  "productName": "BPX Beacon Client",
   "homepage": "./",
   "main": "build/electron/main.js",
   "engines": {
