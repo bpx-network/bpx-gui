@@ -23,6 +23,7 @@ export default function FarmManageFarmingRewards(props: Props) {
   const { onClose, open } = props;
   const [setCoinbase] = useSetCoinbaseMutation();
   const { coinbase, isLoading } = useGetCoinbaseQuery();
+  console.log(coinbase)
 
   const [error, setError] = useState<Error | null>(null);
   const methods = useForm<FormData>({
