@@ -1,10 +1,16 @@
 import { Beacon } from '@bpx-network/api';
-import type { Block, BlockRecord, BlockHeader, BlockchainState, BeaconConnection } from '@bpx-network/api';
+import type { Block, BlockRecord, BlockHeader, BlockchainState, BeaconConnection, Coinbase } from '@bpx-network/api';
 
 import api, { baseQuery } from '../api';
 import onCacheEntryAddedInvalidate from '../utils/onCacheEntryAddedInvalidate';
 
-const apiWithTag = api.enhanceEndpoints({ addTagTypes: ['BlockchainState', 'BeaconConnections'] });
+const apiWithTag = api.enhanceEndpoints({
+    addTagTypes: [
+        'BlockchainState',
+        'BeaconConnections',
+        'Coinbase',
+    ],
+});
 
 export const beaconApi = apiWithTag.injectEndpoints({
   endpoints: (build) => ({
@@ -30,6 +36,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
       }),
       transformResponse: (response: any) => response?.blockRecords,
     }),
+    
     getUnfinishedBlockHeaders: build.query<BlockHeader[], undefined>({
       query: () => ({
         command: 'getUnfinishedBlockHeaders',
@@ -44,6 +51,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
+    
     getBlockchainState: build.query<BlockchainState, undefined>({
       query: () => ({
         command: 'getBlockchainState',
@@ -62,6 +70,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
+    
     getBeaconConnections: build.query<BeaconConnection[], undefined>({
       query: () => ({
         command: 'getConnections',
@@ -89,6 +98,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
+    
     openBeaconConnection: build.mutation<
       BeaconConnection,
       {
@@ -103,6 +113,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
       }),
       invalidatesTags: [{ type: 'BeaconConnections', id: 'LIST' }],
     }),
+    
     closeBeaconConnection: build.mutation<
       BeaconConnection,
       {
@@ -119,6 +130,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
         { type: 'BeaconConnections', id: nodeId },
       ],
     }),
+    
     getBlock: build.query<
       Block,
       {
@@ -132,6 +144,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
       }),
       transformResponse: (response: any) => response?.block,
     }),
+    
     getBlockRecord: build.query<
       BlockRecord,
       {
@@ -145,21 +158,25 @@ export const beaconApi = apiWithTag.injectEndpoints({
       }),
       transformResponse: (response: any) => response?.blockRecord,
     }),
+    
     getNetworkInfo: build.query<any, undefined>({
       query: () => ({
         command: 'getNetworkInfo',
         service: Beacon,
       }),
     }),
-    getCoinbase: build.query<string, undefined>({
+    
+    getCoinbase: build.query<undefined, undefined>({
       query: () => ({
-        command: 'getCoinbase',
+        command: 'getRewardTargets',
         service: Beacon,
       }),
-      transformResponse: (response: any) => response?.coinbase,
+      // transformResponse: (response: any) => response,
+      providesTags: ['Coinbase'],
     }),
+
     setCoinbase: build.mutation<
-      undefined,
+      Coinbase,
       {
         coinbase: string;
       }
@@ -169,6 +186,7 @@ export const beaconApi = apiWithTag.injectEndpoints({
         service: Beacon,
         args: [coinbase],
       }),
+      invalidatesTags: ['Coinbase'],
     }),
   }),
 });
