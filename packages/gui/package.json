@@ -10,8 +10,8 @@
     "node": ">=16.15.0"
   },
   "build": {
-    "productName": "bpx",
-    "appId": "cc.bpxchain.blockchain",
+    "productName": "bpx-beacon-client",
+    "appId": "cc.bpxchain.beacon-client",
     "asar": true,
     "asarUnpack": "**/daemon/**",
     "npmRebuild": false,
@@ -26,10 +26,10 @@
       "target": "nsis",
       "icon": "src/assets/img/bpx.ico",
       "timeStampServer": "http://timestamp.comodoca.com",
-      "executableName": "BPX"
+      "executableName": "bpx-gui"
     },
     "nsis": {
-      "artifactName": "BPXSetup-${env.BPX_INSTALLER_VERSION}.exe",
+      "artifactName": "bpx-beacon-client-${env.BPX_INSTALLER_VERSION}.exe",
       "oneClick": false,
       "deleteAppDataOnUninstall": true,
       "allowToChangeInstallationDirectory": true,
@@ -39,7 +39,7 @@
       "include": "installer.nsh"
     },
     "mac": {
-      "executableName": "BPX",
+      "executableName": "bpx-gui",
       "artifactName": "${productName}-${env.BPX_INSTALLER_VERSION}.${ext}",
       "category": "public.app-category.finance",
       "target": "dmg",
