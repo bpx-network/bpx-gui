@@ -39,7 +39,7 @@
       "include": "installer.nsh"
     },
     "mac": {
-      "executableName": "bpx-gui",
+      "executableName": "BPX Beacon Client",
       "artifactName": "${productName}-${env.BPX_INSTALLER_VERSION}.${ext}",
       "category": "public.app-category.finance",
       "target": "dmg",
