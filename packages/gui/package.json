@@ -26,7 +26,7 @@
       "target": "nsis",
       "icon": "src/assets/img/bpx.ico",
       "timeStampServer": "http://timestamp.comodoca.com",
-      "executableName": "BPX Beacon Client"
+      "executableName": "bpx-gui"
     },
     "nsis": {
       "artifactName": "bpx-beacon-client-${env.BPX_INSTALLER_VERSION}.exe",
@@ -39,7 +39,7 @@
       "include": "installer.nsh"
     },
     "mac": {
-      "executableName": "BPX Beacon Client",
+      "executableName": "bpx-gui",
       "artifactName": "${productName}-${env.BPX_INSTALLER_VERSION}.${ext}",
       "category": "public.app-category.finance",
       "target": "dmg",
