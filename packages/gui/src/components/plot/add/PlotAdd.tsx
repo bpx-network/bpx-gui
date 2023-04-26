@@ -35,6 +35,17 @@ export default function PlotAdd() {
         <TooltipIcon>{error.message}</TooltipIcon>
       </Alert>;
   }
+  
+  else if(!publicKeyFingerprints) {
+	return
+      <Alert
+        severity="error"
+      >
+        <Trans>No keys added</Trans>
+        &nbsp;
+        <TooltipIcon>Add at least one key to be able to create plots</TooltipIcon>
+      </Alert>;
+  }
 
   return <PlotAddForm plotters={plotters} fingerprints={publicKeyFingerprints} />;
 }

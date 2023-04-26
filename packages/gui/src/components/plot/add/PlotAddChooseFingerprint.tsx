@@ -2,6 +2,7 @@ import { CardStep, Select, StateColor } from '@bpx-network/core';
 import { t, Trans } from '@lingui/macro';
 import { FormControl, FormHelperText, Grid, InputLabel, MenuItem, Typography } from '@mui/material';
 import React, { useMemo } from 'react';
+import { useWatch } from 'react-hook-form';
 
 type Props = {
   step: number;
@@ -10,6 +11,7 @@ type Props = {
 
 export default function PlotAddChooseFingerprint(props: Props) {
   const { step, fingerprints } = props;
+  const fingerprint: string | undefined = useWatch<string>({ name: 'fingerprint' });
 
   return (
     <CardStep step={step} title={<Trans>Choose Fingerprint</Trans>}>
@@ -26,15 +28,15 @@ export default function PlotAddChooseFingerprint(props: Props) {
             <InputLabel required focused>
               <Trans>Fingerprint</Trans>
             </InputLabel>
-            <Select name="fingerprint">
-              {fingerprints.map((fingerprint) => (
+            <Select name="fingerprint" value={fingerprint}>
+              {fingerprints.map((fp) => (
                 <MenuItem
-                  value={fingerprint.fingerprint}
-                  key={fingerprint.fingerprint}
+                  value={fp.fingerprint}
+                  key={fp.fingerprint}
                 >
-                  {fingerprint.fingerprint}
-                  {fingerprint.label && (
-                    ({fingerprint.label})
+                  {fp.fingerprint}
+                  {fp.label && (
+                    ({fp.label})
                   )}
                 </MenuItem>
               ))}
