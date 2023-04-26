@@ -15,9 +15,10 @@ import PlotAddChooseSize from './PlotAddChooseSize';
 import PlotAddNumberOfPlots from './PlotAddNumberOfPlots';
 import PlotAddSelectFinalDirectory from './PlotAddSelectFinalDirectory';
 import PlotAddSelectTemporaryDirectory from './PlotAddSelectTemporaryDirectory';
+import PlotAddChooseFingerprint from './PlotAddChooseFingerprint';
 
 type Props = {
-  fingerprint: number;
+  fingerprints: any;
   plotters: Record<
     PlotterName,
     {
@@ -35,7 +36,7 @@ type Props = {
 };
 
 export default function PlotAddForm(props: Props) {
-  const { fingerprint, plotters } = props;
+  const { fingerprints, plotters } = props;
 
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
@@ -123,6 +124,7 @@ export default function PlotAddForm(props: Props) {
         <Back variant="h5" form>
           <Trans>Add a Plot</Trans>
         </Back>
+        <PlotAddChooseFingerprint step={step++} fingerprints={fingerprints} />
         <PlotAddChoosePlotter step={step++} onChange={handlePlotterChanged} />
         <PlotAddChooseSize step={step++} plotter={plotter} />
         <PlotAddNumberOfPlots step={step++} plotter={plotter} />
