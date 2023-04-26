@@ -34,7 +34,7 @@ export default function PlotAddChooseFingerprint(props: Props) {
                 >
                   {fingerprint.fingerprint}
                   {fingerprint.label && (
-                    ({fingerprint})
+                    ({fingerprint.label})
                   )}
                 </MenuItem>
               ))}
