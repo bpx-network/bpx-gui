@@ -36,5 +36,5 @@ export default function PlotAdd() {
       </Alert>;
   }
 
-  return <PlotAddForm plotters={plotters} fingerprints={publicKeysFingerprints} />;
+  return <PlotAddForm plotters={plotters} fingerprints={publicKeyFingerprints} />;
 }
