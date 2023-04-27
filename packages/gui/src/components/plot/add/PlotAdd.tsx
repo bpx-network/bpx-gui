@@ -15,6 +15,7 @@ export default function PlotAdd() {
   const { data: publicKeyFingerprints, isLoading: isLoadingPublicKeys, error, refetch } = useGetKeysQuery();
 
   const isLoading = isLoadingPlotters || isLoadingPublicKeys;
+  console.log(publicKeyFingerprints);
 
   if (isLoading) {
     return <Suspender />;
@@ -36,7 +37,7 @@ export default function PlotAdd() {
       </Alert>;
   }
   
-  else if(!publicKeyFingerprints.length) {
+  else if(publicKeyFingerprints.length == 0) {
 	return
       <Alert
         severity="error"
