@@ -17,6 +17,10 @@ import PlotAddSelectFinalDirectory from './PlotAddSelectFinalDirectory';
 import PlotAddSelectTemporaryDirectory from './PlotAddSelectTemporaryDirectory';
 import PlotAddChooseFingerprint from './PlotAddChooseFingerprint';
 
+type FormData = PlotAddConfig & {
+  fingerprint?: string;
+};
+
 type Props = {
   fingerprints: any;
   plotters: Record<
@@ -95,13 +99,16 @@ export default function PlotAddForm(props: Props) {
     try {
       setLoading(true);
       const { delay, ...rest } = data;
+      console.log("Rest");
       console.log(rest);
+      console.log("Data");
       console.log(data);
 
       const plotAddConfig = {
         ...rest,
         delay: delay * 60,
       };
+      console.log("plotAddConfig");
       console.log(plotAddConfig);
 
       await startPlotting(plotAddConfig).unwrap();
