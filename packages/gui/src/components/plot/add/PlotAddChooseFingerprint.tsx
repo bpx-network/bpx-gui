@@ -15,8 +15,8 @@ export default function PlotAddChooseFingerprint(props: Props) {
     <CardStep step={step} title={<Trans>Choose Fingerprint</Trans>}>
       <Typography variant="subtitle1">
         <Trans>
-          Depending on your system configuration, you may find that an alternative plotter produces plots faster than
-          the default Chia Proof of Space plotter. If unsure, use the default Chia Proof of Space plotter.
+          The created plots will be permamently associated with the selected key. If you lose access to this key,
+          you won't be able to use these plots to farm BPX anymore.
         </Trans>
       </Typography>
 
