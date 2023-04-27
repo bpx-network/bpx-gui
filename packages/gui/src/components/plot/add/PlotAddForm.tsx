@@ -104,10 +104,6 @@ export default function PlotAddForm(props: Props) {
         delay: delay * 60,
       };
 
-      if (!farmerPublicKey && !poolPublicKey && fingerprint) {
-        plotAddConfig.fingerprint = fingerprint;
-      }
-
       await startPlotting(plotAddConfig).unwrap();
 
       navigate('/dashboard/plot');
