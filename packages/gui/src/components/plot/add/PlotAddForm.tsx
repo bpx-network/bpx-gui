@@ -95,6 +95,8 @@ export default function PlotAddForm(props: Props) {
     try {
       setLoading(true);
       const { delay, ...rest } = data;
+      console.log(rest);
+      console.log(data);
 
       const plotAddConfig = {
         ...rest,
