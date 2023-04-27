@@ -38,7 +38,7 @@ export default function PlotAdd() {
   }
   
   else if(publicKeyFingerprints.length == 0) {
-    console.log("alert")
+    console.log("alert");
 	return
       <Alert severity="error">
         <Trans>No keys added</Trans>
@@ -47,7 +47,7 @@ export default function PlotAdd() {
       </Alert>;
   }
   
-  console.log("after alert")
+  console.log("after alert");
 
   return <PlotAddForm plotters={plotters} fingerprints={publicKeyFingerprints} />;
 }
