@@ -11,7 +11,7 @@ type Props = {
 
 export default function PlotAddChooseFingerprint(props: Props) {
   const { step, fingerprints } = props;
-  const fingerprint: string | undefined = useWatch<string>({ name: 'fingerprint' });
+  const fingerprint: number | undefined = useWatch<number>({ name: 'fingerprint' });
 
   return (
     <CardStep step={step} title={<Trans>Choose Fingerprint</Trans>}>

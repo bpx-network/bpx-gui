@@ -17,9 +17,7 @@ import PlotAddSelectFinalDirectory from './PlotAddSelectFinalDirectory';
 import PlotAddSelectTemporaryDirectory from './PlotAddSelectTemporaryDirectory';
 import PlotAddChooseFingerprint from './PlotAddChooseFingerprint';
 
-type FormData = PlotAddConfig & {
-  fingerprint?: string;
-};
+type FormData = PlotAddConfig;
 
 type Props = {
   fingerprints: any;
