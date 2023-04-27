@@ -36,7 +36,7 @@ export default function PlotAdd() {
       </Alert>;
   }
   
-  else if(!publicKeyFingerprints) {
+  else if(!publicKeyFingerprints.length) {
 	return
       <Alert
         severity="error"
