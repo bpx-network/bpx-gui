@@ -51,8 +51,6 @@ export default function PlotAddForm(props: Props) {
     finalLocation: '',
     workspaceLocation: '',
     workspaceLocation2: '',
-    farmerPublicKey: '',
-    poolPublicKey: '',
     excludeFinalDir: false,
   };
 
@@ -97,12 +95,12 @@ export default function PlotAddForm(props: Props) {
     try {
       setLoading(true);
       const { delay, ...rest } = data;
-      const { farmerPublicKey, poolPublicKey } = rest;
 
       const plotAddConfig = {
         ...rest,
         delay: delay * 60,
       };
+      console.log(plotAddConfig);
 
       await startPlotting(plotAddConfig).unwrap();
 
