@@ -1,8 +1,8 @@
-import { useRefreshPlotsMutation } from '@bpx-network/api-react';
-import { Button, Flex, useOpenDialog, MenuItem, More } from '@bpx-network/core';
+import { useRefreshPlotsMutation, useGetKeysQuery } from '@bpx-network/api-react';
+import { Button, Flex, useOpenDialog, MenuItem, More, AlertDialog } from '@bpx-network/core';
 import { Trans } from '@lingui/macro';
 import { Add, Refresh } from '@mui/icons-material';
-import { ListItemIcon, Typography } from '@mui/material';
+import { ListItemIcon, Typography, Alert } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
@@ -16,8 +16,21 @@ export default function PlotOverviewPlots() {
   const navigate = useNavigate();
   const openDialog = useOpenDialog();
   const [refreshPlots] = useRefreshPlotsMutation();
+  const { data: fingerprints, isLoading: isLoadingPublicKeys } = useGetKeysQuery();
 
   function handleAddPlot() {
+    if(isLoadingPublicKeys)
+      return;
+    
+    if(fingerprints.length == 0) {
+      openDialog(
+        <AlertDialog title={<Trans>Error</Trans>}>
+          <Trans>Add at least one key to be able to create plots</Trans>
+        </AlertDialog>
+      );
+      return;
+    }
+    
     navigate('/dashboard/plot/add');
   }
 
