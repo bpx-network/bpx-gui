@@ -10,6 +10,9 @@ type Props = {
 
 export default function PlotAddChooseFingerprint(props: Props) {
   const { step, fingerprints } = props;
+  
+  console.log("Fingerprints");
+  console.log(fingerprints);
 
   return (
     <CardStep step={step} title={<Trans>Choose Fingerprint</Trans>}>
@@ -26,7 +29,7 @@ export default function PlotAddChooseFingerprint(props: Props) {
             <InputLabel required focused>
               <Trans>Fingerprint</Trans>
             </InputLabel>
-            <Select name="fingerprint" defaultValue={fingerprints[0].fingerprint}>
+            <Select name="fingerprint" defaultValue={777}>
               {fingerprints.map((fp) => (
                 <MenuItem
                   value={777}
