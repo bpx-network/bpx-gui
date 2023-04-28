@@ -10,9 +10,6 @@ type Props = {
 
 export default function PlotAddChooseFingerprint(props: Props) {
   const { step, fingerprints } = props;
-  
-  console.log("Fingerprints");
-  console.log(fingerprints);
 
   return (
     <CardStep step={step} title={<Trans>Choose Fingerprint</Trans>}>

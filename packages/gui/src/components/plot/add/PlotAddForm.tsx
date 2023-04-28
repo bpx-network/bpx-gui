@@ -91,7 +91,6 @@ export default function PlotAddForm(props: Props) {
 
   const handlePlotterChanged = (newPlotterName: PlotterName) => {
     const defaults = defaultsForPlotter(newPlotterName);
-    console.log("reset");
     reset(defaults);
   };
 
@@ -99,17 +98,11 @@ export default function PlotAddForm(props: Props) {
     try {
       setLoading(true);
       const { delay, ...rest } = data;
-      console.log("Rest");
-      console.log(rest);
-      console.log("Data");
-      console.log(data);
 
       const plotAddConfig = {
         ...rest,
         delay: delay * 60,
       };
-      console.log("plotAddConfig");
-      console.log(plotAddConfig);
 
       await startPlotting(plotAddConfig).unwrap();
 
@@ -127,8 +120,8 @@ export default function PlotAddForm(props: Props) {
         <Back variant="h5" form>
           <Trans>Add a Plot</Trans>
         </Back>
-        <PlotAddChooseFingerprint step={step++} fingerprints={fingerprints} />
         <PlotAddChoosePlotter step={step++} onChange={handlePlotterChanged} />
+        <PlotAddChooseFingerprint step={step++} fingerprints={fingerprints} />
         <PlotAddChooseSize step={step++} plotter={plotter} />
         <PlotAddNumberOfPlots step={step++} plotter={plotter} />
         {allowTempDirectorySelection && <PlotAddSelectTemporaryDirectory step={step++} plotter={plotter} />}
