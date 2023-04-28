@@ -90,6 +90,7 @@ export default function PlotAddForm(props: Props) {
 
   const handlePlotterChanged = (newPlotterName: PlotterName) => {
     const defaults = defaultsForPlotter(newPlotterName);
+    console.log("reset");
     reset(defaults);
   };
 
