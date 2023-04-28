@@ -26,11 +26,11 @@ export default function PlotAddChooseFingerprint(props: Props) {
             <InputLabel required focused>
               <Trans>Fingerprint</Trans>
             </InputLabel>
-            <Select name="fingerprintIndex" defaultValue={0}>
-              {fingerprints.map((fp, index) => (
+            <Select name="fingerprint" defaultValue={fingerprints[0].fingerprint}>
+              {fingerprints.map((fp) => (
                 <MenuItem
-                  value={index}
-                  key={index}
+                  value={777}
+                  key={777}
                 >
                   {fp.fingerprint}
                   {fp.label && (

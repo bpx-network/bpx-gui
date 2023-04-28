@@ -96,7 +96,7 @@ export default function PlotAddForm(props: Props) {
   const handleSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       setLoading(true);
-      const { delay, fingerprintIndex, ...rest } = data;
+      const { delay, ...rest } = data;
       console.log("Rest");
       console.log(rest);
       console.log("Data");
@@ -104,7 +104,6 @@ export default function PlotAddForm(props: Props) {
 
       const plotAddConfig = {
         ...rest,
-        fingerprint: fingerprints[fingerprintIndex].fingerprint,
         delay: delay * 60,
       };
       console.log("plotAddConfig");
