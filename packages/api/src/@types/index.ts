@@ -8,6 +8,7 @@ export type { default as Connection } from './Connection';
 export type { default as FarmingInfo } from './FarmingInfo';
 export type { default as Fingerprint } from './Fingerprint';
 export type { default as Foliage } from './Foliage';
+export type { default as FoliageTransactionBlock } from './FoliageTransactionBlock';
 export type { default as G2Element } from './G2Element';
 export type { default as Header } from './Header';
 export type { default as KeyData } from './KeyData';

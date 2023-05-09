@@ -151,7 +151,7 @@ export default function Block() {
     },
     {
       name: <Trans>Timestamp</Trans>,
-      value: moment(blockRecord.timestamp * 1000).format('LLL'),
+      value: blockRecord.timestamp ? moment(blockRecord.timestamp * 1000).format('LLL') : null,
       tooltip: (
         <Trans>
           This is the time the block was created by the farmer, which is before it is finalized with a proof of time
@@ -208,6 +208,10 @@ export default function Block() {
       name: <Trans>Plot Id</Trans>,
       value: newPlotId,
       tooltip: <Trans>The seed used to create the plot. This depends on the pool pk and plot pk.</Trans>,
+    },
+    {
+      name: <Trans>Farmer Address</Trans>,
+      value: blockRecord.coinbase,
     },
   ];
 
