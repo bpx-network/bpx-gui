@@ -69,19 +69,13 @@ export default function AppSelectMode() {
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Store and Send XCH</Trans>
+                        <Trans>Keep in sync with Beacon Chain</Trans>
                       </Typography>
                     </Flex>
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Manage CAT tokens</Trans>
-                      </Typography>
-                    </Flex>
-                    <Flex gap={1} alignItems="center">
-                      <StyledCheckIcon color="primary" />
-                      <Typography variant="body2">
-                        <Trans>Trade tokens</Trans>
+                        <Trans>Provide consensus updates for Execution Client</Trans>
                       </Typography>
                     </Flex>
                   </Flex>
@@ -118,19 +112,19 @@ export default function AppSelectMode() {
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Create &amp; Manage plots</Trans>
+                        <Trans>Create &amp; manage plots</Trans>
                       </Typography>
                     </Flex>
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Join farming pools</Trans>
+                        <Trans>Generate new blocks</Trans>
                       </Typography>
                     </Flex>
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Runs the beacon client</Trans>
+                        <Trans>Earn block rewards</Trans>
                       </Typography>
                     </Flex>
                   </Flex>
