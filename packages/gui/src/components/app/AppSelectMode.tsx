@@ -75,7 +75,7 @@ export default function AppSelectMode() {
                     <Flex gap={1} alignItems="center">
                       <StyledCheckIcon color="primary" />
                       <Typography variant="body2">
-                        <Trans>Provide consensus updates for Execution Client</Trans>
+                        <Trans>Provide consensus updates to Execution Client</Trans>
                       </Typography>
                     </Flex>
                   </Flex>
